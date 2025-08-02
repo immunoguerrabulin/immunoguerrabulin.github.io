@@ -21,8 +21,8 @@ keywords: computational chemistry, machine learning, ion transport, MD simulatio
 lang: en
 icon: ⚛️
 
-url: "https://jlguerraphd.github.io"  # full GitHub Pages URL with https
-baseurl: ""                           # leave this blank for root directory site
+url: "https://jlguerraphd.github.io"
+baseurl: ""  # this must be blank if you're hosting at root
 
 last_updated: false
 impressum_path:

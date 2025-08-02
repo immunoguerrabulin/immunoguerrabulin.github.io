@@ -3,29 +3,35 @@
 # -----------------------------------------------------------------------------
 
 title: "Jose Luis Guerra" # website title shown in browser tab
-first_name: Jose Luis
-middle_name:
-last_name: Guerra
+first_name: "Jose Luis"
+last_name: "Guerra"
 
 contact_note: >
   You can reach me at JLGuerra@uchicago.edu — email is the best way to contact me.
 
 description: >
-  Ph.D. candidate in Computational Chemistry at the University of Chicago. I build atomistic and machine learning models for ion pumps and molecular systems.
+  Ph.D. candidate in Computational Chemistry at the University of Chicago. 
+  I develop atomistic and machine learning models for ion pumps and molecular systems.
 
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. 
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 keywords: computational chemistry, machine learning, ion transport, MD simulations, drug discovery
 lang: en
-icon: ⚛️
+icon: ⚛️ # emoji favicon
 
+# GitHub Pages URL (should not have trailing slashes)
 url: "https://jlguerraphd.github.io"
-baseurl: ""  # this must be blank if you're hosting at root
+baseurl: ""  # this should be empty when hosting at the root
 
+# Optional: Disable "Last Updated" text in the footer
 last_updated: false
+
+# Optional: If you're legally required to have an impressum (e.g. EU), set it here.
 impressum_path:
+
+# Show "Back to Top" button
 back_to_top: true
 
 # -----------------------------------------------------------------------------

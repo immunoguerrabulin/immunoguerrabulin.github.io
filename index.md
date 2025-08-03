@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: /
+peFeel free to reach out via email at JLGuerra@uchicago.edu for collaborations or discussions about computational chemistry and molecular modeling. /
 subtitle: <a href='https://www.uchicago.edu'>University of Chicago</a>. Ph.D. Candidate in Computational Chemistry.
 
 profile:

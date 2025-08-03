@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. candidate in Computational Chemistry at the University of Chicago, where I develop atomistic models for ion pumps. My research focuses on using computational techniques to study P-type ATPase pumps
+I am a Ph.D. candidate in Computational Chemistry at the University of Chicago, where I develop atomistic models for ion pumps. My research focuses on using computational techniques to study P-type ATPase pumps.
 
 My work combines molecular dynamics simulations and quantum mechanics calculations to study complex biological systems. 
 

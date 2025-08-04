@@ -31,4 +31,4 @@ I am a Ph.D. candidate in Computational Chemistry at the University of Chicago, 
 
 My work combines molecular dynamics simulations and quantum mechanics calculations to study complex biological systems.
 
-Feel free to reach out via email at JLGuerra@uchicago.edu for collaborations or discussions about computational chemistry and molecular modeling.
+

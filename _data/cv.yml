@@ -1,97 +1,130 @@
+- title: Summary
+  type: list
+  contents:
+    - Ph.D. candidate (expected May 2026) in theoretical and computational chemistry developing multiscale, atomistic models of P-type ATPases.
+    - "Expertise in time-series data including: molecular dynamics (enhanced sampling, free energy), hybrid Quantum Mechanical/Molecular Mechanics for chemical steps."
+    - Recent AI/ML internship applying computational neuroscience to build a synthetic olfactory engine.
+
 - title: General Information
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Jose Luis Guerra
+    - name: Email
+      value: Jlguerra@uchicago.edu
+    - name: LinkedIn
+      value: jlguerraphd
+      links:
+        - name: Profile
+          link: https://linkedin.com/in/jlguerraphd
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - year: Expected May 2026
+      title: Ph.D. in Chemistry
+      institution: University of Chicago
+      location: Chicago, IL
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - NSF Graduate Research Fellow
+        - "Dissertation: Multiscale Modeling of P-type ATPase Pumps"
+        - "Relevant coursework: Mathematical Foundations of Machine Learning; Machine Learning in Chemistry; Agents for Science"
+    - year: May 2021
+      title: B.S. in Biochemistry (Honors)
+      institution: Stony Brook University
+      location: Stony Brook, NY
       description:
-        - Description 1.
-        - Description 2.
+        - Minor in Chemistry and Music
+        - "Honors thesis: Molecular Dynamics of Mismatched Base Pairs in a B-family DNA Polymerase"
 
-- title: Experience
+- title: Research & Professional Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - year: Jan 2022 – Present
+      title: Graduate Researcher
+      institution: Roux Lab, University of Chicago
+      location: Chicago, IL
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Built an atomistic 40+ microstate model of the Na+,K+-ATPase transport cycle; computed step-wise displacement charge and linked mechanism to measurable observables.
+        - Designed enhanced-sampling and free-energy workflows integrated with QM/MM to study ATP hydrolysis and dephosphorylation.
+        - Built reproducible Python pipelines processing and validating more than 1 TB of simulation data.
+    - year: Jul 2025 – Sep 2025
+      title: AI/ML Intern (Independent Contractor)
+      institution: Aurat Aroma LLC
+      location: Remote
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Supported the Synthetic Olfactory Engine with computational neuroscience models and supporting algorithms.
+        - Developed production-quality Python code and technical documentation for new components.
+        - Contributed to back-end infrastructure and data pipelines; translated requirements into implementable tasks.
+    - year: Summer 2021
+      title: Summer Research Intern (Amgen Scholars Program)
+      institution: Columbia University
+      location: New York, NY
       description:
+        - Established protocols for high-speed AFM imaging of biomechanical properties.
+    - year: Jan 2018 – May 2021
+      title: Undergraduate Researcher
+      institution: Simmerling Lab, Stony Brook University
+      location: Stony Brook, NY
+      description:
+        - Simulated protein–nucleic acid interactions using AMBER/NAMD and Python; validated results via statistical analyses and targeted in silico mutations.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+- title: Technical Skills
+  type: list_groups
+  contents:
+    - category: Programming
+      items:
+        - name: Python
+        - name: Bash
+        - name: R
+        - name: C
+        - name: Fortran
+    - category: ML / Analysis
+      items:
+        - name: NumPy, pandas, SciPy, scikit-learn, PyTorch
+        - name: Data curation and model evaluation
+    - category: Simulation
+      items:
+        - name: NAMD, AMBER, OpenMM
+        - name: Gaussian, TeraChem
+        - name: Enhanced sampling and free-energy methods
+    - category: HPC / Workflow
+      items:
+        - name: Linux clusters
+        - name: PBS, Slurm
+    - category: Domain
+      items:
+        - name: Ion transport, electrostatics, protein–ligand interactions, structure-based modeling
 
-- title: Open Source Projects
+- title: Leadership & Service
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - year: Dec 2023 – May 2025
+      title: Graduate Student Intern
+      institution: UChicago PSD Office of Diversity and Inclusion
+      location: Chicago, IL
+      description:
+        - Developed a web-scraping pipeline to gather and analyze population data from R1 institutions.
+        - Evaluated partnerships with R1 and R2 minority-serving institutions to inform targeted recruitment and outreach.
+    - year: 2021 – 2024
+      title: Graduate School Application Mentor
+      institution: Científico Latino
+      location: Remote
+      description:
+        - Provided resume and cover letter feedback, conducted mock interviews, and supported applicants applying to STEM Ph.D. programs.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Selected Publications & Presentations
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - "Poster: Multiscale Modeling of P-type ATPase Pumps. Gateway Ion Channel Symposium, July 2026."
+    - "Guerra, J., and Roux, B. (2025). Multiscale Modeling of P-type Pumps. In preparation."
+    - "<a href=\"https://pubs.acs.org/doi/10.1021/acs.jpcb.5c04069\" target=\"_blank\" rel=\"noopener noreferrer\">Guerra, J., Rui, H., and Roux, B. (2025). Multistate Kinetic Model of the Sodium–Potassium ATPase. J. Phys. Chem. B.</a>"
+    - "<a href=\"https://pubs.rsc.org/en/content/articlelanding/2022/cp/d1cp05069a\" target=\"_blank\" rel=\"noopener noreferrer\">Andrews, B., Guerra, J., et al. (2021). Do Molecular Dynamics Force Fields Accurately Model Ramachandran Distributions of Amino Acid Residues in Water? Phys. Chem. Chem. Phys.</a>"
+    - "<a href=\"https://pubs.acs.org/doi/10.1021/jacs.1c00556\" target=\"_blank\" rel=\"noopener noreferrer\">Fallon, L., et al. (2021). Free Energy Landscapes from SARS-CoV-2 Spike Glycoprotein Simulations Suggest that RBD Opening Can Be Modulated via Interactions in an Allosteric Pocket. J. Am. Chem. Soc.</a>"
+
+- title: Awards & Honors
+  type: list
+  contents:
+    - <a href="https://www.nsfgrfp.org/" target="_blank" rel="noopener noreferrer">National Science Foundation Graduate Research Fellowship</a>
+    - University of Chicago McCormick Graduate Fellowship
+    - <a href="https://www.stonybrook.edu/commcms/due/awards.php" target="_blank" rel="noopener noreferrer">Stony Brook University Provost's Award for Academic Excellence</a>

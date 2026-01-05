@@ -630,25 +630,12 @@ third_party_libraries:
       js: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.js"
     version: "2.1.8"
 
-# -----------------------------------------------------------------------------
-# Get external JSON data
-# -----------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
+## Get external JSON data
+## -----------------------------------------------------------------------------
+##
+## The theme supports generating the CV from a JSONResume file (assets/json/resume.json).
+## This repository uses the YAML-based CV in _data/cv.yml instead.
+##
+## If you want to re-enable JSONResume later, restore the jekyll_get_json + jsonresume blocks.
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
-# Trigger deployment

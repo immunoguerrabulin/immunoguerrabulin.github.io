@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /about/
 subtitle: <a href='https://www.uchicago.edu'>University of Chicago</a>. Ph.D. Candidate in Computational Chemistry.
 

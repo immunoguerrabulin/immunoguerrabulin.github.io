@@ -1,0 +1,7 @@
+# Local-only overrides for development.
+# Usage:
+#   bundle exec jekyll serve --livereload --host 127.0.0.1 --config _config.yml,_config_local.yml
+
+# Disable imagemagick processing locally unless you have ImageMagick installed.
+imagemagick:
+  enabled: false

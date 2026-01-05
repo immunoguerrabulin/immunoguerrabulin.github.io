@@ -30,6 +30,15 @@ assets/js/search/*.js
 assets/plotly/demo.html
 lighthouse_results/**
 _posts/2015-10-20-math.md
+_posts/2015-07-15-code.md
+_includes/cv/time_table.liquid
+_pages/publications.md
+_pages/repositories.md
+index.md
+INSTALL.md
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss
 _scripts/*
+
+# distillpub output is already minified/managed upstream
+assets/js/distillpub/transforms.v2.js

@@ -1,6 +1,29 @@
 **/*.map
 **/*.min.css
 **/*.min.js
+
+# Build outputs / caches
+_site/
+vendor/
+.bundle/
+.jekyll-cache/
+.sass-cache/
+
+# Generated / binary assets
+assets/pdf/
+assets/json/
+
+# Jekyll config + data (often includes long/HTML strings that Prettier rewrites)
+_config*.yml
+_data/**/*.yml
+
+# Dependency lockfiles
+package-lock.json
+Gemfile.lock
+
+# Misc
+readme_preview/
+
 assets/css/main.scss
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js

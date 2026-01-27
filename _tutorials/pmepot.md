@@ -35,6 +35,9 @@ This tutorial walks through generating the **fractional membrane potential** of 
 
 ---
 
+**Download example data**: a tarball containing `step5_input.psf`, `pos.dcd`, and `neg.dcd` (positve and negative voltage trajectories) is available: https://drive.google.com/file/d/1IN766-hRTBPqVSkxA3XaqkwAfwDf1dau/view?usp=sharing
+
+
 ### Toy system
 
 <figure style="text-align:center;margin:0.8rem 0 1.2rem 0">

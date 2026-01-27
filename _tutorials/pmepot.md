@@ -30,8 +30,8 @@ This tutorial walks through generating the **fractional membrane potential** of 
 
 | File                               | Description                         |
 | ---------------------------------- | ----------------------------------- |
-| `tutorials/planer_membrane/pos.dx` | PMEpot output for **+V** simulation |
-| `tutorials/planer_membrane/neg.dx` | PMEpot output for **−V** simulation |
+| `tutorials/planer_membrane/pos.dx` | PMEpot output for **+V** simulation — [pos.dx on GitHub](https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/pos.dx) |
+| `tutorials/planer_membrane/neg.dx` | PMEpot output for **−V** simulation — [neg.dx on GitHub](https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/neg.dx) |
 
 ---
 
@@ -298,6 +298,8 @@ python tutorials/planer_membrane/pme_pot_figure.py
 > ```
 {: .block-tip }
 <!-- prettier-ignore-end -->
+
+Script source: https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/pme_pot_figure.py
 
 ### What the Script Computes
 

@@ -3,6 +3,7 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+.DS_Store
 .DS_store
 .ruby-version
 .tweet-cache
@@ -11,3 +12,10 @@ assets/libs/
 node_modules/
 vendor
 .idea
+__pycache__/
+*.py[cod]
+
+# Large simulation artifacts (keep out of git/GitHub Pages)
+*.dcd
+tutorials/planer_membrane/planer_membrane_bundle.tar.gz
+tutorials/planer_membrane/transfer_bundle/

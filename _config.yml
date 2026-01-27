@@ -161,6 +161,8 @@ collections:
     output: true
   projects:
     output: true
+  tutorials:
+    output: true
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -638,4 +640,3 @@ third_party_libraries:
 ## This repository uses the YAML-based CV in _data/cv.yml instead.
 ##
 ## If you want to re-enable JSONResume later, restore the jekyll_get_json + jsonresume blocks.
-

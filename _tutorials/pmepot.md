@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Computing Fractional Membrane Potential
-description: Separate the uniform field ramp and combine POS/NEG PME potentials.
+description: Compute the membrane potential using simulations.
 img: tutorials/planer_membrane/neg_only_map_6.dat_center_45.bmp
 importance: 1
 category: analysis

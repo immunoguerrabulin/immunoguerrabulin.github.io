@@ -136,7 +136,7 @@ Where `{EZ_Value}` is the electric field vector component in the Z-direction.
 
 A useful shortcut for this calculation is the direct unit equivalence:
 
-> 1 Unit $\left(\frac{\text{kcal}}{\text{mol} \cdot \AA \cdot e}\right)$ is equivalent to $0.0434 \text{ V}/\AA$.
+> 1 Unit $\left(\frac{\text{kcal}}{\text{mol} \cdot \text{Å} \cdot e}\right)$ is equivalent to $0.0434\,\text{V}/\text{Å}$.
 
 Using this equivalence, the formula becomes:
 
@@ -148,12 +148,12 @@ $$
 
 Where:
 - $V_{\text{target}}$ is the voltage in Volts.
-- $L_z$ is the box length in Angstroms ($\AA$).
-- $0.0434$ is the conversion factor representing V/$\AA$ per NAMD unit.
+- $L_z$ is the box length in Angstroms (Å).
+- $0.0434$ is the conversion factor representing $\text{V}/\text{Å}$ per NAMD unit.
 
 ### Example Calculation: +90 mV
 
-**Scenario:** You want +90 mV across a box length ($L_z$) of 100 $\AA$.
+**Scenario:** You want +90 mV across a box length ($L_z$) of $100~\text{Å}$.
 
 > 💡 **Tip:** Find the box size in the `.xsc` file—the `c_z` column gives $L_z$:
 > ```
@@ -174,7 +174,7 @@ $$
 
 {% raw %}
 $$
-\frac{0.09~\text{V}}{100~\AA} = 0.0009~\text{V}/\AA
+\frac{0.09~\text{V}}{100~\text{Å}} = 0.0009~\text{V}/\text{Å}
 $$
 {% endraw %}
 
@@ -184,7 +184,7 @@ Divide by the equivalence factor ($0.0434$):
 
 {% raw %}
 $$
-E_{\text{NAMD}} = \frac{0.0009}{0.0434} \approx 0.02074~\text{kcal}/(\text{mol}\cdot\AA\cdot e)
+E_{\text{NAMD}} = \frac{0.0009}{0.0434} \approx 0.02074~\text{kcal}/(\text{mol}\cdot\text{Å}\cdot e)
 $$
 {% endraw %}
 

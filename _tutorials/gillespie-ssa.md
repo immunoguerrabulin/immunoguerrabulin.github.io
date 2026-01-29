@@ -2,7 +2,7 @@
 layout: page
 title: Gillespie SSA for Stochastic Chemical Kinetics
 description: Simulate reaction networks with the Stochastic Simulation Algorithm (Gillespie).
-img: tutorials/gillespie-ssa/gillespie_trajectory.png
+img: assets/img/gillespie_trajectory.png
 importance: 3
 category: simulation
 ---
@@ -194,7 +194,13 @@ As a sanity check, for a two-state system the mean lifetime in a state is $1/(k_
 
 Trajectory plot (saved by the code above):
 
-![Gillespie SSA trajectory](/tutorials/gillespie-ssa/gillespie_trajectory.png)
+<figure style="text-align:center;margin:1rem 0">
+  <img
+    src="/tutorials/gillespie-ssa/gillespie_trajectory.png"
+    alt="Gillespie SSA trajectory"
+    style="max-width: 700px; width: 100%; height: auto;"
+  />
+</figure>
 
 ## Next steps
 

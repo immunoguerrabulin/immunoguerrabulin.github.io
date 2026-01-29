@@ -2,7 +2,7 @@
 layout: page
 title: Gillespie SSA for Stochastic Chemical Kinetics
 description: Simulate reaction networks with the Stochastic Simulation Algorithm (Gillespie).
-img: assets/img/11.jpg
+img: tutorials/gillespie-ssa/gillespie_trajectory.png
 importance: 3
 category: simulation
 ---

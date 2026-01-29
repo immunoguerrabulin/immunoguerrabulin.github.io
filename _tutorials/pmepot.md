@@ -28,15 +28,14 @@ This tutorial walks through generating the **fractional membrane potential** of 
 
 ## Inputs
 
-| File                               | Description                         |
-| ---------------------------------- | ----------------------------------- |
+| File                               | Description                                                                                                                                                           |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `tutorials/planer_membrane/pos.dx` | PMEpot output for **+V** simulation — [pos.dx on GitHub](https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/pos.dx) |
 | `tutorials/planer_membrane/neg.dx` | PMEpot output for **−V** simulation — [neg.dx on GitHub](https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/neg.dx) |
 
 ---
 
 **Download example data**: a tarball containing `step5_input.psf`, `pos.dcd`, and `neg.dcd` (positve and negative voltage trajectories) is available: https://drive.google.com/file/d/1IN766-hRTBPqVSkxA3XaqkwAfwDf1dau/view?usp=sharing
-
 
 ### Toy system
 

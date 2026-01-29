@@ -24,12 +24,11 @@ The Gillespie Stochastic Simulation Algorithm (SSA) simulates a continuous-time 
 
 using the current **propensities** (reaction rates given the current state).
 
-The original 1977 paper by Gillespie (link:https://pubs.acs.org/doi/10.1021/j100540a008) presents an excellent overview of the limitations of a purely deterministic approach to chemical kinetics. Gillespie argues for stochastic simulation methods because chemical reactions are inherently discrete and random. For example, molecular counts change by integer amounts and reaction events occur with probabilistic timing (think of Poission Distributions), producing stochastic fluctuations. The arguments in the paper are well reasoned and I highly recommend reading it. I would emphasize that stochastic simulations make the fluctuations (noise) of a model explicit, this is important for applications such as noise analysis of ion channels, which may be explored in a later tutorial. 
+The original 1977 paper by Gillespie (link:https://pubs.acs.org/doi/10.1021/j100540a008) presents an excellent overview of the limitations of a purely deterministic approach to chemical kinetics. Gillespie argues for stochastic simulation methods because chemical reactions are inherently discrete and random. For example, molecular counts change by integer amounts and reaction events occur with probabilistic timing (think of Poission Distributions), producing stochastic fluctuations. The arguments in the paper are well reasoned and I highly recommend reading it. I would emphasize that stochastic simulations make the fluctuations (noise) of a model explicit, this is important for applications such as noise analysis of ion channels, which may be explored in a later tutorial.
 
-This tutorial assumes knowledge of Monte Carlo simulations, and stochastic/transition matricies (Markov chain). 
+This tutorial assumes knowledge of Monte Carlo simulations, and stochastic/transition matricies (Markov chain).
 
-Some of this was adapted from a Simulation, Modeling, and Computation in Biophysics guest lecture I gave. 
----
+Some of this was adapted from a guest lecture I gave for "Simulation, Modeling, and Computation in Biophysics".
 
 ## Algorithm (the direct method)
 
@@ -47,39 +46,40 @@ At current state $x$ (row index of $Q$) and time $t$:
 
 1. Identify total exit rate ($a_0$): retrieve the diagonal element for the current state.
 
-    $$
-    a_0 = -Q_{xx}
-    $$
+   $$
+   a_0 = -Q_{xx}
+   $$
 
-    (Note: rate of leaving the state, $-Q_{xx} = k_{\text{forward}} + k_{\text{backward}}$.)
+   (Note: rate of leaving the state, $-Q_{xx} = k_{\text{forward}} + k_{\text{backward}}$.)
 
 2. (Optional) Check stop condition: if $a_0 = 0$, the system is in an absorbing state. Stop.
 3. Generate random numbers: draw $r_1, r_2 \sim U(0,1)$.
 4. Compute time step ($\tau$): calculate the holding time using the total exit rate.
 
-    $$
-        \\tau = \frac{-\ln(r_1)}{-Q_{xx}}
-    $$
+   $$
+       \\tau = \frac{-\ln(r_1)}{-Q_{xx}}
+   $$
 
 5. Determine transition move: use the off-diagonal elements to compute the probability of the forward jump.
 
-    $$
-    p_{\text{fwd}} = \frac{Q_{x, x+1}}{-Q_{xx}}
-    $$
+   $$
+   p_{\text{fwd}} = \frac{Q_{x, x+1}}{-Q_{xx}}
+   $$
 
-    If $r_2 < p_{\text{fwd}}$: set next state $x_{\text{next}} = x + 1$ (forward). Otherwise set $x_{\text{next}} = x - 1$ (backward).
+   If $r_2 < p_{\text{fwd}}$: set next state $x_{\text{next}} = x + 1$ (forward). Otherwise set $x_{\text{next}} = x - 1$ (backward).
 
 6. Update:
 
-    $$
-    t \leftarrow t + \tau
-    $$
+   $$
+   t \leftarrow t + \tau
+   $$
 
-    $$
-    x \leftarrow x_{\text{next}}
-    $$
+   $$
+   x \leftarrow x_{\text{next}}
+   $$
 
 ---
+
 As a challenge, it is worth trying to code this yourself in your favorite language.
 
 Let's model the following system:
@@ -94,9 +94,10 @@ with rate constants (in $\mathrm{s}^{-1}$):
 - $k_{2f} = 10$, $k_{2b} = 4$
 - $k_{3f} = 20$, $k_{3b} = 1$
 
-The python code is provided here: 
+The python code is provided here:
 
 ## Python example that uses a Q matrix
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -188,12 +189,12 @@ Residence time (empirical vs theoretical):
  state 1: emp=0.0669106 s, theo=0.0666667 s
  state 2: emp=0.0248728 s, theo=0.025 s
 ```
+
 As a sanity check, for a two-state system the mean lifetime in a state is $1/(k_f + k_b)$; in the code above I estimate the mean lifetime from the simulated trajectory and compare it to the theoretical value. They agree!
 
 Trajectory plot (saved by the code above):
 
 ![Gillespie SSA trajectory](/tutorials/gillespie-ssa/gillespie_trajectory.png)
----
 
 ## Next steps
 

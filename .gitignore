@@ -19,3 +19,6 @@ __pycache__/
 *.dcd
 tutorials/planer_membrane/planer_membrane_bundle.tar.gz
 tutorials/planer_membrane/transfer_bundle/
+
+# Local notebooks (not for GitHub Pages)
+tutorials/string_method/String Method Test (1).ipynb

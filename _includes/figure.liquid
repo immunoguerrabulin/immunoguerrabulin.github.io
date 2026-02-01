@@ -1,6 +1,16 @@
 {% assign img_path = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
 {% assign parts = include.path | split: '.' %}
 {% assign ext = parts.last %}
+{% assign can_scale = false %}
+{% if site.imagemagick.enabled and site.imagemagick.input_directories %}
+  {% for dir in site.imagemagick.input_directories %}
+    {% if include.path contains dir %}
+      {% assign can_scale = true %}
+    {% endif %}
+  {% endfor %}
+{% elsif site.imagemagick.enabled %}
+  {% assign can_scale = true %}
+{% endif %}
 
 <figure
   {% if include.slot %}
@@ -13,7 +23,7 @@
       See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
       https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
     -->
-    {% if site.imagemagick.enabled %}
+    {% if can_scale %}
       {% unless include.avoid_scaling %}
         <source
           class="responsive-img-srcset"

@@ -14,19 +14,19 @@ The Budapest Festival Orchestra (BFO), under the baton of Iván Fischer, and Max
 
 ## Program
 
-- **Arvo Pärt**: *Summa* (1977)
-- **Tchaikovsky**: *Violin Concerto in D major*, Op. 35 (1878)
-- **Vengerov encore**: Bach — *Sonata No. 1 in G minor*, Adagio
-- **Brahms**: *Symphony No. 2 in D major*, Op. 73 (1877)
+- **Arvo Pärt**: _Summa_ (1977)
+- **Tchaikovsky**: _Violin Concerto in D major_, Op. 35 (1878)
+- **Vengerov encore**: Bach — _Sonata No. 1 in G minor_, Adagio
+- **Brahms**: _Symphony No. 2 in D major_, Op. 73 (1877)
 - **Encore**: Hungarian folk songs
 
 ## Notes & reactions
 
-### Arvo Pärt: *Summa* (1977)
+### Arvo Pärt: _Summa_ (1977)
 
-The opening piece featured the BFO musicians without their instruments, singing Pärt’s *Summa*, originally composed as a choral work. His “tintinnabuli” style is something I think a lot of people could get bored of, but I enjoyed it as a short opener. (Aside: try composing in this style and make it sound good…it’s hard). It created an intimate connection between the musicians, and you could tell it took them out of their comfort zones in a good way. In any case, I think minimalism has a place in the concert hall.
+The opening piece featured the BFO musicians without their instruments, singing Pärt’s _Summa_, originally composed as a choral work. His “tintinnabuli” style is something I think a lot of people could get bored of, but I enjoyed it as a short opener. (Aside: try composing in this style and make it sound good…it’s hard). It created an intimate connection between the musicians, and you could tell it took them out of their comfort zones in a good way. In any case, I think minimalism has a place in the concert hall.
 
-### Tchaikovsky: *Violin Concerto in D major*, Op. 35 (1878)
+### Tchaikovsky: _Violin Concerto in D major_, Op. 35 (1878)
 
 The highlight of the night for me, and honestly the reason I bought the ticket, was hearing Vengerov perform the iconic Tchaikovsky Violin Concerto. The concerto has a bit of performance history attached to it (including the [whole dedication drama](https://en.tchaikovsky-research.net/pages/Leopold_Auer)), and it’s hard not to come in with strong expectations. Vengerov’s interpretation was phenomenal. He had incredible command over his tone and the colors he produced. The first movement really showcased the ensemble’s ability to accommodate tempo changes from the soloist, and Fischer did a great job balancing the orchestra so the soloist never got covered. When the big tuttis hit, it was honestly thrilling to hear the full range of the orchestra open up.
 
@@ -39,11 +39,11 @@ The second movement highlighted Vengerov’s ability to produce a silky, delicat
 {% include figure.liquid path="assets/img/blog/budapest-festival-orchestra/tchaikovsky_violin_3rdmvt.png" class="img-fluid rounded z-depth-1" alt="Tchaikovsky violin concerto (third movement excerpt)" caption="A small excerpt from the 3rd movement. This is the composer's holograph manuscript" zoomable=true %}
 **Source:** [Tchaikovsky Violin Concerto autograph manuscript (IMSLP PDF)](https://s9.imslp.org/files/imglnks/usimg/e/e5/IMSLP608987-PMLP3312-tchaikovsky-35-1.pdf)
 
-### Vengerov encore: Bach — *Sonata No. 1 in G minor*, Adagio
+### Vengerov encore: Bach — _Sonata No. 1 in G minor_, Adagio
 
 After the virtuosic tour of the Tchaikovsky, Vengerov completely shifted the room with an intimate Bach Adagio. I’ve heard this movement performed several times, but it’s never really the same piece twice—every performer brings their own connection to Bach. Vengerov outlined the different voices carefully and thoughtfully, and there were moments where I was genuinely convinced another violin must be playing with him. The way he balanced the lines was impressive, and it was obvious he had thought through even the smallest details, like arpeggiating a chord in one spot versus letting it speak as a full block. It was played faster than I prefer but the interpretation was satisfying.
 
-### Brahms: *Symphony No. 2 in D major*, Op. 73 (1877)
+### Brahms: _Symphony No. 2 in D major_, Op. 73 (1877)
 
 By intermission, I honestly debated leaving. I had arrived the morning before on a 6 a.m. flight and was running on very little sleep, and the thought of another 50 minutes of a Brahms symphony was not especially enticing. But it was worth staying and I didn’t fall asleep. I was impressed by how passionately the musicians played, particularly in the final coda, where it felt as though they were truly giving everything they had left. The brass section was exceptional. While this isn’t my favorite Brahms symphony, like any Brahms work it highlights an orchestra’s ability to turn a large symphonic composition into something almost chamber-like, where individual instruments must blend to create a refined interpretation.
 

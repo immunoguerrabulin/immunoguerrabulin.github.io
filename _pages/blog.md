@@ -1,8 +1,9 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
-nav: false
+title: Maximum Entropy
+nav_title: Blog
+nav: true
 nav_order: 1
 pagination:
   enabled: true
@@ -109,6 +110,10 @@ pagination:
       {% assign postlist = site.posts %}
     {% endif %}
 
+    {% if postlist == empty %}
+      <li class="text-muted">No posts yet. Check back soon.</li>
+    {% else %}
+
     {% for post in postlist %}
 
     {% if post.external_source == blank %}
@@ -186,6 +191,8 @@ pagination:
     </li>
 
     {% endfor %}
+
+    {% endif %}
 
   </ul>
 

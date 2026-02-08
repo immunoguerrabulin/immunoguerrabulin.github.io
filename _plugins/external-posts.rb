@@ -10,14 +10,21 @@ module ExternalPosts
     priority :high
 
     def generate(site)
-      if site.config['external_sources'] != nil
-        site.config['external_sources'].each do |src|
-          puts "Fetching external posts from #{src['name']}:"
-          if src['rss_url']
-            fetch_from_rss(site, src)
-          elsif src['posts']
-            fetch_from_urls(site, src)
-          end
+      # Remove previously injected external posts so incremental regenerations
+      # reflect the current `external_sources` config exactly.
+      site.collections['posts'].docs.reject! { |doc| doc.data['external_source'] }
+
+      sources = Array(site.config['external_sources']).select do |src|
+        src.is_a?(Hash) && (src['rss_url'] || src['posts'])
+      end
+      return if sources.empty?
+
+      sources.each do |src|
+        puts "Fetching external posts from #{src['name']}:"
+        if src['rss_url']
+          fetch_from_rss(site, src)
+        elsif src['posts']
+          fetch_from_urls(site, src)
         end
       end
     end

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI Agents in Science Part 1"
+title: "AI Agents for Science Part 1"
 description: "Notes and comments from a course I took Fall 2025"
 tags: [science]
 categories: [science]

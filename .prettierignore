@@ -4,6 +4,7 @@
 
 # Build outputs / caches
 _site/
+_site_stale_*/
 vendor/
 .bundle/
 .jekyll-cache/

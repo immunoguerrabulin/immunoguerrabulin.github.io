@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Bag of Words"
-description: "Using a simple NLP method to analyze a 28-paper corpus."
+description: "Analyzing a 28-paper corpus with Bag-of-Words and TF-IDF to test whether a simple NLP pipeline can recover scientific subtopics."
 tags: [science]
 categories: [science]
 ---
 
 This post reviews a homework assignment in which I used a Bag of Words model to analyze 28 scientific papers. By converting each document into a vector representation, I tested whether a simple NLP pipeline could recover meaningful scientific subtopics from the corpus.
 
-Bag of Words is one of the earliest and most influential vector space approaches in natural language processing. While it lacks the sophistication of modern language models, it provides an interpretable foundation for understanding how text can be represented numerically and compared across documents. I present this analysis as an introduction to the broader idea of language models and computational text analysis.
+Bag of Words is one of the earliest and most influential vector space approaches in natural language processing. While it lacks the sophistication of modern language models, it provides an interpretable foundation for understanding how text can be represented numerically and compared across documents. I present this analysis as an introduction to computational text representation and the broader ideas it motivates.
 
 <div class="card my-4">
   <div class="card-body">
@@ -65,12 +65,40 @@ Then each document vector was L2-normalized.
 - UMAP with cosine distance (`n_neighbors=5`, `min_dist=0.1`)
 - cosine similarity matrix + hierarchical ordering using distance \(1 - \cos(i,j)\)
 
+## Main findings
+
+- papers with similar subtopics tended to group together
+- the first three PCA components explained `0.106`, `0.100`, and `0.095` of variance
+- PCA loadings reflected biologically meaningful terms (for example `tfh`, `gc`, `germinal`, `follicular`)
+- UMAP revealed groupings not visible in the PCA projection
+- the cosine clustermap was consistent with those grouping patterns
+
+<div class="row">
+  <div class="col-md-6">
+    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/pca.png" class="img-fluid rounded z-depth-1" alt="PCA projection of TF-IDF vectors colored by immunology subtopic" caption="PCA projection of normalized TF-IDF vectors. Subtopic structure is partially visible in linear space." zoomable=true %}
+  </div>
+  <div class="col-md-6">
+    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_opt.png" class="img-fluid rounded z-depth-1" alt="UMAP embedding of TF-IDF vectors with cosine distance and tuned parameters" caption="UMAP embedding (`n_neighbors=5`, `min_dist=0.1`) showing clearer nonlinear grouping by subtopic." zoomable=true %}
+  </div>
+</div>
+
+{% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/clustermap.png" class="img-fluid rounded z-depth-1" alt="Cosine similarity clustermap of document vectors ordered by hierarchical clustering" caption="Cosine similarity clustermap reordered by hierarchical clustering. Similar papers align in local blocks." zoomable=true %}
+
+<div class="row">
+  <div class="col-md-6">
+    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_nn.png" class="img-fluid rounded z-depth-1" alt="UMAP parameter sweep over number of neighbors" caption="UMAP hyperparameter sweep over `n_neighbors`." zoomable=true %}
+  </div>
+  <div class="col-md-6">
+    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_dist.png" class="img-fluid rounded z-depth-1" alt="UMAP parameter sweep over minimum distance setting" caption="UMAP hyperparameter sweep over `min_dist`." zoomable=true %}
+  </div>
+</div>
+
 ## Additional comments
 
-The utility of TF-IDF weighting and L2 normalization was a key part of this assignment.  
+The utility of TF-IDF weighting and L2 normalization was a key part of this assignment.
 When I built the raw term-document matrix, the most frequent token was, unsurprisingly, `and`.
 
-This is exactly why raw counts alone can produce weak embeddings: high-frequency background tokens dominate the signal across nearly all documents.  
+This illustrates why raw counts alone can produce weak embeddings: high-frequency background tokens dominate the signal across nearly all documents.
 After TF-IDF weighting, high-weight terms shifted toward more domain-specific vocabulary such as `cgas`.
 
 <div class="table-responsive my-3">
@@ -98,26 +126,9 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
   </table>
 </div>
 
+The token `t` (rank 8) is likely an artifact of PDF extraction splitting hyphenated terms such as "T-cell" into `t` and `cell`.
+
 {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/term_count_heatmap.png" class="img-fluid rounded z-depth-1" alt="Term-document matrix heatmap showing sparse token occurrence across documents" caption="Term-Document Matrix. The figure shows whether or not a word appears in a given document." zoomable=true %}
-
-## Main findings
-
-- papers with similar subtopics tended to group together
-- the first three PCA components explained `0.106`, `0.100`, and `0.095` of variance
-- PCA loadings reflected biologically meaningful terms (for example `tfh`, `gc`, `germinal`, `follicular`)
-- UMAP gave a cleaner nonlinear separation than PCA in some regions
-- the cosine clustermap was consistent with those grouping patterns
-
-<div class="row">
-  <div class="col-md-6">
-    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/pca.png" class="img-fluid rounded z-depth-1" alt="PCA projection of TF-IDF vectors colored by immunology subtopic" caption="PCA projection of normalized TF-IDF vectors. Subtopic structure is partially visible in linear space." zoomable=true %}
-  </div>
-  <div class="col-md-6">
-    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_opt.png" class="img-fluid rounded z-depth-1" alt="UMAP embedding of TF-IDF vectors with cosine distance and tuned parameters" caption="UMAP embedding (`n_neighbors=5`, `min_dist=0.1`) showing clearer nonlinear grouping by subtopic." zoomable=true %}
-  </div>
-</div>
-
-{% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/clustermap.png" class="img-fluid rounded z-depth-1" alt="Cosine similarity clustermap of document vectors ordered by hierarchical clustering" caption="Cosine similarity clustermap reordered by hierarchical clustering. Similar papers align in local blocks." zoomable=true %}
 
 ## Nearest-neighbor check
 
@@ -144,7 +155,7 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
     </thead>
     <tbody>
       <tr><td>0</td><td>Molecular and cellular insights into T cell exhaustion.</td><td>T-cell exhaustion</td></tr>
-      <tr><td>6</td><td>Defining "T cell exhaustion".</td><td>T_cell</td></tr>
+      <tr><td>6</td><td>Defining "T cell exhaustion".</td><td>T-cell exhaustion</td></tr>
     </tbody>
   </table>
 </div>
@@ -174,6 +185,8 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
     </tbody>
   </table>
 </div>
+
+Several top shared terms (`pubmed`, `manuscript`, `author`, `pmc`) are metadata artifacts from PDF extraction. The cosine similarity of 0.6177 is therefore partially inflated by source noise rather than topic signal alone.
 
 <details class="my-4">
   <summary><strong>Supplementary: top PCA loading tables (PC1 / PC2 / PC3)</strong></summary>
@@ -240,6 +253,8 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
       </table>
     </div>
 
+    <p class="text-muted small mt-n2 mb-3">Note: <code>ammasome</code> and <code>ammatory</code> appear to be truncated tokens from PDF extraction, likely fragments of <code>inflammasome</code> and <code>inflammatory</code>.</p>
+
     <div class="table-responsive my-3">
       <table class="table table-sm table-striped table-bordered align-middle">
         <caption class="caption-top">PC3 top contributing terms (explained variance = 0.095)</caption>
@@ -270,6 +285,7 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
         </tbody>
       </table>
     </div>
+
   </div>
 </details>
 
@@ -278,15 +294,6 @@ After TF-IDF weighting, high-weight terms shifted toward more domain-specific vo
 - preprocessing was intentionally simple, so metadata/noise leaked into features
 - tokens such as `annualreviews`, `https`, `pubmed`, and `author` appeared with large weights
 - BoW/TF-IDF ignores word order and deeper semantics
-
-<div class="row">
-  <div class="col-md-6">
-    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_nn.png" class="img-fluid rounded z-depth-1" alt="UMAP parameter sweep over number of neighbors" caption="UMAP hyperparameter sweep over `n_neighbors`." zoomable=true %}
-  </div>
-  <div class="col-md-6">
-    {% include figure.liquid path="assets/img/blog/bag-of-words-cmsc-354-hw1/umap_dist.png" class="img-fluid rounded z-depth-1" alt="UMAP parameter sweep over minimum distance setting" caption="UMAP hyperparameter sweep over `min_dist`." zoomable=true %}
-  </div>
-</div>
 
 ## Takeaway
 

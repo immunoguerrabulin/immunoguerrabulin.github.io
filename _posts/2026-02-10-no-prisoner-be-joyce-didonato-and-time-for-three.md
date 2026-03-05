@@ -10,9 +10,7 @@ Joyce DiDonato is the artist in residence at the Chicago Symphony, and Time for 
 
 ## Program
 
-Joyce DiDonato with Time for Three — Feb. 10, 2026
-
-**No Prisoner Be** — *Song cycle on texts by Emily Dickinson, music by Kevin Puts*
+- **Kevin Puts**: _No Prisoner Be_ — Song cycle on texts by Emily Dickinson
 
 1. They shut me up
 2. I was the slightest in the House –
@@ -21,7 +19,7 @@ Joyce DiDonato with Time for Three — Feb. 10, 2026
 5. Interlude No. 1
 6. I dwell in Possibility
 7. Because I could not stop for Death –
-8. A bee I personally knew *(Bee Scherzo No. 1)*
+8. A bee I personally knew _(Bee Scherzo No. 1)_
 9. I Felt a Funeral
 10. I reason, Earth is short –
 11. A little Snow
@@ -30,15 +28,15 @@ Joyce DiDonato with Time for Three — Feb. 10, 2026
 14. Interlude No. 2
 15. The Props assist the House
 16. There is a solitude of space
-17. Could I but ride indefinite *(Bee Scherzo No. 2)*
+17. Could I but ride indefinite _(Bee Scherzo No. 2)_
 18. So set its Sun in Thee
 19. Her face
 20. Tell Her
-21. His Feet are shod with Gauze – *(Bee Scherzo No. 3)*
+21. His Feet are shod with Gauze – _(Bee Scherzo No. 3)_
 22. Wild Nights!
 23. There is another sky
 24. 'Tis true – They shut me in the Cold –
-25. If I can stop one Heart from breaking *(On Praetorius "Lo How a Rose e'er Blooming")*
+25. If I can stop one Heart from breaking _(On Praetorius "Lo How a Rose e'er Blooming")_
 26. No Prisoner be –
 
 ## Notes & reactions

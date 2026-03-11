@@ -6,7 +6,7 @@ tags: [music]
 categories: [music]
 ---
 
-On March 7, 2026, the Zukerman Trio performed at the Chicago Symphony Center. Below is the program and my review. 
+On March 7, 2026, the Zukerman Trio performed at the Chicago Symphony Center. Below is the program and my review.
 
 ## Program
 

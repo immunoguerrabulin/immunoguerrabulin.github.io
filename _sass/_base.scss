@@ -591,6 +591,49 @@ footer.sticky-bottom {
   }
 }
 
+.blog-filters {
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 1rem 0 1.25rem;
+  text-align: center;
+
+  .blog-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .blog-filter-button {
+    background: transparent;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    cursor: pointer;
+    font: inherit;
+    padding: 0.45rem 0.95rem;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+
+    &.is-active {
+      background-color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+      color: $white-color;
+    }
+  }
+
+  .blog-filter-status {
+    font-size: 0.95rem;
+    margin: 0.85rem 0 0;
+  }
+}
+
 .post-title {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;

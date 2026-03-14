@@ -264,7 +264,7 @@ jekyll-archives:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: [] # tags to display at the top of the blog page
-display_categories: [] # categories to display at the top of the blog page
+display_categories: [music, science] # categories to display at the top of the blog page
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

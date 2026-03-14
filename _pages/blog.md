@@ -6,7 +6,7 @@ nav_title: Blog
 nav: true
 nav_order: 1
 pagination:
-  enabled: true
+  enabled: false
   collection: posts
   permalink: /page/:num/
   per_page: 5
@@ -30,32 +30,19 @@ pagination:
   </div>
   {% endif %}
 
-{% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
-
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
-      {% endif %}
+{% if site.display_categories and site.display_categories.size > 0 %}
+  <div class="blog-filters" data-blog-filters>
+    <div class="blog-filter-buttons" role="toolbar" aria-label="Filter blog posts by category">
+      <button type="button" class="blog-filter-button is-active" data-filter="all" aria-pressed="true">All</button>
       {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
+        <button type="button" class="blog-filter-button" data-filter="{{ category | downcase }}" aria-pressed="false">
+          {{ category | replace: '-', ' ' | capitalize }}
+        </button>
       {% endfor %}
-    </ul>
+    </div>
+    <p class="blog-filter-status text-muted" data-filter-status>Showing all posts</p>
   </div>
-  {% endif %}
+{% endif %}
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
@@ -104,11 +91,7 @@ pagination:
 
   <ul class="post-list">
 
-    {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
-    {% else %}
-      {% assign postlist = site.posts %}
-    {% endif %}
+    {% assign postlist = site.posts %}
 
     {% if postlist == empty %}
       <li class="text-muted">No posts yet. Check back soon.</li>
@@ -125,7 +108,7 @@ pagination:
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
 
-    <li>
+    <li data-post-categories="{{ post.categories | join: '|' | downcase }}">
 
 {% if post.thumbnail %}
 
@@ -194,6 +177,8 @@ pagination:
 
     {% endif %}
 
+    <li class="text-muted" data-filter-empty hidden>No posts in this category yet.</li>
+
   </ul>
 
 {% if page.pagination.enabled %}
@@ -201,3 +186,5 @@ pagination:
 {% endif %}
 
 </div>
+
+<script defer src="{{ '/assets/js/blog-filters.js' | relative_url | bust_file_cache }}"></script>

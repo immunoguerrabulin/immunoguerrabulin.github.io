@@ -14,6 +14,35 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
+  {% if page.hero and page.hero.image %}
+    <section class="about-hero">
+      <div class="about-hero-copy">
+        {% if page.hero.kicker %}
+          <p class="about-hero-kicker">{{ page.hero.kicker }}</p>
+        {% endif %}
+        {% if page.hero.title %}
+          <h2>{{ page.hero.title }}</h2>
+        {% endif %}
+        {% if page.hero.description %}
+          <p>{{ page.hero.description }}</p>
+        {% endif %}
+      </div>
+      <div class="about-hero-media">
+        {% assign hero_image_path = page.hero.image | prepend: 'assets/img/' %}
+        {% capture hero_sizes %}(min-width: {{ site.max_width }}) 510px, 95vw{% endcapture %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=hero_image_path
+          class="img-fluid"
+          sizes=hero_sizes
+          alt=page.hero.alt
+          cache_bust=true
+        %}
+      </div>
+    </section>
+  {% endif %}
+
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">

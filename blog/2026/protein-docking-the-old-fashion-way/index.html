@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Protein Docking...the old fashion way | Jose Guerra
+    
+  
+</title>
+<meta name="author" content="Jose Guerra">
+<meta name="description" content="Revisiting a project from my undergraduate years.">
+
+  <meta name="keywords" content="computational chemistry, ion transport, MD simulations, molecular modeling">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="https://jlguerraphd.github.io/blog/2026/protein-docking-the-old-fashion-way/">
+
+
+  <!-- Dark Mode -->
+  <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Jose Guerra
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/blog/">Blog
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/tutorials/">Tutorials
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+          
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+              </button>
+            </li>
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+
+
+
+
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Protein Docking...the old fashion way</h1>
+    <p class="post-meta">
+      Created on February 08, 2026
+      
+      
+      
+    </p>
+    <p class="post-tags">
+      
+        <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>
+      
+      
+          ·  
+        
+          
+            <a href="/blog/tag/science"> <i class="fa-solid fa-hashtag fa-sm"></i> science</a>
+          
+          
+        
+      
+
+      
+          ·  
+        
+          
+            <a href="/blog/category/science"> <i class="fa-solid fa-tag fa-sm"></i> science</a>
+          
+          
+        
+      
+    </p>
+  </header>
+
+  <article class="post-content">
+    
+    <div id="markdown-content">
+      <p>In this post, I revisit a project I worked on as an undergraduate for AMS 548: Optimization Techniques in Biomolecular Simulations at Stony Brook University, taught by Dima Kozakov, back in Spring of 2021. At the time, I was an ambitious undergraduate trying to fulfill requirements for a Chemistry minor alongside my Biochemistry degree, which meant taking a few courses outside my formal curriculum. While browsing options, this course immediately stood out.</p>
+
+<p>Dima is an excellent instructor and a leading researcher in protein-protein docking. His lab develops widely used docking software, so learning directly from someone with deep expertise in the field was both instructive and motivating. Upon doing this write-up, I learn he moved to UT Austin. Below is the official course description:</p>
+
+<div class="card my-4">
+  <div class="card-body">
+    <div class="text-muted small mb-2">Course description</div>
+    <p class="mb-0">
+      This practical hands-on course teaches basic techniques for building mathematical models, algorithms, and software for biomolecular simulations of macromolecular interactions. Topics include the basics of statistical mechanics and its connection to sampling algorithms; the origin of and approximations for molecular force computations; the geometry of molecular configuration search spaces and multidimensional optimization; and fundamentals of software development and high-performance computing (HPC). During the course, students develop a multiscale approach to modeling protein-protein interactions from the ground up.
+    </p>
+  </div>
+</div>
+
+<h2 id="preface">Preface</h2>
+
+<p>The course focused on state-of-the-art techniques as they existed in 2021. Fast Fourier Transform (FFT)-based methods for protein docking were already well established, but Kozakov’s innovation was the use of eigenvalue-eigenvector decompositions of pairwise interaction potentials. This reformulation allowed interaction terms to be evaluated efficiently using FFT-based correlations. In the PIPER framework, this effectively introduces a coarse-grained representation of the interaction energy landscape.</p>
+
+<p>Aside: this was a very different era, well before AlphaFold-based docking “hacks” and modern diffusion models changed the field. It raises the question: do fundamental physics-based approaches still matter for protein docking?…</p>
+
+<h2 id="the-project">The Project</h2>
+
+<p>For the course capstone, we worked with a deliberately simple model. The goal was to develop a program that performs Monte Carlo protein docking using rigid-body representations. While highly simplified, this setup forced us to confront the computational and physical challenges of docking, sampling, scoring, and optimization, without relying on black-box tools (or even LLMs during that time period).</p>
+
+<p>In hindsight, revisiting this project has been a useful reminder of how much insight you can gain from building things the “old-fashioned” way.</p>
+
+<h2 id="relevant-papers">Relevant Papers</h2>
+
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/prot.21117" rel="external nofollow noopener" target="_blank">PIPER: An FFT-based protein docking program with pairwise potentials</a></li>
+  <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.70066" rel="external nofollow noopener" target="_blank">Modeling Protein-Protein and Protein-Ligand Interactions by the ClusPro Team in CASP16</a></li>
+</ul>
+
+<h2 id="why-this-approach">Why this approach?</h2>
+
+<p>When I signed up for this course in November 2020, there wasn’t much buzz yet around AlphaFold, and the role of machine learning in biophysics still felt far away. With that context, it’s easy to overlook traditional docking, but physics-based scoring is still appealing because it’s built from explicit interaction terms rather than learned correlations. That said, these methods are limited by their assumptions (rigid bodies, simplified potentials) and by sampling: if the search can’t efficiently explore relevant configurations, the score won’t help. Recent work from the Kozakov/Vajda labs reflects this reality by combining generative models with more traditional approaches like molecular dynamics (MD) and the PIPER/ClusPro framework. A major concern for purely data driven models is out of distribution behavior when the models encounter interaction patterns that weren’t well represented in training.</p>
+
+<h2 id="notes--observations">Notes &amp; observations</h2>
+
+<h3 id="scoring-function">Scoring function</h3>
+
+<p>In this project, I implemented a simple Coulomb-like electrostatics term by looping over every receptor-ligand atom pair, reading each atom’s charge from the parameter set, and accumulating a score proportional to:</p>
+
+\[E_{\text{coul}} \propto \sum_{i \in R} \sum_{j \in L} \frac{q_i q_j}{d_{ij}^2}\]
+
+<p>I also computed energy gradients (with respect to atomic coordinates) to estimate the direction of the electrostatic force.</p>
+
+<p>For docking acceptance/rejection, I used Dima’s <code class="language-plaintext highlighter-rouge">complex_energy</code> routine (<code class="language-plaintext highlighter-rouge">energy.h</code>). It evaluates pairwise interactions and wraps them with basic clash/contact handling. That scalar score is what the Monte Carlo loop uses to accept or reject a proposed move.</p>
+
+<p>The pairwise potential term used there is:</p>
+
+\[E_{\text{pair}} =
+\sum_{i \in A^{*}} \sum_{j \in B^{*}}
+\mathbf{1}\!\left(r_1^2 \le d_{ij}^2 &lt; r_2^2\right)\, e_{ij}\]
+
+\[e_{ij} = \sum_{m=0}^{k-1} \lambda_m\, X_{m,s_i}\, X_{m,s_j}\]
+
+\[d_{ij}^2 = (x_i-x_j)^2 + (y_i-y_j)^2 + (z_i-z_j)^2,
+\qquad
+s_i = \operatorname{subatoms}(\mathrm{atom\_typen}_i)\]
+
+<p>Where:</p>
+
+<ul>
+  <li>$(r_1, r_2, k, \lambda_m, X)$ come from <code class="language-plaintext highlighter-rouge">prms</code> (<code class="language-plaintext highlighter-rouge">prms.h</code>).</li>
+  <li>$A^{<em>}$ and $B^{</em>}$ include all atoms unless <code class="language-plaintext highlighter-rouge">only_sab=1</code>, in which case only atoms with <code class="language-plaintext highlighter-rouge">sa != 0</code> are used.</li>
+  <li>This is the function declared as <code class="language-plaintext highlighter-rouge">pairwise_potential_energy(...)</code> in <code class="language-plaintext highlighter-rouge">energy.h</code>.</li>
+</ul>
+
+<p>In <code class="language-plaintext highlighter-rouge">complex_energy</code> (the one used in docking), this pairwise term is combined as:</p>
+
+\[E_{\text{complex}} =
+\begin{cases}
+20\,N_{\text{clash}}, &amp; N_{\text{clash}} \ge 15 \\
+E_{\text{pair}} - 0.1\,N_{\text{contact}}, &amp; N_{\text{clash}} &lt; 15
+\end{cases}\]
+
+<p>Note: PIPER accelerates these pairwise potentials via an eigenvalue decomposition and FFT-based correlations, but our course project did not implement that acceleration; we evaluated the pairwise term directly.</p>
+
+<p>The assignment had a couple of parts (I do not have the exact prompt, but this is what I remember):</p>
+
+<ol>
+  <li>
+<strong>Q1a.</strong> Compute the center-of-mass (CoM) shift vector between receptor and ligand, translate one structure by half that shift, and write the translated structure to file.</li>
+  <li>
+<strong>Q1b.</strong> Compute the total Coulombic interaction energy between receptor and ligand atoms using charges from the parameter file.</li>
+  <li>
+<strong>Q1c.</strong> Compute the analytic gradient of the Coulombic energy with respect to Cartesian coordinates $(F_x, F_y, F_z)$.</li>
+  <li>
+<strong>Q1d.</strong> Compute the same gradient numerically using finite differences $(\Delta = 0.01)$ and compare against Q1c.</li>
+  <li>
+<strong>Q1e.</strong> Iteratively translate a structure and report how Coulombic energy changes as CoM distance changes.</li>
+  <li>
+<strong>Q2a.</strong> Estimate $\pi$ with a Monte Carlo simulation.</li>
+  <li>
+<strong>Q2b.</strong> Use a 1D Metropolis Monte Carlo method to minimize the toy energy function:</li>
+</ol>
+
+\[f(x) = \left(-0.5x^2 - 0.5x - 0.3\right)e^{-|x|} + 0.01x^2\]
+
+<ol>
+  <li>
+<strong>Q2c.</strong> Perform rigid-body protein-ligand docking with Metropolis Monte Carlo using <code class="language-plaintext highlighter-rouge">complex_energy</code>, save accepted poses, and report the final complex energy.</li>
+</ol>
+
+<h3 id="outputs">Outputs</h3>
+
+<div class="row">
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/distance_vs_e_energy.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Plot of Coulombic energy versus receptor-ligand center-of-mass distance" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Coulombic energy vs receptor-ligand center-of-mass distance (Q1e).</figcaption>
+  
+</figure>
+
+  </div>
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/dock_energy_mc.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Plot of complex energy over Monte Carlo docking moves" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Complex energy over Monte Carlo docking moves (Q2c).</figcaption>
+  
+</figure>
+
+  </div>
+</div>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/mc_protein_docking.gif" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Animated GIF of rigid-body protein docking trajectory frames" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Rigid-body docking trajectory (sampled frames).</figcaption>
+  
+</figure>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>It has been a while since I looked back on this project and reviewing the papers on protein docking. I was aware of the use of AlphaFold based methods for protein docking but it was nice to see that the Kozakov/Vajda labs use it alongside their physics methods. It seems that the work that has been done to carefully study the interactions of atoms still will be useful when it comes to predicting complexes espcially in the case where there is a lack of information in the dataset.</p>
+
+    </div>
+  </article>
+
+  
+
+  
+
+  
+    
+      
+
+  
+    
+    
+      <br>
+      <hr>
+      <br>
+      <ul class="list-disc pl-8"></ul>
+
+      <!-- Adds related posts to the end of an article -->
+      <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+    
+
+    <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal/">Jakub Hrůša with the Chicago Symphony Orchestra Open Rehearsal</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/zukerman-trio-performs-at-the-chicago-symphony-center/">Zukerman Trio Performs at the Chicago Symphony Center</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/cso-under-the-direction-of-klaus-makela-brings-paris-to-chicago/">CSO Under the Direction of Klaus Mäkelä Brings Paris to Chicago</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/himari-performs-with-the-chicago-symphony-orchestra/">Himari Performs with the Chicago Symphony Orchestra</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/no-prisoner-be-joyce-didonato-and-time-for-three/">No Prisoner Be: Joyce DiDonato and Time for Three</a>
+    
+  </li>
+
+
+
+    
+  
+
+  
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2026
+  Jose
+  
+  Guerra. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.  Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script>
+
+
+
+
+  </body>
+</html>

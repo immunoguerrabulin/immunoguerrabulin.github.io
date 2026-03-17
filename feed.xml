@@ -1,748 +1,1233 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://jlguerraphd.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://jlguerraphd.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-08-03T00:41:17+00:00</updated><id>https://jlguerraphd.github.io/feed.xml</id><title type="html">Jose Luis Guerra</title><subtitle>Ph.D. candidate in Computational Chemistry at the University of Chicago. I develop atomistic and machine learning models for ion pumps and molecular systems. </subtitle><entry><title type="html">a post with plotly.js</title><link href="https://jlguerraphd.github.io/blog/2025/plotly/" rel="alternate" type="text/html" title="a post with plotly.js"/><published>2025-03-26T14:24:00+00:00</published><updated>2025-03-26T14:24:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2025/plotly</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2025/plotly/"><![CDATA[<p>This is an example post with some <a href="https://plotly.com/javascript/">plotly</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">plotly
-</span><span class="sb">{
-  "data": [
-    {
-      "x": [1, 2, 3, 4],
-      "y": [10, 15, 13, 17],
-      "type": "scatter"
-    },
-    {
-      "x": [1, 2, 3, 4],
-      "y": [16, 5, 11, 9],
-      "type": "scatter"
-    }
-  ]
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-plotly">{
-  "data": [
-    {
-      "x": [1, 2, 3, 4],
-      "y": [10, 15, 13, 17],
-      "type": "scatter"
-    },
-    {
-      "x": [1, 2, 3, 4],
-      "y": [16, 5, 11, 9],
-      "type": "scatter"
-    }
-  ]
-}
-</code></pre> <p>Also another example chart.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">plotly
-</span><span class="sb">{
-  "data": [
-    {
-      "x": [1, 2, 3, 4],
-      "y": [10, 15, 13, 17],
-      "mode": "markers"
-    },
-    {
-      "x": [2, 3, 4, 5],
-      "y": [16, 5, 11, 9],
-      "mode": "lines"
-    },
-    {
-      "x": [1, 2, 3, 4],
-      "y": [12, 9, 15, 12],
-      "mode": "lines+markers"
-    }
-  ],
-  "layout": {
-    "title": {
-      "text": "Line and Scatter Plot"
-    }
-  }
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>This is how it looks like:</p> <pre><code class="language-plotly">{
-  "data": [
-    {
-      "x": [1, 2, 3, 4],
-      "y": [10, 15, 13, 17],
-      "mode": "markers"
-    },
-    {
-      "x": [2, 3, 4, 5],
-      "y": [16, 5, 11, 9],
-      "mode": "lines"
-    },
-    {
-      "x": [1, 2, 3, 4],
-      "y": [12, 9, 15, 12],
-      "mode": "lines+markers"
-    }
-  ],
-  "layout": {
-    "title": {
-      "text": "Line and Scatter Plot"
-    }
-  }
-}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included plotly.js code could look like]]></summary></entry><entry><title type="html">a post with image galleries</title><link href="https://jlguerraphd.github.io/blog/2024/photo-gallery/" rel="alternate" type="text/html" title="a post with image galleries"/><published>2024-12-04T01:59:00+00:00</published><updated>2024-12-04T01:59:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/photo-gallery</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/photo-gallery/"><![CDATA[<p>The images in this post are all zoomable, arranged into different mini-galleries using different libraries.</p> <h2 id="lightbox2"><a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox2</a></h2> <p><a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg" data-lightbox="roadtrip"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"/></a> <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" data-lightbox="roadtrip"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"/></a> <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg" data-lightbox="roadtrip"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"/></a></p> <hr/> <h2 id="photoswipe"><a href="https://photoswipe.com/">PhotoSwipe</a></h2> <div class="pswp-gallery pswp-gallery--single-column" id="gallery--getting-started"> <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" data-pswp-width="1669" data-pswp-height="2500" target="_blank"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt=""/> </a> <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" data-pswp-width="1875" data-pswp-height="2500" data-cropped="true" target="_blank"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt=""/> </a> <a href="https://unsplash.com" data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg" data-pswp-width="2500" data-pswp-height="1666" target="_blank"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt=""/> </a> <div> <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg" data-pswp-width="2500" data-pswp-height="1667" target="_blank"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt=""/> </a> </div> </div> <hr/> <h2 id="spotlight-js"><a href="https://nextapps-de.github.io/spotlight/">Spotlight JS</a></h2> <div class="spotlight-group"> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"/> </a> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"/> </a> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"/> </a> </div> <div class="spotlight-group"> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/4/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/4/img-200.jpg"/> </a> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-200.jpg"/> </a> <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"> <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg"/> </a> </div> <hr/> <h2 id="venobox"><a href="https://veno.es/venobox/">Venobox</a></h2> <p><a class="venobox" data-gall="myGallery" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"/></a> <a class="venobox" data-gall="myGallery" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"/></a> <a class="venobox" data-gall="myGallery" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"/></a></p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="images"/><summary type="html"><![CDATA[this is what included image galleries could look like]]></summary></entry><entry><title type="html">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</title><link href="https://jlguerraphd.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra/" rel="alternate" type="text/html" title="Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra"/><published>2024-05-14T00:00:00+00:00</published><updated>2024-05-14T00:00:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra/"><![CDATA[<p>May 14, 2024 We’re introducing a series of updates across the Gemini family of models, including the new 1.5 Flash, our lightweight model for speed and efficiency, and Project Astra, our vision for the future of AI assistants. In December, we launched our first natively multimodal model Gemini 1.0 in three sizes: Ultra, Pro and Nano. Just a few months later we released 1.5 Pro, with enhanced performance and a breakthrough long context window of 1 million tokens.Developers and enterprise customers have been putting 1.5 Pro to use in incredible ways and finding its long context window, multimodal reasoning capabilities and impressive overall performance incredibly useful.We know from user feedback that some applications need lower latency and a lower cost to serve. This inspired us to keep innovating, so today, we’re introducing Gemini 1.5 Flash: a model that’s lighter-weight than 1.5 Pro, and designed to be fast and efficient to serve at scale.Both 1.5 Pro and 1.5 Flash are available in public preview with a 1 million token context window in Google AI Studio and Vertex AI. And now, 1.5 Pro is also available with a 2 million token context window via waitlist to developers using the API and to Google Cloud customers.We’re also introducing updates across the Gemini family of models, announcing our next generation of open models, Gemma 2, and sharing progress on the future of AI assistants, with Project Astra.Context lengths of leading foundation models compared with Gemini 1.5’s 2 million token capability1.5 Flash is the newest addition to the Gemini model family and the fastest Gemini model served in the API. It’s optimized for high-volume, high-frequency tasks at scale, is more cost-efficient to serve and features our breakthrough long context window.While it’s a lighter weight model than 1.5 Pro, it’s highly capable of multimodal reasoning across vast amounts of information and delivers impressive quality for its size.The new Gemini 1.5 Flash model is optimized for speed and efficiency, is highly capable of multimodal reasoning and features our breakthrough long context window.1.5 Flash excels at summarization, chat applications, image and video captioning, data extraction from long documents and tables, and more. This is because it’s been trained by 1.5 Pro through a process called “distillation,” where the most essential knowledge and skills from a larger model are transferred to a smaller, more efficient model.Read more about 1.5 Flash in our updated Gemini 1.5 technical report, on the Gemini technology page, and learn about 1.5 Flash’s availability and pricing.Over the last few months, we’ve significantly improved 1.5 Pro, our best model for general performance across a wide range of tasks.Beyond extending its context window to 2 million tokens, we’ve enhanced its code generation, logical reasoning and planning, multi-turn conversation, and audio and image understanding through data and algorithmic advances. We see strong improvements on public and internal benchmarks for each of these tasks.1.5 Pro can now follow increasingly complex and nuanced instructions, including ones that specify product-level behavior involving role, format and style. We’ve improved control over the model’s responses for specific use cases, like crafting the persona and response style of a chat agent or automating workflows through multiple function calls. And we’ve enabled users to steer model behavior by setting system instructions.We added audio understanding in the Gemini API and Google AI Studio, so 1.5 Pro can now reason across image and audio for videos uploaded in Google AI Studio. And we’re now integrating 1.5 Pro into Google products, including Gemini Advanced and in Workspace apps.Read more about 1.5 Pro in our updated Gemini 1.5 technical report and on the Gemini technology page.Gemini Nano is expanding beyond text-only inputs to include images as well. Starting with Pixel, applications using Gemini Nano with Multimodality will be able to understand the world the way people do — not just through text, but also through sight, sound and spoken language.Read more about Gemini 1.0 Nano on Android.Today, we’re also sharing a series of updates to Gemma, our family of open models built from the same research and technology used to create the Gemini models.We’re announcing Gemma 2, our next generation of open models for responsible AI innovation. Gemma 2 has a new architecture designed for breakthrough performance and efficiency, and will be available in new sizes.The Gemma family is also expanding with PaliGemma, our first vision-language model inspired by PaLI-3. And we’ve upgraded our Responsible Generative AI Toolkit with LLM Comparator for evaluating the quality of model responses.Read more on the Developer blog.As part of Google DeepMind’s mission to build AI responsibly to benefit humanity, we’ve always wanted to develop universal AI agents that can be helpful in everyday life. That’s why today, we’re sharing our progress in building the future of AI assistants with Project Astra (advanced seeing and talking responsive agent).To be truly useful, an agent needs to understand and respond to the complex and dynamic world just like people do — and take in and remember what it sees and hears to understand context and take action. It also needs to be proactive, teachable and personal, so users can talk to it naturally and without lag or delay.While we’ve made incredible progress developing AI systems that can understand multimodal information, getting response time down to something conversational is a difficult engineering challenge. Over the past few years, we’ve been working to improve how our models perceive, reason and converse to make the pace and quality of interaction feel more natural.Building on Gemini, we’ve developed prototype agents that can process information faster by continuously encoding video frames, combining the video and speech input into a timeline of events, and caching this information for efficient recall.By leveraging our leading speech models, we also enhanced how they sound, giving the agents a wider range of intonations. These agents can better understand the context they’re being used in, and respond quickly, in conversation.With technology like this, it’s easy to envision a future where people could have an expert AI assistant by their side, through a phone or glasses. And some of these capabilities are coming to Google products, like the Gemini app and web experience, later this year.We’ve made incredible progress so far with our family of Gemini models, and we’re always striving to advance the state-of-the-art even further. By investing in a relentless production line of innovation, we’re able to explore new ideas at the frontier, while also unlocking the possibility of new and exciting Gemini use cases.Learn more about Gemini and its capabilities. Your information will be used in accordance with Google’s privacy policy.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      Done. Just one step more.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://jlguerraphd.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jlguerraphd.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-17T11:32:29-05:00</updated><id>https://jlguerraphd.github.io/feed.xml</id><title type="html">Jose Guerra</title><subtitle>Ph.D. candidate in Computational Chemistry at the University of Chicago.  I develop atomistic models for ion pumps using computational techniques.
+</subtitle><entry><title type="html">Jakub Hrůša with the Chicago Symphony Orchestra Open Rehearsal</title><link href="https://jlguerraphd.github.io/blog/2026/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal/" rel="alternate" type="text/html" title="Jakub Hrůša with the Chicago Symphony Orchestra Open Rehearsal" /><published>2026-03-14T00:00:00-05:00</published><updated>2026-03-14T00:00:00-05:00</updated><id>https://jlguerraphd.github.io/blog/2026/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal/"><![CDATA[<p>This week I attended an open rehearsal with Jakub Hrůša and the Chicago Symphony Orchestra ahead of their March 12-14, 2026 program with Leif Ove Andsnes as the soloist for the Beethoven Piano Concerto. Believe it or not, this was the first time I attended a rehearsal of a professional orchestra. It was amazing to go behind the scenes and learn about how efficent the orchestra is. Some concerts have 2-3 rehearsals before the concerts. For a professional group like the CSO, its clear that they are not simply sight reading the music for the first time. They are given the music in advance to prepare for the rehearsal.</p>
+
+<p>It was also incredible to see the usual orchestra with causal clothing. I have seen these musicans for the past 5 years in their concert black but never with typically street wear.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
     
-      Check your inbox to confirm your subscription.
-    You are already subscribed to our newsletter.
-    You can also subscribe with a
-    different email address
+    <img src="/assets/img/blog/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal/open_rehearsal_view.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 720px;
+          
+          
+        " alt="View of the Chicago Symphony Orchestra during the donor open rehearsal" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">View from the balcony during the donor open rehearsal.</figcaption>
+  
+</figure>
+
+<h2 id="program">Program</h2>
+
+<p>Chicago Symphony Orchestra Donor Open Rehearsal<br />
+Jakub Hrůša, conductor<br />
+Leif Ove Andsnes, piano</p>
+
+<p><strong>Works rehearsed</strong></p>
+
+<ul>
+  <li><strong>Beethoven</strong>: <em>Piano Concerto No. 3 in C minor</em>, Op. 37 <em>(orchestral rehearsal only; soloist not present)</em></li>
+  <li><strong>Schumann</strong>: <em>Symphony No. 1 in B-flat major</em>, Op. 38 (“Spring”)</li>
+  <li><strong>Smetana</strong>: Selections from <em>The Bartered Bride</em></li>
+</ul>
+
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
+
+<h3 id="beethoven-piano-concerto-no-3-in-c-minor-op-37">Beethoven: <em>Piano Concerto No. 3 in C minor</em>, Op. 37</h3>
+
+<p>For the Wednesday rehearsal, the ensemble did not rehearse with the soloist.</p>
+
+<h3 id="schumann-symphony-no-1-in-b-flat-major-op-38-spring">Schumann: <em>Symphony No. 1 in B-flat major</em>, Op. 38 (“Spring”)</h3>
+
+<p>The rehearsal started with the third movement. I have always been aware that Hrůša was the real deal. Every concert I have attended with him has revealed subtle details in the music, and that first impression was reflected well in the first half of the rehearsal that I saw. He indicated to the musicians how the articulation should change each time the theme repeated so that it gradually became more legato.</p>
+
+<p>I was also impressed by his ability to analyze the music in advance and help the orchestra balance the texture. At one point he changed the written dynamics so that the cello section could be brought out more clearly because they had the main line. The same thing happened with the second violins when they held a note over the bar and were the only section doing so. He wanted that detail to stand out, and he also asked for bowings to return to the original. He did all of this very diplomatically, and the orchestra seemed to respect him.</p>
+
+<p>There was one moment where he stopped the whole orchestra and asked only for the string sections. In that passage, the first violins have fast high notes, and Hrůša knew something was not quite 100% there. He joked that he did not want to torture them, but made clear that the passage needed more confidence. These are professional musicians who do not need to go note by note during rehearsal, and I think Hrůša handled the situation well. The musicians seemed to understand exactly what he wanted, and there were even a few giggles from both the orchestra and the audience.</p>
+
+<h3 id="smetana-selections-from-the-bartered-bride">Smetana: selections from <em>The Bartered Bride</em></h3>
+
+<p>The second half of the rehearsal started at around 11:45. I decided to leave early and head back to work.</p>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>The way that Hrůša structures the rehearsal makes sense in hindsight. He has an incredible attention to detail and knew how to make the most of the rehearsal with the grop. He seems to be well liked by the ensemble (he is often invited to come join the group for concerts). I unfornately will not attend the concert this week at the CSO but based on what I saw I expect a wonderful concert.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Spectating a rehearsal with Jakub Hrůša and the Chicago Symphony Orchestra ahead of their March 12-14, 2026 program with Leif Ove Andsnes.]]></summary></entry><entry><title type="html">Zukerman Trio Performs at the Chicago Symphony Center</title><link href="https://jlguerraphd.github.io/blog/2026/zukerman-trio-performs-at-the-chicago-symphony-center/" rel="alternate" type="text/html" title="Zukerman Trio Performs at the Chicago Symphony Center" /><published>2026-03-07T00:00:00-06:00</published><updated>2026-03-07T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/zukerman-trio-performs-at-the-chicago-symphony-center</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/zukerman-trio-performs-at-the-chicago-symphony-center/"><![CDATA[<p>On March 7, 2026, the Zukerman Trio performed at the Chicago Symphony Center. Below is the program and my review.</p>
+
+<h2 id="program">Program</h2>
+
+<p>Zukerman Trio — March 7, 2026<br />
+Chicago Symphony Center</p>
+
+<p><strong>Works performed</strong></p>
+
+<ul>
+  <li><strong>Mendelssohn</strong>: <em>Piano Trio No. 1 in D minor</em>, Op. 49
+    <ul>
+      <li>Molto allegro ed agitato</li>
+      <li>Andante con moto tranquillo</li>
+      <li>Scherzo: Leggiero e vivace</li>
+      <li>Finale: Allegro assai appassionato</li>
+    </ul>
+  </li>
+  <li><strong>Higdon</strong>: <em>Pale Yellow</em> (from <em>Piano Trio</em>)</li>
+  <li><strong>Intermission</strong></li>
+  <li><strong>Dvořák</strong>: <em>Dumky</em> for piano, violin, and cello, Op. 90
+    <ul>
+      <li>Lento maestoso — Allegro vivace, quasi doppio movimento</li>
+      <li>Poco adagio — Vivace non troppo</li>
+      <li>Andante — Vivace non troppo</li>
+      <li>Andante moderato (quasi tempo di marcia) — Allegretto scherzando</li>
+      <li>Allegro</li>
+      <li>Lento maestoso — Vivace, quasi doppio movimento</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
+
+<p>Pinchas Zukerman is one of the greats. I have watched videos of him performing with Itzhak Perlman and giving masterclasses online, but I had never had the chance to hear him in person. When I found out that he was coming to Chicago for one day to give a chamber music recital, I knew I had to get my hands on a ticket.</p>
+
+<h3 id="mendelssohn-piano-trio-no-1-in-d-minor-op-49">Mendelssohn: <em>Piano Trio No. 1 in D minor</em>, Op. 49</h3>
+
+<p>Mendelssohn is arguably one of the best composers of chamber music. The Mendelssohn trio is a classic, and the interpretation that was delivered did not try to do anything unusual. All of the players did an excellent job. What stood out most to me was finally hearing Zukerman’s tone in person. I felt like I had teleported back to the golden age of violin playing. His bowing style and articulation are incredibly distinctive. His vibrato is similar to Itzhak Perlman’s, though used more carefully.</p>
+
+<h3 id="higdon-pale-yellow">Higdon: <em>Pale Yellow</em></h3>
+
+<p>The second piece of the night was a contemporary work by a respected composer. I have not listened to much Higdon, but I was aware of the concept behind her Piano Trio. I enjoyed the textures of the piece. The idea is to encapsulate color in music. I have heard people with synesthesia describe sound as color; I do not have that ability, but the piece helped me imagine what that experience might be like. The composer herself wrote that her process is similar to painting, but with music, and I found that concept intriguing.</p>
+
+<p>I do not know this music well enough to make a firm judgment, but this piece seemed to be the least prepared by the group. I will have to listen to a recording to be sure, but it is worth noting.</p>
+
+<h3 id="dvořák-dumky-for-piano-violin-and-cello-op-90">Dvořák: <em>Dumky</em> for piano, violin, and cello, Op. 90</h3>
+
+<p>The highlight of the concert for me was the incredible Dumky Trio. This is one of my all-time favorite piano trios. Dvořák is an amazing composer who somehow understood the capabilities of every instrument he wrote for. He was a violist, yet he still managed to write extraordinary parts for the woodwinds and the strings.</p>
+
+<p>In this piece, the pianist really shined and showcased his virtuosity as well as his ability to carry the lyrical themes. The cellist was equally impressive, with clear precision and color. Zukerman… what can I say? He is Pinchas Zukerman. He is amazing. I was especially struck by his bowing technique, which he often explains in his videos: catch and release. His sound is incredible, and I am glad I was able to hear him live.</p>
+
+<h2 id="photo">Photo</h2>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
     
-    .
+    <img src="/assets/img/blog/zukerman-trio-2026-03-07/zukerman-trio-bow.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 720px;
+          
+          
+        " alt="Zukerman Trio taking a bow at Symphony Center" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Zukerman Trio taking a bow.</figcaption>
+  
+</figure>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>There is often a debate about when performers should stop playing. Yehudi Menuhin, Ivry Gitlis, and Itzhak Perlman are names that often come up when people discuss artists who continue performing beyond their peak years. My view of Zukerman is that, even at 77, he still has his skills. There were only a few moments, especially in the Higdon, where I thought some inaccuracies occurred, but he still has his tone, intonation, and musical integrity. After this concert, I found myself wondering whether Zukerman’s ability to continue performing at this level is the result of his impeccable technique. His bowing is especially interesting. It almost looks as if he is stirring a pot: on the down-bow he moves away from himself, and on the up-bow he comes back toward himself. I admire both his technique and his taste in the use of slides and vibrato.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Concert review of the Zukerman Trio at the Chicago Symphony Center on March 7, 2026.]]></summary></entry><entry><title type="html">CSO Under the Direction of Klaus Mäkelä Brings Paris to Chicago</title><link href="https://jlguerraphd.github.io/blog/2026/cso-under-the-direction-of-klaus-makela-brings-paris-to-chicago/" rel="alternate" type="text/html" title="CSO Under the Direction of Klaus Mäkelä Brings Paris to Chicago" /><published>2026-03-05T00:00:00-06:00</published><updated>2026-03-05T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/cso-under-the-direction-of-klaus-makela-brings-paris-to-chicago</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/cso-under-the-direction-of-klaus-makela-brings-paris-to-chicago/"><![CDATA[<p>On March 5, 2026, the Chicago Symphony Orchestra performed under the direction of Klaus Mäkelä. Below is the program and my notes from the evening.</p>
+
+<h2 id="program">Program</h2>
+
+<p>Chicago Symphony Orchestra — March 5, 2026<br />
+Klaus Mäkelä, conductor</p>
+
+<p><strong>Works performed</strong></p>
+
+<ul>
+  <li><strong>Milhaud</strong>: <em>Le Bœuf sur le toit</em> (“The Ox on the Roof”)</li>
+  <li><strong>Gershwin</strong>: <em>An American in Paris</em></li>
+  <li><strong>Stravinsky</strong>: <em>The Rite of Spring</em></li>
+</ul>
+
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
+
+<p>This concert was nearly sold out. There were no student tickets and only rush tickets for the main floor. I managed to secure my ticket only a couple of hours before the show, and it was worth it. The program was essentially a two-hour trip to Paris. That felt especially fitting given the young maestro’s appointment as music director of the Orchestre de Paris. My seat was extremely close to the stage, so the balance was unusual; however, it was nice to see the communication between the conductor and the musicians.</p>
+
+<h3 id="milhaud-le-bœuf-sur-le-toit-the-ox-on-the-roof">Milhaud: <em>Le Bœuf sur le toit</em> (“The Ox on the Roof”)</h3>
+
+<p>The night started with a playful, light piece. It was a great opening for a peaceful and happy first half of the concert. The orchestra’s ability to indulge us with the Brazilian-inspired themes was convincing. There is not much more to say, but it was definitely a crowd-pleaser.</p>
+
+<h3 id="gershwin-an-american-in-paris">Gershwin: <em>An American in Paris</em></h3>
+
+<p>The next piece on the program was Gershwin’s iconic <em>An American in Paris</em>. At some point, almost everyone has heard this piece. I genuinely enjoyed the performance. The string section sounded extremely clean and elegant.</p>
+
+<h3 id="stravinsky-the-rite-of-spring">Stravinsky: <em>The Rite of Spring</em></h3>
+
+<p>I had previously watched Mäkelä conduct <em>The Rite of Spring</em> in a Carnegie Hall recording with the Orchestre de Paris. I was in New York City at the time, but the concert was fully sold out. Luckily for me, Medici TV later offered it on its streaming platform. Based on what I saw there, I had a feeling this would be the piece in which Mäkelä would really showcase his abilities.</p>
+
+<p>For the first half of the concert, I had the impression that the musicians were, for the most part, leading the conductor. From my very close seat, I could tell that none of the principals were really paying much attention to him. There were occasional glances from the principal cellist toward the conductor, but not much more. In <em>The Rite of Spring</em>, though, the conductor became part of the orchestra, leading them and helping bring this insane piece to life. The bassoon was not as precise as what I had heard in recordings, but it was still amazing to hear how Mäkelä paced the orchestra.</p>
+
+<h2 id="photo">Photo</h2>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
     
-  Let’s stay in touch. Get the latest news from Google in your inbox.
-          Follow Us
-</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.]]></summary></entry><entry><title type="html">a post with tabs</title><link href="https://jlguerraphd.github.io/blog/2024/tabs/" rel="alternate" type="text/html" title="a post with tabs"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/tabs</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/tabs/"><![CDATA[<p>This is how a post with <a href="https://github.com/Ovski4/jekyll-tabs">tabs</a> looks like. Note that the tabs could be used for different purposes, not only for code.</p> <h2 id="first-tabs">First tabs</h2> <p>To add tabs, use the following syntax:</p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">tabs</span><span class="w"> </span><span class="nv">group-name</span><span class="w"> </span><span class="cp">%}</span>
+    <img src="/assets/img/blog/makela-paris-to-chicago/makela-bow.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 720px;
+          
+          
+        " alt="Klaus Mäkelä taking a bow with the Chicago Symphony Orchestra" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">tab</span><span class="w"> </span><span class="nv">group-name</span><span class="w"> </span><span class="nv">tab-name-1</span><span class="w"> </span><span class="cp">%}</span>
+  
+    <figcaption class="caption">Klaus Mäkelä taking a bow with the Chicago Symphony Orchestra.</figcaption>
+  
+</figure>
 
-Content 1
+<h2 id="closing-thoughts">Closing thoughts</h2>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">endtab</span><span class="w"> </span><span class="cp">%}</span>
+<p>In the grand scheme of the concert, I think the first half did little to help Mäkelä justify his appointment. He is very young, and many may say inexperienced; I agree. I think his talent and ability to shape a large work were highlighted in the second half of the concert. He made me feel excited again about a piece I have heard many, many times. He knew how to make sure the orchestra did not give away too much at the start. I think this piece may remain a staple of his repertoire. He still has room to grow and perhaps fully develop into the role of music director of one of the biggest orchestras in the United States.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Concert review of the Chicago Symphony Orchestra under Klaus Mäkelä on March 5, 2026.]]></summary></entry><entry><title type="html">Himari Performs with the Chicago Symphony Orchestra</title><link href="https://jlguerraphd.github.io/blog/2026/himari-performs-with-the-chicago-symphony-orchestra/" rel="alternate" type="text/html" title="Himari Performs with the Chicago Symphony Orchestra" /><published>2026-02-14T00:00:00-06:00</published><updated>2026-02-14T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/himari-performs-with-the-chicago-symphony-orchestra</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/himari-performs-with-the-chicago-symphony-orchestra/"><![CDATA[<p>On Feb. 14, 2026, Himari appeared with the Chicago Symphony Orchestra conducted by Jaap van Zweden. Below is the program and my notes from the performance.</p>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">tab</span><span class="w"> </span><span class="nv">group-name</span><span class="w"> </span><span class="nv">tab-name-2</span><span class="w"> </span><span class="cp">%}</span>
+<h2 id="program">Program</h2>
 
-Content 2
+<p>Himari with the Chicago Symphony Orchestra — Feb. 14, 2026</p>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">endtab</span><span class="w"> </span><span class="cp">%}</span>
+<p><strong>Works performed</strong></p>
 
-<span class="cp">{%</span><span class="w"> </span><span class="nt">endtabs</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <p>With this you can generate visualizations like:</p> <ul id="log" class="tab" data-tab="1ddd7243-6c5a-4789-8ad6-949d3491651d" data-name="log"> <li class="active" id="log-php"> <a href="#">php </a> </li> <li id="log-js"> <a href="#">js </a> </li> <li id="log-ruby"> <a href="#">ruby </a> </li> </ul> <ul class="tab-content" id="1ddd7243-6c5a-4789-8ad6-949d3491651d" data-name="log"> <li class="active"> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
-</code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pputs</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>
-</code></pre></div></div> </li> </ul> <h2 id="another-example">Another example</h2> <ul id="data-struct" class="tab" data-tab="347447c6-00fc-4d77-9a49-2b9f6d9ccd22" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> <ul class="tab-content" id="347447c6-00fc-4d77-9a49-2b9f6d9ccd22" data-name="data-struct"> <li class="active"> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">whatsup"</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">hi"</span>
-</code></pre></div></div> </li> <li> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"hello"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"whatsup"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div> </li> </ul> <h2 id="tabs-for-something-else">Tabs for something else</h2> <ul id="something-else" class="tab" data-tab="fc07baee-a267-4551-b79f-06f329f6d94f" data-name="something-else"> <li class="active" id="something-else-text"> <a href="#">text </a> </li> <li id="something-else-quote"> <a href="#">quote </a> </li> <li id="something-else-list"> <a href="#">list </a> </li> </ul> <ul class="tab-content" id="fc07baee-a267-4551-b79f-06f329f6d94f" data-name="something-else"> <li class="active"> <p>Regular text</p> </li> <li> <blockquote> <p>A quote</p> </blockquote> </li> <li> <p>Hipster list</p> <ul> <li>brunch</li> <li>fixie</li> <li>raybans</li> <li>messenger bag</li> </ul> </li> </ul>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with typograms</title><link href="https://jlguerraphd.github.io/blog/2024/typograms/" rel="alternate" type="text/html" title="a post with typograms"/><published>2024-04-29T23:36:10+00:00</published><updated>2024-04-29T23:36:10+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/typograms</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/typograms/"><![CDATA[<p>This is an example post with some <a href="https://github.com/google/typograms/">typograms</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
-</span><span class="sb">+----+
-|    |---&gt; My first diagram!
-+----+</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-typograms">+----+
-|    |---&gt; My first diagram!
-+----+
-</code></pre> <p>Another example:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
-</span><span class="sb">.------------------------.
-|.----------------------.|
-||"https://example.com" ||
-|'----------------------'|
-| ______________________ |
-||                      ||
-||   Welcome!           ||
-||                      ||
-||                      ||
-||  .----------------.  ||
-||  | username       |  ||
-||  '----------------'  ||
-||  .----------------.  ||
-||  |"*******"       |  ||
-||  '----------------'  ||
-||                      ||
-||  .----------------.  ||
-||  |   "Sign-up"    |  ||
-||  '----------------'  ||
-||                      ||
-|+----------------------+|
-.------------------------.</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>which generates:</p> <pre><code class="language-typograms">.------------------------.
-|.----------------------.|
-||"https://example.com" ||
-|'----------------------'|
-| ______________________ |
-||                      ||
-||   Welcome!           ||
-||                      ||
-||                      ||
-||  .----------------.  ||
-||  | username       |  ||
-||  '----------------'  ||
-||  .----------------.  ||
-||  |"*******"       |  ||
-||  '----------------'  ||
-||                      ||
-||  .----------------.  ||
-||  |   "Sign-up"    |  ||
-||  '----------------'  ||
-||                      ||
-|+----------------------+|
-.------------------------.
-</code></pre> <p>For more examples, check out the <a href="https://google.github.io/typograms/#examples">typograms documentation</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="diagrams"/><summary type="html"><![CDATA[this is what included typograms code could look like]]></summary></entry><entry><title type="html">a post that can be cited</title><link href="https://jlguerraphd.github.io/blog/2024/post-citation/" rel="alternate" type="text/html" title="a post that can be cited"/><published>2024-04-28T15:06:00+00:00</published><updated>2024-04-28T15:06:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/post-citation</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/post-citation/"><![CDATA[<p>This is an example post that can be cited. The content of the post ends here, while the citation information is automatically provided below. The only thing needed is for you to set the <code class="language-plaintext highlighter-rouge">citation</code> key in the front matter to <code class="language-plaintext highlighter-rouge">true</code>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="citation"/><summary type="html"><![CDATA[this is what a post that can be cited looks like]]></summary></entry><entry><title type="html">a post with pseudo code</title><link href="https://jlguerraphd.github.io/blog/2024/pseudocode/" rel="alternate" type="text/html" title="a post with pseudo code"/><published>2024-04-15T00:01:00+00:00</published><updated>2024-04-15T00:01:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/pseudocode</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/pseudocode/"><![CDATA[<p>This is an example post with some pseudo code rendered by <a href="https://github.com/SaswatPadhi/pseudocode.js">pseudocode</a>. The example presented here is the same as the one in the <a href="https://saswat.padhi.me/pseudocode.js/">pseudocode.js</a> documentation, with only one simple but important change: everytime you would use <code class="language-plaintext highlighter-rouge">$</code>, you should use <code class="language-plaintext highlighter-rouge">$$</code> instead. Also, note that the <code class="language-plaintext highlighter-rouge">pseudocode</code> key in the front matter is set to <code class="language-plaintext highlighter-rouge">true</code> to enable the rendering of pseudo code. As an example, using this code:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">pseudocode
-</span><span class="sb">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Generates:</p> <pre><code class="language-pseudocode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included pseudo code could look like]]></summary></entry><entry><title type="html">a post with code diff</title><link href="https://jlguerraphd.github.io/blog/2024/code-diff/" rel="alternate" type="text/html" title="a post with code diff"/><published>2024-01-27T19:22:00+00:00</published><updated>2024-01-27T19:22:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/code-diff</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/code-diff/"><![CDATA[<p>You can display diff code by using the regular markdown syntax:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff
-</span><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")
-</span></code></pre></div></div> <p>But this is difficult to read, specially if you have a large diff. You can use <a href="https://diff2html.xyz/">diff2html</a> to display a more readable version of the diff. For this, just use <code class="language-plaintext highlighter-rouge">diff2html</code> instead of <code class="language-plaintext highlighter-rouge">diff</code> for the code block language:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff2html
-</span><span class="sb">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
---- a/sample.js
-+++ b/sample.js
-@@ -1 +1 @@
--console.log("Hello World!")
-+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>If we use a longer example, for example <a href="https://github.com/rtfpessoa/diff2html/commit/c2c253d3e3f8b8b267f551e659f72b44ca2ac927">this commit from diff2html</a>, it will generate the following output:</p> <pre><code class="language-diff2html">From 2aaae31cc2a37bfff83430c2c914b140bee59b6a Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sun, 9 Oct 2016 16:41:54 +0100
-Subject: [PATCH 1/2] Initial template override support
+<ul>
+  <li><strong>Thompson</strong>: <em>To See the Sky</em></li>
+  <li><strong>Bruch</strong>: <em>Violin Concerto No. 1</em></li>
+  <li><strong>Himari encore</strong>: Milstein — <em>Paganiniana</em></li>
+  <li><strong>Mozart</strong>: <em>Symphony No. 41</em> (“Jupiter”)</li>
+</ul>
 
----
- scripts/hulk.js                    |  4 ++--
- src/diff2html.js                   |  3 +--
- src/file-list-printer.js           | 11 ++++++++---
- src/hoganjs-utils.js               | 29 +++++++++++++++++------------
- src/html-printer.js                |  6 ++++++
- src/line-by-line-printer.js        |  6 +++++-
- src/side-by-side-printer.js        |  6 +++++-
- test/file-list-printer-tests.js    |  2 +-
- test/hogan-cache-tests.js          | 18 +++++++++++++++---
- test/line-by-line-tests.js         |  3 +--
- test/side-by-side-printer-tests.js |  3 +--
- 11 files changed, 62 insertions(+), 29 deletions(-)
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
 
-diff --git a/scripts/hulk.js b/scripts/hulk.js
-index 5a793c18..a4b1a4d5 100755
---- a/scripts/hulk.js
-+++ b/scripts/hulk.js
-@@ -173,11 +173,11 @@ function namespace(name) {
- // write a template foreach file that matches template extension
- templates = extractFiles(options.argv.remain)
-   .map(function(file) {
--    var openedFile = fs.readFileSync(file, 'utf-8');
-+    var openedFile = fs.readFileSync(file, 'utf-8').trim();
-     var name;
-     if (!openedFile) return;
-     name = namespace(path.basename(file).replace(/\..*$/, ''));
--    openedFile = removeByteOrderMark(openedFile.trim());
-+    openedFile = removeByteOrderMark(openedFile);
-     openedFile = wrap(file, name, openedFile);
-     if (!options.outputdir) return openedFile;
-     fs.writeFileSync(path.join(options.outputdir, name + '.js')
-diff --git a/src/diff2html.js b/src/diff2html.js
-index 21b0119e..64e138f5 100644
---- a/src/diff2html.js
-+++ b/src/diff2html.js
-@@ -7,7 +7,6 @@
+<h3 id="thompson-to-see-the-sky">Thompson: <em>To See the Sky</em></h3>
 
- (function() {
-   var diffParser = require('./diff-parser.js').DiffParser;
--  var fileLister = require('./file-list-printer.js').FileListPrinter;
-   var htmlPrinter = require('./html-printer.js').HtmlPrinter;
+<p>The night started with a new piece for the Chicago Symphony. I have not heard much of Thompson’s work, but I have heard some of the music that influenced his writing—especially Terence Blanchard’s <em>Fire Shut Up in My Bones</em>. What inspired me about Blanchard’s opera is the way it brings jazz and new tonalities into a setting that traditionally conforms to the norm. When I saw <em>Fire Shut Up in My Bones</em>, I could almost imagine the kind of shocking reaction <em>The Rite of Spring</em> provoked at its premiere (this kind of edge is standard for some contemporary works at the Lyric Opera House). Thompson’s piece brought a similar excitement into the concert hall.</p>
 
-   function Diff2Html() {
-@@ -43,7 +42,7 @@
+<p>At points, I felt hints of Duke Ellington’s <em>Black, Brown, and Beige</em> in the writing, particularly in the use of the brass section. There was also a section that made me appreciate the often overlooked percussion of the CSO—absolutely hypnotizing rhythms. It was a great opener, and I’m curious to dig into more of Thompson’s work. During the performance I also couldn’t help noticing the markings Jaap van Zweden added to his score (photo below); even the greatest artists mark their music.</p>
 
-     var fileList = '';
-     if (configOrEmpty.showFiles === true) {
--      fileList = fileLister.generateFileList(diffJson, configOrEmpty);
-+      fileList = htmlPrinter.generateFileListSummary(diffJson, configOrEmpty);
-     }
+<h3 id="bruch-violin-concerto-no-1">Bruch: <em>Violin Concerto No. 1</em></h3>
 
-     var diffOutput = '';
-diff --git a/src/file-list-printer.js b/src/file-list-printer.js
-index e408d9b2..1e0a2c61 100644
---- a/src/file-list-printer.js
-+++ b/src/file-list-printer.js
-@@ -8,11 +8,16 @@
- (function() {
-   var printerUtils = require('./printer-utils.js').PrinterUtils;
+<p>The next item on the program was the iconic Bruch Violin Concerto No. 1. Bruch wrote three violin concertos, but this one is the most played. Aside: I recommend giving No. 2 a chance—it was often championed by golden-age violinists. This staple in the violin repertoire is typically (and maybe unfortunately) seen as a student concerto alongside the Mendelssohn concerto. The melodies are something a listener of any genre can enjoy, but like much of Bruch’s music, there is an important ingredient of personality you have to add to make it sound distinct and convincing.</p>
 
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var baseTemplatesPath = 'file-summary';
-   var iconsBaseTemplatesPath = 'icon';
+<p>Himari performed the concerto flawlessly and had excellent command of her sound; she even used some fingerings I found creatively chosen to deliver different colors. Still, I have to agree with some critics who suggested it was a rather boring performance. It hardly showcased Himari’s virtuosity and left less room for her to interpret the piece. When it ended, I caught myself thinking, “What was all the hype about?” I’ve seen many pre-college Juilliard students perform this concerto at a similar technical level.</p>
 
--  function FileListPrinter() {
-+  function FileListPrinter(config) {
-+    this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
+<h3 id="encore-milstein--paganiniana">Encore: Milstein — <em>Paganiniana</em></h3>
 
-   FileListPrinter.prototype.generateFileList = function(diffFiles) {
-@@ -38,5 +43,5 @@
-     });
-   };
+<p>My thoughts were completely overturned when Himari came back and started to play Milstein’s <em>Paganiniana</em> as an encore. When she began with the riff from Paganini’s Caprice No. 24, I was excited (I have learned that piece, and it is incredibly challenging technically). My excitement multiplied when I realized it was Milstein’s iconic showpiece. At the age of 14, being able to perform this with such precision is breathtaking. Beyond the technical prowess, I was taken by the colors and details Himari added.</p>
 
--  module.exports.FileListPrinter = new FileListPrinter();
-+  module.exports.FileListPrinter = FileListPrinter;
- })();
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 9949e5fa..0dda08d7 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -8,18 +8,19 @@
- (function() {
-   var fs = require('fs');
-   var path = require('path');
--
-   var hogan = require('hogan.js');
+<p>It made me realize the CSO did her a disservice by programming Bruch. She needs time to develop a closer connection with a piece everyone has heard—there has to be a “secret element” added to make it personal. When I left the concert hall, I saw that she’ll be playing Prokofiev’s Violin Concerto No. 2 in G minor, Op. 63 (with the legendary Joe Hisaishi) and Sibelius’s Violin Concerto in D minor, Op. 47 later this year. Having that repertoire in your fingers is no joke, and I couldn’t help wondering what those concertos would have sounded like that night. Ultimately, even if the general consensus was that the Bruch concerto was a little dull, Himari is incredibly talented, and I hope she continues to develop. I would be interested in hearing how her Bruch sounds 5, 10, and even 20 years from now.</p>
 
-   var hoganTemplates = require('./templates/diff2html-templates.js');
+<h3 id="mozart-symphony-no-41-jupiter">Mozart: <em>Symphony No. 41</em> (“Jupiter”)</h3>
 
--  var templatesPath = path.resolve(__dirname, 'templates');
-+  var extraTemplates;
+<p>The second half of the concert was dedicated to Mozart’s <em>Jupiter</em> Symphony. I thought the symphony was executed excellently. Jaap van Zweden has quite a reputation, and I thought he delivered exactly the sound he wanted from the CSO. I was particularly impressed by the timbre of the flute—it almost sounded as if the principal flutist was playing on a wooden flute. The dynamic and colorful string sections are a staple of any concert with van Zweden conducting; his previous career as a violinist must have given him acute attention to how the strings should sound, and they gave him exactly what he wanted.</p>
 
--  function HoganJsUtils() {
-+  function HoganJsUtils(configuration) {
-+    this.config = configuration || {};
-+    extraTemplates = this.config.templates || {};
-   }
+<p>Aside: earlier that week, before the Time for Three concert, I went to the CSO gift shop and saw someone who looked incredibly like Jaap van Zweden. We exchanged a look for a couple of seconds because I could not believe the resemblance. I completely forgot that he would be in town. That person was, in fact, Jaap.</p>
 
--  HoganJsUtils.prototype.render = function(namespace, view, params, configuration) {
--    var template = this.template(namespace, view, configuration);
-+  HoganJsUtils.prototype.render = function(namespace, view, params) {
-+    var template = this.template(namespace, view);
-     if (template) {
-       return template.render(params);
-     }
-@@ -27,17 +28,16 @@
-     return null;
-   };
+<h2 id="photos--video-optional">Photos / video (optional)</h2>
 
--  HoganJsUtils.prototype.template = function(namespace, view, configuration) {
--    var config = configuration || {};
-+  HoganJsUtils.prototype.template = function(namespace, view) {
-     var templateKey = this._templateKey(namespace, view);
+<div class="row">
+  <div class="col-md-6">
+    
 
--    return this._getTemplate(templateKey, config);
-+    return this._getTemplate(templateKey);
-   };
 
--  HoganJsUtils.prototype._getTemplate = function(templateKey, config) {
-+  HoganJsUtils.prototype._getTemplate = function(templateKey) {
-     var template;
 
--    if (!config.noCache) {
-+    if (!this.config.noCache) {
-       template = this._readFromCache(templateKey);
-     }
 
-@@ -53,6 +53,7 @@
 
-     try {
-       if (fs.readFileSync) {
-+        var templatesPath = path.resolve(__dirname, 'templates');
-         var templatePath = path.join(templatesPath, templateKey);
-         var templateContent = fs.readFileSync(templatePath + '.mustache', 'utf8');
-         template = hogan.compile(templateContent);
-@@ -66,12 +67,16 @@
-   };
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/himari-performs-with-the-chicago-symphony-orchestra/vanzweden_score.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 520px;
+          
+          
+        " alt="Jaap van Zweden's score markings of Thompson's piece" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
-   HoganJsUtils.prototype._readFromCache = function(templateKey) {
--    return hoganTemplates[templateKey];
-+    return extraTemplates[templateKey] || hoganTemplates[templateKey];
-   };
+  
+    <figcaption class="caption">Jaap van Zweden’s score.</figcaption>
+  
+</figure>
 
-   HoganJsUtils.prototype._templateKey = function(namespace, view) {
-     return namespace + '-' + view;
-   };
+  </div>
+  <div class="col-md-6">
+    
 
--  module.exports.HoganJsUtils = new HoganJsUtils();
-+  HoganJsUtils.prototype.compile = function(templateStr) {
-+    return hogan.compile(templateStr);
-+  };
-+
-+  module.exports.HoganJsUtils = HoganJsUtils;
- })();
-diff --git a/src/html-printer.js b/src/html-printer.js
-index 585d5b66..13f83047 100644
---- a/src/html-printer.js
-+++ b/src/html-printer.js
-@@ -8,6 +8,7 @@
- (function() {
-   var LineByLinePrinter = require('./line-by-line-printer.js').LineByLinePrinter;
-   var SideBySidePrinter = require('./side-by-side-printer.js').SideBySidePrinter;
-+  var FileListPrinter = require('./file-list-printer.js').FileListPrinter;
 
-   function HtmlPrinter() {
-   }
-@@ -22,5 +23,10 @@
-     return sideBySidePrinter.generateSideBySideJsonHtml(diffFiles);
-   };
 
-+  HtmlPrinter.prototype.generateFileListSummary = function(diffJson, config) {
-+    var fileListPrinter = new FileListPrinter(config);
-+    return fileListPrinter.generateFileList(diffJson);
-+  };
-+
-   module.exports.HtmlPrinter = new HtmlPrinter();
- })();
-diff --git a/src/line-by-line-printer.js b/src/line-by-line-printer.js
-index b07eb53c..d230bedd 100644
---- a/src/line-by-line-printer.js
-+++ b/src/line-by-line-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
 
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'line-by-line';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -19,6 +20,9 @@
 
-   function LineByLinePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/himari-performs-with-the-chicago-symphony-orchestra/Himari_jaap.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 520px;
+          
+          
+        " alt="Himari with Jaap van Zweden following the Concerto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
-   LineByLinePrinter.prototype.makeFileDiffHtml = function(file, diffs) {
-diff --git a/src/side-by-side-printer.js b/src/side-by-side-printer.js
-index bbf1dc8d..5e3033b3 100644
---- a/src/side-by-side-printer.js
-+++ b/src/side-by-side-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
+  
+    <figcaption class="caption">Himari with Jaap van Zweden.</figcaption>
+  
+</figure>
 
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'side-by-side';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -26,6 +27,9 @@
+  </div>
+</div>
 
-   function SideBySidePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
+<h2 id="closing-thoughts">Closing thoughts</h2>
 
-   SideBySidePrinter.prototype.makeDiffHtml = function(file, diffs) {
-diff --git a/test/file-list-printer-tests.js b/test/file-list-printer-tests.js
-index a502a46f..60ea3208 100644
---- a/test/file-list-printer-tests.js
-+++ b/test/file-list-printer-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
+<p>This program left me with mixed feelings and a lot of curiosity. Thompson’s opener brought real excitement into the hall, the CSO sounded gorgeous in Mozart, and Himari’s <em>Paganiniana</em> encore was the moment that made me understand the hype. I’ll be paying close attention to how her interpretations deepen over time—especially in repertoire like Prokofiev and Sibelius.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Concert review of Himari with the Chicago Symphony Orchestra on Feb. 14, 2026.]]></summary></entry><entry><title type="html">No Prisoner Be: Joyce DiDonato and Time for Three</title><link href="https://jlguerraphd.github.io/blog/2026/no-prisoner-be-joyce-didonato-and-time-for-three/" rel="alternate" type="text/html" title="No Prisoner Be: Joyce DiDonato and Time for Three" /><published>2026-02-10T00:00:00-06:00</published><updated>2026-02-10T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/no-prisoner-be-joyce-didonato-and-time-for-three</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/no-prisoner-be-joyce-didonato-and-time-for-three/"><![CDATA[<p>Joyce DiDonato is the artist in residence at the Chicago Symphony, and Time for Three is a group I have been following for years because of their unique crossover between genres. I had to make the trip for these performers. When I bought the ticket, I only vaguely knew of Kevin Puts through the concerto he wrote for Time for Three, but had never listened to the song cycle that was to be performed that night. Puts is an accomplished composer who has won a Pulitzer Prize and a Grammy. The work is a song cycle set to the poetry of Emily Dickinson.</p>
 
--var fileListPrinter = require('../src/file-list-printer.js').FileListPrinter;
-+var fileListPrinter = new (require('../src/file-list-printer.js').FileListPrinter)();
+<h2 id="program">Program</h2>
 
- describe('FileListPrinter', function() {
-   describe('generateFileList', function() {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 190bf6f8..3bb754ac 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
+<ul>
+  <li><strong>Kevin Puts</strong>: <em>No Prisoner Be</em> — Song cycle on texts by Emily Dickinson</li>
+</ul>
 
--var HoganJsUtils = require('../src/hoganjs-utils.js').HoganJsUtils;
-+var HoganJsUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)();
- var diffParser = require('../src/diff-parser.js').DiffParser;
+<ol>
+  <li>They shut me up</li>
+  <li>I was the slightest in the House –</li>
+  <li>The Soul selects her own Society</li>
+  <li>Again – his voice is at the door –</li>
+  <li>Interlude No. 1</li>
+  <li>I dwell in Possibility</li>
+  <li>Because I could not stop for Death –</li>
+  <li>A bee I personally knew <em>(Bee Scherzo No. 1)</em></li>
+  <li>I Felt a Funeral</li>
+  <li>I reason, Earth is short –</li>
+  <li>A little Snow</li>
+  <li>I tie my Hat – I crease my Shawl</li>
+  <li>“Hope” is the thing</li>
+  <li>Interlude No. 2</li>
+  <li>The Props assist the House</li>
+  <li>There is a solitude of space</li>
+  <li>Could I but ride indefinite <em>(Bee Scherzo No. 2)</em></li>
+  <li>So set its Sun in Thee</li>
+  <li>Her face</li>
+  <li>Tell Her</li>
+  <li>His Feet are shod with Gauze – <em>(Bee Scherzo No. 3)</em></li>
+  <li>Wild Nights!</li>
+  <li>There is another sky</li>
+  <li>‘Tis true – They shut me in the Cold –</li>
+  <li>If I can stop one Heart from breaking <em>(On Praetorius “Lo How a Rose e’er Blooming”)</em></li>
+  <li>No Prisoner be –</li>
+</ol>
 
- describe('HoganJsUtils', function() {
-@@ -21,16 +21,28 @@ describe('HoganJsUtils', function() {
-       });
-       assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should render view without cache', function() {
-       var result = HoganJsUtils.render('generic', 'empty-diff', {
-         contentClass: 'd2h-code-line',
-         diffParser: diffParser
-       }, {noCache: true});
--      assert.equal(emptyDiffHtml + '\n', result);
-+      assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should return null if template is missing', function() {
--      var result = HoganJsUtils.render('generic', 'missing-template', {}, {noCache: true});
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)({noCache: true});
-+      var result = hoganUtils.render('generic', 'missing-template', {});
-       assert.equal(null, result);
-     });
-+
-+    it('should allow templates to be overridden', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+
-+      var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-diff --git a/test/line-by-line-tests.js b/test/line-by-line-tests.js
-index 1cd92073..8869b3df 100644
---- a/test/line-by-line-tests.js
-+++ b/test/line-by-line-tests.js
-@@ -14,7 +14,7 @@ describe('LineByLinePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
 
-       assert.equal(expected, fileHtml);
-     });
-@@ -422,7 +422,6 @@ describe('LineByLinePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                &lt;/tbody&gt;\n' +
-         '            &lt;/table&gt;\n' +
-         '        &lt;/div&gt;\n' +
-diff --git a/test/side-by-side-printer-tests.js b/test/side-by-side-printer-tests.js
-index 76625f8e..771daaa5 100644
---- a/test/side-by-side-printer-tests.js
-+++ b/test/side-by-side-printer-tests.js
-@@ -14,7 +14,7 @@ describe('SideBySidePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
+<p>The evening began with an interactive component where the ushers handed out paper and asked the audience to write down their own poem. I thought it was a nice exercise, even though my own poetry writing skills are awful. The venue took on a more contemporary approach: the Symphony Center stage was decorated with white fabric, lights, and a desk at the center. The opening number had Joyce appearing from the back of the hall and making her way onto the stage, with the lights going dark for a moment during her entrance. I appreciated this theatrical approach to the music. It felt like a staged, modern song cycle rather than a traditional recital.</p>
 
-       assert.equal(expectedRight, fileHtml.right);
-       assert.equal(expectedLeft, fileHtml.left);
-@@ -324,7 +324,6 @@ describe('SideBySidePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                    &lt;/tbody&gt;\n' +
-         '                &lt;/table&gt;\n' +
-         '            &lt;/div&gt;\n' +
+<p>Another point worth noting: Time for Three sings alongside Joyce while also playing their instruments, which made for a unique and layered color palette. I expected the show to be mostly a spotlight for the singer, but several Bee Scherzos were catchy and showcased the trio’s virtuosic capabilities. One of the violinists also switched to viola at key moments, and the darker C-string resonance was striking. I also appreciated the use of the “chop” bowing technique, which is not a sound you typically hear in classical music. Puts’ credentials felt well earned, and this piece made me appreciate the work of Emily Dickinson in a different light.</p>
 
-From f3cadb96677d0eb82fc2752dc3ffbf35ca9b5bdb Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sat, 15 Oct 2016 13:21:22 +0100
-Subject: [PATCH 2/2] Allow uncompiled templates
+<p>At the end of the concert, it turned out that Kevin Puts was in the audience — a surprise for the artists, who called him onto the stage for an encore of the piece. The encore turned into a sing-along, and it was an incredible experience, something that felt almost like a religious gathering. After the concert there was a meet and greet, which I happily attended. While waiting, someone in the crowd pulled off a marriage proposal, and amazingly, Time for Three came out and played along. The clip is below.</p>
 
----
- README.md                 |  3 +++
- src/hoganjs-utils.js      |  7 +++++++
- test/hogan-cache-tests.js | 24 +++++++++++++++++++++++-
- 3 files changed, 33 insertions(+), 1 deletion(-)
+<figure>
+  
+    <video src="/assets/img/blog/no-prisoner-be-joyce-didonato-and-time-for-three/time_for_three_wedding_proposal.mp4" class="img-fluid rounded z-depth-1 mx-auto d-block" width="720" height="auto" controls="" />
 
-diff --git a/README.md b/README.md
-index 132c8a28..46909f25 100644
---- a/README.md
-+++ b/README.md
-@@ -98,6 +98,9 @@ The HTML output accepts a Javascript object with configuration. Possible options
-   - `synchronisedScroll`: scroll both panes in side-by-side mode: `true` or `false`, default is `false`
-   - `matchWordsThreshold`: similarity threshold for word matching, default is 0.25
-   - `matchingMaxComparisons`: perform at most this much comparisons for line matching a block of changes, default is `2500`
-+  - `templates`: object with previously compiled templates to replace parts of the html
-+  - `rawTemplates`: object with raw not compiled templates to replace parts of the html
-+  &gt; For more information regarding the possible templates look into [src/templates](https://github.com/rtfpessoa/diff2html/tree/master/src/templates)
+  
+  
+    <figcaption class="caption">Time for Three at the meet and greet playing music for a marriage proposal.</figcaption>
+  
+</figure>
 
- ## Diff2HtmlUI Helper
+<p>Although this was not part of the concert itself, I appreciated the chance to hear the group perform so spontaneously and up close. As a violinist, I know how incredibly difficult it is to keep that level of ensemble cohesion in the moment. The audience went wild and poured support to the newly engaged couple.</p>
 
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 0dda08d7..b2e9c275 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -17,6 +17,13 @@
-   function HoganJsUtils(configuration) {
-     this.config = configuration || {};
-     extraTemplates = this.config.templates || {};
-+
-+    var rawTemplates = this.config.rawTemplates || {};
-+    for (var templateName in rawTemplates) {
-+      if (rawTemplates.hasOwnProperty(templateName)) {
-+        if (!extraTemplates[templateName]) extraTemplates[templateName] = this.compile(rawTemplates[templateName]);
-+      }
-+    }
-   }
+<p>Following the proposal, I got to meet Time for Three, Kevin Puts, and Joyce DiDonato. All of them were generous and radiated passion for music. My conversation with Kevin centered on how he decided between violin and viola in certain sections, which came down to the choice of using a C string for its resonance. Although he is a pianist by training, I was genuinely impressed by this — it had never occurred to me that this was a decision worth deliberating. Talking to Joyce, I most appreciated her humility: she said it looks much harder than it is to sing what she performed.</p>
 
-   HoganJsUtils.prototype.render = function(namespace, view, params) {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 3bb754ac..a34839c0 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -36,7 +36,7 @@ describe('HoganJsUtils', function() {
-       assert.equal(null, result);
-     });
+<div class="row">
+  <div class="col-md-6">
+    
 
--    it('should allow templates to be overridden', function() {
-+    it('should allow templates to be overridden with compiled templates', function() {
-       var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
 
-       var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-@@ -44,5 +44,27 @@ describe('HoganJsUtils', function() {
-       var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-       assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-     });
-+
-+    it('should allow templates to be overridden with uncompiled templates', function() {
-+      var emptyDiffTemplate = '&lt;p&gt;&lt;/p&gt;';
-+
-+      var config = {rawTemplates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-+
-+    it('should allow templates to be overridden giving priority to compiled templates', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+      var emptyDiffTemplateUncompiled = '&lt;p&gt;Not used!&lt;/p&gt;';
-+
-+      var config = {
-+        templates: {'generic-empty-diff': emptyDiffTemplate},
-+        rawTemplates: {'generic-empty-diff': emptyDiffTemplateUncompiled}
-+      };
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is how you can display code diffs]]></summary></entry><entry><title type="html">a post with advanced image components</title><link href="https://jlguerraphd.github.io/blog/2024/advanced-images/" rel="alternate" type="text/html" title="a post with advanced image components"/><published>2024-01-27T11:46:00+00:00</published><updated>2024-01-27T11:46:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/advanced-images</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/advanced-images/"><![CDATA[<p>This is an example post with advanced image components.</p> <h2 id="image-slider">Image Slider</h2> <p>This is a simple image slider. It uses the <a href="https://swiperjs.com/">Swiper</a> library. Check the <a href="https://swiperjs.com/demos">examples page</a> for more information of what you can achieve with it.</p> <swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true"> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/9-480.webp 480w,/assets/img/9-800.webp 800w,/assets/img/9-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/9.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/8-480.webp 480w,/assets/img/8-800.webp 800w,/assets/img/8-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/8.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/10-480.webp 480w,/assets/img/10-800.webp 800w,/assets/img/10-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/10.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/12-480.webp 480w,/assets/img/12-800.webp 800w,/assets/img/12-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/12.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> </swiper-container> <h2 id="image-comparison-slider">Image Comparison Slider</h2> <p>This is a simple image comparison slider. It uses the <a href="https://img-comparison-slider.sneas.io/">img-comparison-slider</a> library. Check the <a href="https://img-comparison-slider.sneas.io/examples.html">examples page</a> for more information of what you can achieve with it.</p> <img-comparison-slider> <figure slot="first"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/prof_pic.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <figure slot="second"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic_color-480.webp 480w,/assets/img/prof_pic_color-800.webp 800w,/assets/img/prof_pic_color-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/prof_pic_color.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </img-comparison-slider>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="images"/><summary type="html"><![CDATA[this is what advanced image components could look like]]></summary></entry><entry><title type="html">a post with vega lite</title><link href="https://jlguerraphd.github.io/blog/2024/vega-lite/" rel="alternate" type="text/html" title="a post with vega lite"/><published>2024-01-27T00:20:00+00:00</published><updated>2024-01-27T00:20:00+00:00</updated><id>https://jlguerraphd.github.io/blog/2024/vega-lite</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2024/vega-lite/"><![CDATA[<p>This is an example post with some <a href="https://vega.github.io/vega-lite/">vega lite</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">vega_lite
-</span><span class="sb">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-vega_lite">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/no-prisoner-be-joyce-didonato-and-time-for-three/no-prisoner-be-joyce-didonato-and-time-for-three.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 520px;
+          
+          
+        " alt="Joyce DiDonato and Time for Three performance" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Joyce DiDonato, Time for Three, and Kevin Puts.</figcaption>
+  
+</figure>
+
+  </div>
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/no-prisoner-be-joyce-didonato-and-time-for-three/joyce-jose.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" width="100%" height="auto" style="
+          
+          
+          
+            max-width: 520px;
+          
+          
+        " alt="Jose with Joyce DiDonato" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Post-concert photo with Joyce DiDonato.</figcaption>
+  
+</figure>
+
+  </div>
+</div>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>This was an extraordinary evening where I got to experience a completely novel color palette and composition. The cherry on top was being able to interact with the artists and feel their passion for the work that they presented.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Concert Review of Joyce DiDonato and Time for Three on Feb. 10 at the Chicago Symphony Center.]]></summary></entry><entry><title type="html">Bag of Words</title><link href="https://jlguerraphd.github.io/blog/2026/bag-of-words/" rel="alternate" type="text/html" title="Bag of Words" /><published>2026-02-09T00:00:00-06:00</published><updated>2026-02-09T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/bag-of-words</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/bag-of-words/"><![CDATA[<p>This post reviews a homework assignment in which I used a Bag of Words model to analyze 28 scientific papers. By converting each document into a vector representation, I tested whether a simple NLP pipeline could recover meaningful scientific subtopics from the corpus.</p>
+
+<p>Bag of Words is one of the earliest and most influential vector space approaches in natural language processing. While it lacks the sophistication of modern language models, it provides an interpretable foundation for understanding how text can be represented numerically and compared across documents. I present this analysis as an introduction to computational text representation and the broader ideas it motivates.</p>
+
+<div class="card my-4">
+  <div class="card-body">
+    <div class="text-muted small mb-3">At a glance</div>
+    <div class="row text-center">
+      <div class="col-6 col-md-3 mb-3 mb-md-0">
+        <div class="text-muted small">Corpus</div>
+        <div class="h5 mb-0">28 papers</div>
+      </div>
+      <div class="col-6 col-md-3 mb-3 mb-md-0">
+        <div class="text-muted small">Methods</div>
+        <div class="h5 mb-0">BoW + TF-IDF</div>
+      </div>
+      <div class="col-6 col-md-3 mb-3 mb-md-0">
+        <div class="text-muted small">Embeddings</div>
+        <div class="h5 mb-0">PCA, UMAP</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="text-muted small">Best cosine pair</div>
+        <div class="h5 mb-0">0.6177</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="overview">Overview</h2>
+
+<h3 id="1-preprocessing-and-vectorization">1) Preprocessing and vectorization</h3>
+
+<ul>
+  <li>lowercase conversion</li>
+  <li>punctuation removal</li>
+  <li>whitespace token splitting</li>
+  <li>term-document matrix construction</li>
+</ul>
+
+<p>From the raw count matrix (X), I computed TF-IDF:</p>
+
+\[T_{d,t}
+=
+\frac{X_{d,t}}{\sum_{t'} X_{d,t'}}
+\cdot
+\log\left(
+\frac{N}{
+\sum_{d'} \mathbf{1}[X_{d',t} &gt; 0]
 }
-</code></pre> <p>This plot supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included vega lite code could look like]]></summary></entry></feed>
+\right)\]
+
+<p>Then each document vector was L2-normalized.</p>
+
+<h3 id="2-dimensionality-reduction-and-similarity">2) Dimensionality reduction and similarity</h3>
+
+<ul>
+  <li>PCA on normalized TF-IDF vectors</li>
+  <li>UMAP with cosine distance (<code class="language-plaintext highlighter-rouge">n_neighbors=5</code>, <code class="language-plaintext highlighter-rouge">min_dist=0.1</code>)</li>
+  <li>cosine similarity matrix + hierarchical ordering using distance (1 - \cos(i,j))</li>
+</ul>
+
+<h2 id="main-findings">Main findings</h2>
+
+<ul>
+  <li>papers with similar subtopics tended to group together</li>
+  <li>the first three PCA components explained <code class="language-plaintext highlighter-rouge">0.106</code>, <code class="language-plaintext highlighter-rouge">0.100</code>, and <code class="language-plaintext highlighter-rouge">0.095</code> of variance</li>
+  <li>PCA loadings reflected biologically meaningful terms (for example <code class="language-plaintext highlighter-rouge">tfh</code>, <code class="language-plaintext highlighter-rouge">gc</code>, <code class="language-plaintext highlighter-rouge">germinal</code>, <code class="language-plaintext highlighter-rouge">follicular</code>)</li>
+  <li>UMAP revealed groupings not visible in the PCA projection</li>
+  <li>the cosine clustermap was consistent with those grouping patterns</li>
+</ul>
+
+<div class="row">
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/pca.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="PCA projection of TF-IDF vectors colored by immunology subtopic" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">PCA projection of normalized TF-IDF vectors. Subtopic structure is partially visible in linear space.</figcaption>
+  
+</figure>
+
+  </div>
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/umap_opt.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="UMAP embedding of TF-IDF vectors with cosine distance and tuned parameters" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">UMAP embedding (`n_neighbors=5`, `min_dist=0.1`) showing clearer nonlinear grouping by subtopic.</figcaption>
+  
+</figure>
+
+  </div>
+</div>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/clustermap.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Cosine similarity clustermap of document vectors ordered by hierarchical clustering" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Cosine similarity clustermap reordered by hierarchical clustering. Similar papers align in local blocks.</figcaption>
+  
+</figure>
+
+<div class="row">
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/umap_nn.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="UMAP parameter sweep over number of neighbors" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">UMAP hyperparameter sweep over `n_neighbors`.</figcaption>
+  
+</figure>
+
+  </div>
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/umap_dist.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="UMAP parameter sweep over minimum distance setting" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">UMAP hyperparameter sweep over `min_dist`.</figcaption>
+  
+</figure>
+
+  </div>
+</div>
+
+<h2 id="additional-comments">Additional comments</h2>
+
+<p>The utility of TF-IDF weighting and L2 normalization was a key part of this assignment.
+When I built the raw term-document matrix, the most frequent token was, unsurprisingly, <code class="language-plaintext highlighter-rouge">and</code>.</p>
+
+<p>This illustrates why raw counts alone can produce weak embeddings: high-frequency background tokens dominate the signal across nearly all documents.
+After TF-IDF weighting, high-weight terms shifted toward more domain-specific vocabulary such as <code class="language-plaintext highlighter-rouge">cgas</code>.</p>
+
+<div class="table-responsive my-3">
+  <table class="table table-sm table-striped table-bordered align-middle">
+    <caption class="caption-top">Top 10 most frequent tokens in the raw corpus</caption>
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Term</th>
+        <th scope="col">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>and</td><td>14573</td></tr>
+      <tr><td>2</td><td>of</td><td>13337</td></tr>
+      <tr><td>3</td><td>the</td><td>12363</td></tr>
+      <tr><td>4</td><td>in</td><td>10033</td></tr>
+      <tr><td>5</td><td>a</td><td>6960</td></tr>
+      <tr><td>6</td><td>to</td><td>6528</td></tr>
+      <tr><td>7</td><td>cells</td><td>6462</td></tr>
+      <tr><td>8</td><td>t</td><td>6120</td></tr>
+      <tr><td>9</td><td>al</td><td>5411</td></tr>
+      <tr><td>10</td><td>et</td><td>5343</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>The token <code class="language-plaintext highlighter-rouge">t</code> (rank 8) is likely an artifact of PDF extraction splitting hyphenated terms such as “T-cell” into <code class="language-plaintext highlighter-rouge">t</code> and <code class="language-plaintext highlighter-rouge">cell</code>.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/bag-of-words-cmsc-354-hw1/term_count_heatmap.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Term-document matrix heatmap showing sparse token occurrence across documents" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Term-Document Matrix. The figure shows whether or not a word appears in a given document.</figcaption>
+  
+</figure>
+
+<h2 id="nearest-neighbor-check">Nearest-neighbor check</h2>
+
+<div class="table-responsive my-3">
+  <table class="table table-sm table-striped table-bordered align-middle">
+    <caption class="caption-top">Closest document pair under cosine similarity of TF-IDF vectors</caption>
+    <tbody>
+      <tr><th scope="row">Query document</th><td>Doc 0</td></tr>
+      <tr><th scope="row">Nearest neighbor</th><td>Doc 6</td></tr>
+      <tr><th scope="row">Cosine similarity</th><td>0.6177</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive my-3">
+  <table class="table table-sm table-striped table-bordered align-middle">
+    <caption class="caption-top">Metadata for the closest document pair</caption>
+    <thead>
+      <tr>
+        <th scope="col">Doc</th>
+        <th scope="col">Title</th>
+        <th scope="col">Subtopic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>0</td><td>Molecular and cellular insights into T cell exhaustion.</td><td>T-cell exhaustion</td></tr>
+      <tr><td>6</td><td>Defining "T cell exhaustion".</td><td>T-cell exhaustion</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive my-3">
+  <table class="table table-sm table-striped table-bordered align-middle">
+    <caption class="caption-top">Top shared TF-IDF terms for Docs 0 and 6</caption>
+    <thead>
+      <tr>
+        <th scope="col">Term</th>
+        <th scope="col">Shared score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>exhausted</td><td>0.2281</td></tr>
+      <tr><td>exhaustion</td><td>0.1415</td></tr>
+      <tr><td>pd1</td><td>0.0550</td></tr>
+      <tr><td>pubmed</td><td>0.0462</td></tr>
+      <tr><td>manuscript</td><td>0.0460</td></tr>
+      <tr><td>author</td><td>0.0364</td></tr>
+      <tr><td>wherry</td><td>0.0048</td></tr>
+      <tr><td>tumour</td><td>0.0042</td></tr>
+      <tr><td>pmc</td><td>0.0035</td></tr>
+      <tr><td>progenitor</td><td>0.0029</td></tr>
+      <tr><td>tumours</td><td>0.0027</td></tr>
+      <tr><td>cd8</td><td>0.0020</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Several top shared terms (<code class="language-plaintext highlighter-rouge">pubmed</code>, <code class="language-plaintext highlighter-rouge">manuscript</code>, <code class="language-plaintext highlighter-rouge">author</code>, <code class="language-plaintext highlighter-rouge">pmc</code>) are metadata artifacts from PDF extraction. The cosine similarity of 0.6177 is therefore partially inflated by source noise rather than topic signal alone.</p>
+
+<details class="my-4">
+  <summary><strong>Supplementary: top PCA loading tables (PC1 / PC2 / PC3)</strong></summary>
+  <div class="mt-3">
+    <div class="table-responsive my-3">
+      <table class="table table-sm table-striped table-bordered align-middle">
+        <caption class="caption-top">PC1 top contributing terms (explained variance = 0.106)</caption>
+        <thead>
+          <tr><th scope="col">Term</th><th scope="col">Loading</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>gc</td><td>0.4543</td></tr>
+          <tr><td>tfh</td><td>0.2394</td></tr>
+          <tr><td>germinal</td><td>0.1579</td></tr>
+          <tr><td>org</td><td>0.1191</td></tr>
+          <tr><td>gcs</td><td>0.1136</td></tr>
+          <tr><td>lz</td><td>0.1119</td></tr>
+          <tr><td>follicular</td><td>0.1003</td></tr>
+          <tr><td>annualreviews</td><td>0.0984</td></tr>
+          <tr><td>dz</td><td>0.0959</td></tr>
+          <tr><td>https</td><td>0.0869</td></tr>
+          <tr><td>self-reactive</td><td>0.0822</td></tr>
+          <tr><td>pubmed</td><td>-0.2997</td></tr>
+          <tr><td>manuscript</td><td>-0.2147</td></tr>
+          <tr><td>autophagy</td><td>-0.2022</td></tr>
+          <tr><td>author</td><td>-0.1893</td></tr>
+          <tr><td>exhausted</td><td>-0.1622</td></tr>
+          <tr><td>exhaustion</td><td>-0.1589</td></tr>
+          <tr><td>deretic</td><td>-0.1132</td></tr>
+          <tr><td>tex</td><td>-0.0924</td></tr>
+          <tr><td>pd1</td><td>-0.0754</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-responsive my-3">
+      <table class="table table-sm table-striped table-bordered align-middle">
+        <caption class="caption-top">PC2 top contributing terms (explained variance = 0.100)</caption>
+        <thead>
+          <tr><th scope="col">Term</th><th scope="col">Loading</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>https</td><td>0.3579</td></tr>
+          <tr><td>org</td><td>0.3322</td></tr>
+          <tr><td>tex</td><td>0.1823</td></tr>
+          <tr><td>ammasome</td><td>0.1255</td></tr>
+          <tr><td>1038</td><td>0.0911</td></tr>
+          <tr><td>ammatory</td><td>0.0862</td></tr>
+          <tr><td>guest</td><td>0.0773</td></tr>
+          <tr><td>gc</td><td>-0.3272</td></tr>
+          <tr><td>pubmed</td><td>-0.3113</td></tr>
+          <tr><td>manuscript</td><td>-0.2155</td></tr>
+          <tr><td>author</td><td>-0.1884</td></tr>
+          <tr><td>germinal</td><td>-0.1300</td></tr>
+          <tr><td>autophagy</td><td>-0.1139</td></tr>
+          <tr><td>gcs</td><td>-0.1081</td></tr>
+          <tr><td>dz</td><td>-0.1043</td></tr>
+          <tr><td>lz</td><td>-0.1042</td></tr>
+          <tr><td>tfh</td><td>-0.0774</td></tr>
+          <tr><td>shm</td><td>-0.0714</td></tr>
+          <tr><td>deretic</td><td>-0.0667</td></tr>
+          <tr><td>bcr</td><td>-0.0653</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-muted small mt-n2 mb-3">Note: <code>ammasome</code> and <code>ammatory</code> appear to be truncated tokens from PDF extraction, likely fragments of <code>inflammasome</code> and <code>inflammatory</code>.</p>
+
+    <div class="table-responsive my-3">
+      <table class="table table-sm table-striped table-bordered align-middle">
+        <caption class="caption-top">PC3 top contributing terms (explained variance = 0.095)</caption>
+        <thead>
+          <tr><th scope="col">Term</th><th scope="col">Loading</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>tex</td><td>0.5089</td></tr>
+          <tr><td>exhaustion</td><td>0.3057</td></tr>
+          <tr><td>guest</td><td>0.2314</td></tr>
+          <tr><td>exhausted</td><td>0.1664</td></tr>
+          <tr><td>annualreviews</td><td>0.1507</td></tr>
+          <tr><td>iy37ch19-wherry</td><td>0.1199</td></tr>
+          <tr><td>pd-1</td><td>0.1158</td></tr>
+          <tr><td>cls</td><td>0.1157</td></tr>
+          <tr><td>arjats</td><td>0.1157</td></tr>
+          <tr><td>etal</td><td>0.1138</td></tr>
+          <tr><td>tmem</td><td>0.1073</td></tr>
+          <tr><td>teff</td><td>0.1057</td></tr>
+          <tr><td>downloaded</td><td>0.0997</td></tr>
+          <tr><td>2026</td><td>0.0997</td></tr>
+          <tr><td>www</td><td>0.0970</td></tr>
+          <tr><td>mon</td><td>0.0907</td></tr>
+          <tr><td>https</td><td>-0.2133</td></tr>
+          <tr><td>autophagy</td><td>-0.1412</td></tr>
+          <tr><td>org</td><td>-0.1320</td></tr>
+          <tr><td>cgas</td><td>-0.1191</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</details>
+
+<h2 id="limitations">Limitations</h2>
+
+<ul>
+  <li>preprocessing was intentionally simple, so metadata/noise leaked into features</li>
+  <li>tokens such as <code class="language-plaintext highlighter-rouge">annualreviews</code>, <code class="language-plaintext highlighter-rouge">https</code>, <code class="language-plaintext highlighter-rouge">pubmed</code>, and <code class="language-plaintext highlighter-rouge">author</code> appeared with large weights</li>
+  <li>BoW/TF-IDF ignores word order and deeper semantics</li>
+</ul>
+
+<h2 id="takeaway">Takeaway</h2>
+
+<p>Bag-of-Words + TF-IDF provided an interpretable baseline that partially recovered subtopic structure in this 28-paper corpus, though the results were strongly affected by simple preprocessing choices and residual PDF/source metadata.</p>]]></content><author><name></name></author><category term="science" /><category term="science" /><summary type="html"><![CDATA[Analyzing a 28-paper corpus with Bag-of-Words and TF-IDF to test whether a simple NLP pipeline can recover scientific subtopics.]]></summary></entry><entry><title type="html">AI Agents for Science Part 1</title><link href="https://jlguerraphd.github.io/blog/2026/ai-agents-in-science/" rel="alternate" type="text/html" title="AI Agents for Science Part 1" /><published>2026-02-08T00:00:00-06:00</published><updated>2026-02-08T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/ai-agents-in-science</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/ai-agents-in-science/"><![CDATA[<p>Large Language Models (LLMs) have reached research pipelines across the board. Colleagues and I use them to debug code, optimize workflows, and summarize papers. One colleague even managed to “vibe code” an iOS app with Claude. As a fifth-year graduate student in the 2025-2026 academic year, I felt it was important to stay current with rapidly evolving computational methods. Naturally, I enrolled in “CMSC 35370 1 AI Agents for Science,” taught by Professor Ian Foster. The course is still fresh in my mind, and fortunately the materials are publicly available at <a href="https://agents4science.github.io/">Agents4Science</a>.</p>
+
+<p>This will most likely be a series of posts where I summarize the course and reflect on some of my problem set solutions. I give a reduced version of my notes here since the slides are publicly available.</p>
+
+<h2 id="lecture-1-what-is-an-agent-and-overview-of-the-course">Lecture 1: What is an “Agent” and overview of the course.</h2>
+
+<p><em>The class was packed (not surprising), and many people were even sitting on the floor to attend the lecture.</em> The class started with a nice introduction to the purpose of the class, what an agent is, and why there is so much hype around the topic. The quick answer to the hype portion is that the rise of LLMs provides an engine to power these systems.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/ai-agents-in-science/ai4science_lecture1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Lecture slide: a simple perspective on an LLM in a loop with an objective" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">A simple perspective: an LLM in a loop with an objective (lecture slide).</figcaption>
+  
+</figure>
+
+<p>The meme Professor Foster provided humorously captured a common view at both ends of the spectrum: an agent is “just” an LLM placed in a loop to accomplish a task. However, when you look under the hood there could be many different ways that this “for loop” is constructed.</p>
+
+<p>An <em>agent</em> is more than a LLM that can answer questions. It is a system that:</p>
+
+<ol>
+  <li>Takes a state and goals</li>
+  <li>Sense: has the ability to observe its environment</li>
+  <li>Plan: figures out how to execute a goal</li>
+  <li>Act: has the ability to act in its environment</li>
+  <li>Learn: updates its state or goals based on actions</li>
+</ol>
+
+<p>This is the “for loop” Foster talks about in the lecture.</p>
+
+<h2 id="review-of-the-different-types-of-models">Review of the different types of models</h2>
+
+<p><em>Before getting into agents themselves, Foster briefly reviewed the evolution of machine learning models that made agentic systems possible.</em></p>
+
+<p>Traditional ML: A model of some kind (GNN, CNN,…) is trained to do a specific task. One model is typically trained for a specific modality. Requires a lot of supervision from a human.</p>
+
+<p>Foundation models (E.g. LLMs): A multi-modal model that can be adapted to many different tasks. It is typically pre-trained using self-supervised objectives on large, unlabeled datasets.</p>
+
+<p>Reasoning models: Use explicit multi-step reasoning and self-consistency checks to reduce errors. It is slower but usually more accurate.</p>
+
+<h2 id="agents-in-science-published-on-going-work-and-how-they-will-accelerate-science">Agents in Science published, on-going work, and how they will accelerate science</h2>
+
+<h4 id="agentic-discovery-loops-in-practice">Agentic discovery loops in practice</h4>
+
+<p>Since this was just the first lecture, we were given an overview of the current deployments of agents and what experts are looking to use them for. Professor Foster introduced a perspective paper, <a href="https://www.nature.com/articles/s41524-022-00765-z">Accelerating materials discovery using artificial intelligence, high performance computing and robotics</a>, where he uses their Fig.2 to show how a modern agentic system may work. It would have the ability to come up with a hypothesis, test it with an automated lab or deploy simulations (or both!), analyze the experiments, discuss the findings to make a discussion or update hypothesis, find gaps in the understanding, then reason.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/ai-agents-in-science/agent_perspective.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Figure 2 from the perspective paper showing technology-driven acceleration of the discovery cycle" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Figure 2 from 'Accelerating materials discovery using artificial intelligence, high performance computing and robotics' (Nature Computational Materials, 2022).</figcaption>
+  
+</figure>
+
+<h4 id="research-papers-as-agents">Research papers as agents</h4>
+
+<p>The next topic he mentioned was <a href="https://arxiv.org/pdf/2509.06917">Paper2Agent: Reimagining Research Papers as Interactive and Reliable AI Agents</a>. The point being that agents simplify the barrier to entry for scientists because we are able to communicate directly with them using human language. (Aside: I read over the Paper2Agent work and it is in fact exciting to see that agent was able to convert a paper into something that could be used to carry out research. In my field, this could be extremely useful for trying to use the latest papers to analyze trajectories.)</p>
+
+<h4 id="single-agent-vs-multi-agent-systems">Single-agent vs multi-agent systems</h4>
+
+<p>The debate between using one large, general-purpose model versus multiple smaller, specialized models was also raised. In regard to size of the model, I mean the number of parameters that the model has. If there was a large enough reasoning model, which Prof Foster compares to a human, might be able to carry out a whole task. However, in the agentic systems era we are in right now it is more common to have several agents with one specific task, such as idea generator and idea critic.</p>
+
+<p>The class concluded with a quick overview of the research being done at Argonne. I was particularly excited about the work of Arvind Ramanathan, who is trying to design antimicrobial peptides. Arvind gave a lecture later in the course, but the TLDR is that the agentic system has a link to data and the ability to use structure prediction software/physics-based simulations, has an evaluator, and they also linked it up to a real experimental setup.</p>
+
+<p>Foreshadowing: A certain Nvidia paper was not mentioned in this lecture…but it will turn out that smaller models are probably where agentic systems will start heading (<a href="https://arxiv.org/pdf/2506.02153">arXiv:2506.02153</a>). This idea is closely related to modern scaling laws, which describe (or try to describe) how model performance depends on the interplay between parameter count and the amount of training data. The implication is that there is a regime where smaller, well-trained models can be more efficient and effective. This is something that I think is cool!</p>]]></content><author><name></name></author><category term="science" /><category term="science" /><summary type="html"><![CDATA[Notes and comments from a course I took Fall 2025]]></summary></entry><entry><title type="html">Protein Docking…the old fashion way</title><link href="https://jlguerraphd.github.io/blog/2026/protein-docking-the-old-fashion-way/" rel="alternate" type="text/html" title="Protein Docking…the old fashion way" /><published>2026-02-08T00:00:00-06:00</published><updated>2026-02-08T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/protein-docking-the-old-fashion-way</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/protein-docking-the-old-fashion-way/"><![CDATA[<p>In this post, I revisit a project I worked on as an undergraduate for AMS 548: Optimization Techniques in Biomolecular Simulations at Stony Brook University, taught by Dima Kozakov, back in Spring of 2021. At the time, I was an ambitious undergraduate trying to fulfill requirements for a Chemistry minor alongside my Biochemistry degree, which meant taking a few courses outside my formal curriculum. While browsing options, this course immediately stood out.</p>
+
+<p>Dima is an excellent instructor and a leading researcher in protein-protein docking. His lab develops widely used docking software, so learning directly from someone with deep expertise in the field was both instructive and motivating. Upon doing this write-up, I learn he moved to UT Austin. Below is the official course description:</p>
+
+<div class="card my-4">
+  <div class="card-body">
+    <div class="text-muted small mb-2">Course description</div>
+    <p class="mb-0">
+      This practical hands-on course teaches basic techniques for building mathematical models, algorithms, and software for biomolecular simulations of macromolecular interactions. Topics include the basics of statistical mechanics and its connection to sampling algorithms; the origin of and approximations for molecular force computations; the geometry of molecular configuration search spaces and multidimensional optimization; and fundamentals of software development and high-performance computing (HPC). During the course, students develop a multiscale approach to modeling protein-protein interactions from the ground up.
+    </p>
+  </div>
+</div>
+
+<h2 id="preface">Preface</h2>
+
+<p>The course focused on state-of-the-art techniques as they existed in 2021. Fast Fourier Transform (FFT)-based methods for protein docking were already well established, but Kozakov’s innovation was the use of eigenvalue-eigenvector decompositions of pairwise interaction potentials. This reformulation allowed interaction terms to be evaluated efficiently using FFT-based correlations. In the PIPER framework, this effectively introduces a coarse-grained representation of the interaction energy landscape.</p>
+
+<p>Aside: this was a very different era, well before AlphaFold-based docking “hacks” and modern diffusion models changed the field. It raises the question: do fundamental physics-based approaches still matter for protein docking?…</p>
+
+<h2 id="the-project">The Project</h2>
+
+<p>For the course capstone, we worked with a deliberately simple model. The goal was to develop a program that performs Monte Carlo protein docking using rigid-body representations. While highly simplified, this setup forced us to confront the computational and physical challenges of docking, sampling, scoring, and optimization, without relying on black-box tools (or even LLMs during that time period).</p>
+
+<p>In hindsight, revisiting this project has been a useful reminder of how much insight you can gain from building things the “old-fashioned” way.</p>
+
+<h2 id="relevant-papers">Relevant Papers</h2>
+
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/prot.21117">PIPER: An FFT-based protein docking program with pairwise potentials</a></li>
+  <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.70066">Modeling Protein-Protein and Protein-Ligand Interactions by the ClusPro Team in CASP16</a></li>
+</ul>
+
+<h2 id="why-this-approach">Why this approach?</h2>
+
+<p>When I signed up for this course in November 2020, there wasn’t much buzz yet around AlphaFold, and the role of machine learning in biophysics still felt far away. With that context, it’s easy to overlook traditional docking, but physics-based scoring is still appealing because it’s built from explicit interaction terms rather than learned correlations. That said, these methods are limited by their assumptions (rigid bodies, simplified potentials) and by sampling: if the search can’t efficiently explore relevant configurations, the score won’t help. Recent work from the Kozakov/Vajda labs reflects this reality by combining generative models with more traditional approaches like molecular dynamics (MD) and the PIPER/ClusPro framework. A major concern for purely data driven models is out of distribution behavior when the models encounter interaction patterns that weren’t well represented in training.</p>
+
+<h2 id="notes--observations">Notes &amp; observations</h2>
+
+<h3 id="scoring-function">Scoring function</h3>
+
+<p>In this project, I implemented a simple Coulomb-like electrostatics term by looping over every receptor-ligand atom pair, reading each atom’s charge from the parameter set, and accumulating a score proportional to:</p>
+
+\[E_{\text{coul}} \propto \sum_{i \in R} \sum_{j \in L} \frac{q_i q_j}{d_{ij}^2}\]
+
+<p>I also computed energy gradients (with respect to atomic coordinates) to estimate the direction of the electrostatic force.</p>
+
+<p>For docking acceptance/rejection, I used Dima’s <code class="language-plaintext highlighter-rouge">complex_energy</code> routine (<code class="language-plaintext highlighter-rouge">energy.h</code>). It evaluates pairwise interactions and wraps them with basic clash/contact handling. That scalar score is what the Monte Carlo loop uses to accept or reject a proposed move.</p>
+
+<p>The pairwise potential term used there is:</p>
+
+\[E_{\text{pair}} =
+\sum_{i \in A^{*}} \sum_{j \in B^{*}}
+\mathbf{1}\!\left(r_1^2 \le d_{ij}^2 &lt; r_2^2\right)\, e_{ij}\]
+
+\[e_{ij} = \sum_{m=0}^{k-1} \lambda_m\, X_{m,s_i}\, X_{m,s_j}\]
+
+\[d_{ij}^2 = (x_i-x_j)^2 + (y_i-y_j)^2 + (z_i-z_j)^2,
+\qquad
+s_i = \operatorname{subatoms}(\mathrm{atom\_typen}_i)\]
+
+<p>Where:</p>
+
+<ul>
+  <li>$(r_1, r_2, k, \lambda_m, X)$ come from <code class="language-plaintext highlighter-rouge">prms</code> (<code class="language-plaintext highlighter-rouge">prms.h</code>).</li>
+  <li>$A^{<em>}$ and $B^{</em>}$ include all atoms unless <code class="language-plaintext highlighter-rouge">only_sab=1</code>, in which case only atoms with <code class="language-plaintext highlighter-rouge">sa != 0</code> are used.</li>
+  <li>This is the function declared as <code class="language-plaintext highlighter-rouge">pairwise_potential_energy(...)</code> in <code class="language-plaintext highlighter-rouge">energy.h</code>.</li>
+</ul>
+
+<p>In <code class="language-plaintext highlighter-rouge">complex_energy</code> (the one used in docking), this pairwise term is combined as:</p>
+
+\[E_{\text{complex}} =
+\begin{cases}
+20\,N_{\text{clash}}, &amp; N_{\text{clash}} \ge 15 \\
+E_{\text{pair}} - 0.1\,N_{\text{contact}}, &amp; N_{\text{clash}} &lt; 15
+\end{cases}\]
+
+<p>Note: PIPER accelerates these pairwise potentials via an eigenvalue decomposition and FFT-based correlations, but our course project did not implement that acceleration; we evaluated the pairwise term directly.</p>
+
+<p>The assignment had a couple of parts (I do not have the exact prompt, but this is what I remember):</p>
+
+<ol>
+  <li><strong>Q1a.</strong> Compute the center-of-mass (CoM) shift vector between receptor and ligand, translate one structure by half that shift, and write the translated structure to file.</li>
+  <li><strong>Q1b.</strong> Compute the total Coulombic interaction energy between receptor and ligand atoms using charges from the parameter file.</li>
+  <li><strong>Q1c.</strong> Compute the analytic gradient of the Coulombic energy with respect to Cartesian coordinates $(F_x, F_y, F_z)$.</li>
+  <li><strong>Q1d.</strong> Compute the same gradient numerically using finite differences $(\Delta = 0.01)$ and compare against Q1c.</li>
+  <li><strong>Q1e.</strong> Iteratively translate a structure and report how Coulombic energy changes as CoM distance changes.</li>
+  <li><strong>Q2a.</strong> Estimate $\pi$ with a Monte Carlo simulation.</li>
+  <li><strong>Q2b.</strong> Use a 1D Metropolis Monte Carlo method to minimize the toy energy function:</li>
+</ol>
+
+\[f(x) = \left(-0.5x^2 - 0.5x - 0.3\right)e^{-|x|} + 0.01x^2\]
+
+<ol>
+  <li><strong>Q2c.</strong> Perform rigid-body protein-ligand docking with Metropolis Monte Carlo using <code class="language-plaintext highlighter-rouge">complex_energy</code>, save accepted poses, and report the final complex energy.</li>
+</ol>
+
+<h3 id="outputs">Outputs</h3>
+
+<div class="row">
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/distance_vs_e_energy.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Plot of Coulombic energy versus receptor-ligand center-of-mass distance" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Coulombic energy vs receptor-ligand center-of-mass distance (Q1e).</figcaption>
+  
+</figure>
+
+  </div>
+  <div class="col-md-6">
+    
+
+
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/dock_energy_mc.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Plot of complex energy over Monte Carlo docking moves" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Complex energy over Monte Carlo docking moves (Q2c).</figcaption>
+  
+</figure>
+
+  </div>
+</div>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/protein-docking-the-old-fashion-way/mc_protein_docking.gif" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Animated GIF of rigid-body protein docking trajectory frames" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Rigid-body docking trajectory (sampled frames).</figcaption>
+  
+</figure>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>It has been a while since I looked back on this project and reviewing the papers on protein docking. I was aware of the use of AlphaFold based methods for protein docking but it was nice to see that the Kozakov/Vajda labs use it alongside their physics methods. It seems that the work that has been done to carefully study the interactions of atoms still will be useful when it comes to predicting complexes espcially in the case where there is a lack of information in the dataset.</p>]]></content><author><name></name></author><category term="science" /><category term="science" /><summary type="html"><![CDATA[Revisiting a project from my undergraduate years.]]></summary></entry><entry><title type="html">Budapest Festival Orchestra on Feb. 6 at Carnegie Hall</title><link href="https://jlguerraphd.github.io/blog/2026/budapest-festival-orchestra-at-carnegie-hall/" rel="alternate" type="text/html" title="Budapest Festival Orchestra on Feb. 6 at Carnegie Hall" /><published>2026-02-06T00:00:00-06:00</published><updated>2026-02-06T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/budapest-festival-orchestra-at-carnegie-hall</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/budapest-festival-orchestra-at-carnegie-hall/"><![CDATA[<p>“How do you get to Carnegie Hall?…Practice, practice, practice!”</p>
+
+<p>The Budapest Festival Orchestra (BFO), under the baton of Iván Fischer, and Maxim Vengerov clearly practiced.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/budapest-festival-orchestra/maxim-vengerov.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Exterior photo of Carnegie Hall before the Budapest Festival Orchestra concert" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Carnegie Hall after the Budapest Festival Orchestra performance.</figcaption>
+  
+</figure>
+
+<h2 id="program">Program</h2>
+
+<ul>
+  <li><strong>Arvo Pärt</strong>: <em>Summa</em> (1977)</li>
+  <li><strong>Tchaikovsky</strong>: <em>Violin Concerto in D major</em>, Op. 35 (1878)</li>
+  <li><strong>Vengerov encore</strong>: Bach — <em>Sonata No. 1 in G minor</em>, Adagio</li>
+  <li><strong>Brahms</strong>: <em>Symphony No. 2 in D major</em>, Op. 73 (1877)</li>
+  <li><strong>Encore</strong>: Hungarian folk songs</li>
+</ul>
+
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
+
+<h3 id="arvo-pärt-summa-1977">Arvo Pärt: <em>Summa</em> (1977)</h3>
+
+<p>The opening piece featured the BFO musicians without their instruments, singing Pärt’s <em>Summa</em>, originally composed as a choral work. His “tintinnabuli” style is something I think a lot of people could get bored of, but I enjoyed it as a short opener. (Aside: try composing in this style and make it sound good…it’s hard). It created an intimate connection between the musicians, and you could tell it took them out of their comfort zones in a good way. In any case, I think minimalism has a place in the concert hall.</p>
+
+<h3 id="tchaikovsky-violin-concerto-in-d-major-op-35-1878">Tchaikovsky: <em>Violin Concerto in D major</em>, Op. 35 (1878)</h3>
+
+<p>The highlight of the night for me, and honestly the reason I bought the ticket, was hearing Vengerov perform the iconic Tchaikovsky Violin Concerto. The concerto has a bit of performance history attached to it (including the <a href="https://en.tchaikovsky-research.net/pages/Leopold_Auer">whole dedication drama</a>), and it’s hard not to come in with strong expectations. Vengerov’s interpretation was phenomenal. He had incredible command over his tone and the colors he produced. The first movement really showcased the ensemble’s ability to accommodate tempo changes from the soloist, and Fischer did a great job balancing the orchestra so the soloist never got covered. When the big tuttis hit, it was honestly thrilling to hear the full range of the orchestra open up.</p>
+
+<p>I’ve heard this concerto many times, by some of the greatest violinists (Hadelich, Hahn, Shaham, and Bell) with the NY Phil, Chicago Symphony, and the Mostly Mozart Festival Orchestra. I never expected to be this impressed by the orchestra itself, but I was. One thing worth mentioning: this was the first time I heard it with the traditional German-style orchestral seating. In America, the cellos are often seated across from the first violins, but here the cellos were much more front-and-center. And it actually makes a difference. It felt like listening to a new mix of a song, I could hear things in the concerto I honestly never noticed before. The lower strings sat in the texture differently, and it was really satisfying to hear how that whole section fits into the broader context of the piece (same thing goes for the bass parts).</p>
+
+<p>The second movement highlighted Vengerov’s ability to produce a silky, delicate sound without losing presence. Then the finale was just incredible. I loved the suspense at the opening—Vengerov used silence in a way that really built tension. The ad-lib moment at the start of the 3rd movement is one of the places where a violinist’s character can shine, and he showed he could feel the room. He knew exactly how long to let it sit before going for it. If I’m being honest, there were a couple minor intonation issues and a few spots where the ensemble had to catch up, but I’m not picky about intonation (you probably could tell from my own violin playing…), and none of it took away from the experience. It was one of the most fun Tchaikovsky concerto performances I’ve seen. I wasn’t bored for a second.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/budapest-festival-orchestra/carnegie-hall.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Photo of Maxim Vengerov performing at Carnegie Hall" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">Maxim Vengerov at Carnegie Hall.</figcaption>
+  
+</figure>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/budapest-festival-orchestra/tchaikovsky_violin_3rdmvt.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Tchaikovsky violin concerto (third movement excerpt)" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">A small excerpt from the 3rd movement. This is the composer's holograph manuscript</figcaption>
+  
+</figure>
+
+<p><strong>Source:</strong> <a href="https://s9.imslp.org/files/imglnks/usimg/e/e5/IMSLP608987-PMLP3312-tchaikovsky-35-1.pdf">Tchaikovsky Violin Concerto autograph manuscript (IMSLP PDF)</a></p>
+
+<h3 id="vengerov-encore-bach--sonata-no-1-in-g-minor-adagio">Vengerov encore: Bach — <em>Sonata No. 1 in G minor</em>, Adagio</h3>
+
+<p>After the virtuosic tour of the Tchaikovsky, Vengerov completely shifted the room with an intimate Bach Adagio. I’ve heard this movement performed several times, but it’s never really the same piece twice—every performer brings their own connection to Bach. Vengerov outlined the different voices carefully and thoughtfully, and there were moments where I was genuinely convinced another violin must be playing with him. The way he balanced the lines was impressive, and it was obvious he had thought through even the smallest details, like arpeggiating a chord in one spot versus letting it speak as a full block. It was played faster than I prefer but the interpretation was satisfying.</p>
+
+<h3 id="brahms-symphony-no-2-in-d-major-op-73-1877">Brahms: <em>Symphony No. 2 in D major</em>, Op. 73 (1877)</h3>
+
+<p>By intermission, I honestly debated leaving. I had arrived the morning before on a 6 a.m. flight and was running on very little sleep, and the thought of another 50 minutes of a Brahms symphony was not especially enticing. But it was worth staying and I didn’t fall asleep. I was impressed by how passionately the musicians played, particularly in the final coda, where it felt as though they were truly giving everything they had left. The brass section was exceptional. While this isn’t my favorite Brahms symphony, like any Brahms work it highlights an orchestra’s ability to turn a large symphonic composition into something almost chamber-like, where individual instruments must blend to create a refined interpretation.</p>
+
+<p>Note: I have also heard the CSO performed this Symphony after the Dvorak Violin Concert (Hadelich).</p>
+
+<h3 id="encore-hungarian-folk-songs">Encore: Hungarian folk songs</h3>
+
+<p>Normally a concert ends after the symphony, but it was such a treat to get one more encore: three members of the orchestra (violin, viola, and bass) stepped into the spotlight and shared a set of Hungarian folk songs. They played a series of tunes and even had the audience clapping along. It was genuinely charming and it was nice to leave having heard something completely new.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Reflections from an evening with the Budapest Festival Orchestra (BFO), Iván Fischer, and Maxim Vengerov at Carnegie Hall.]]></summary></entry><entry><title type="html">The Knights on Feb. 5 at Zankel Hall</title><link href="https://jlguerraphd.github.io/blog/2026/the-knights-at-zankel-hall/" rel="alternate" type="text/html" title="The Knights on Feb. 5 at Zankel Hall" /><published>2026-02-05T00:00:00-06:00</published><updated>2026-02-05T00:00:00-06:00</updated><id>https://jlguerraphd.github.io/blog/2026/the-knights-at-zankel-hall</id><content type="html" xml:base="https://jlguerraphd.github.io/blog/2026/the-knights-at-zankel-hall/"><![CDATA[<p>I arrived in New York City at 9 a.m. after a 6 a.m. flight from Chicago. I spent the day working from home, attending lab meeting, and coding. In the middle of all that, I wondered when I would next hear the Mendelssohn Octet live. By coincidence, The Knights were playing it that night at Carnegie Hall’s Zankel Hall. I had to go.</p>
+
+<h2 id="program">Program</h2>
+
+<ul>
+  <li><strong>Haydn</strong>: <em>Symphony No. 8 in G Major, “Le soir”</em></li>
+  <li><strong>Osvaldo Golijov</strong>: <em>Ever Yours</em> (2022, New York Premiere)</li>
+  <li><strong>Arvo Pärt</strong>: <em>In spe</em> (2010)</li>
+  <li><strong>Mendelssohn</strong>: <em>Octet in E-flat Major</em>, Op. 20 (1825)</li>
+</ul>
+
+<h2 id="notes--reactions">Notes &amp; reactions</h2>
+
+<h3 id="haydn-symphony-no-8-in-g-major-le-soir">Haydn: <em>Symphony No. 8 in G Major, “Le soir”</em></h3>
+
+<p>The concert opened with a beautifully executed Haydn symphony. The final movement, “La tempesta: Presto,” was the highlight—full of the dramatic flair that made the trip worthwhile. Despite a brief moment of suspense when the concertmaster’s bow slipped, the interpretation was crisp.</p>
+
+<h3 id="osvaldo-golijov-ever-yours-2022-new-york-premiere">Osvaldo Golijov: <em>Ever Yours</em> (2022, New York Premiere)</h3>
+
+<p>I must admit now: prior to the concert, I did not check to see what other pieces were being performed. Golijov was not a name that I never knew about. This would be a first impression. I am an appreciator of contemprory music so i welcomed this chance. The conductor Eric Jacobsen came up to introduce the piece. He mentioned that the composer was unable to make it to the concert but left a message about the piece for the audience. The context of the piece was that it was inspired by a letter from Vincent Van Gogh to his brother. And that the piece was dedicated to the co-founder of the St. Lawrence String Quartet, Geoff Nuttall, who passed away from cancer. The composer spoke about the joy of creating music with Nuttall and how making music starts a conversation and even after nuttall passed away the conversation keeps going. The piece was a refreshing journey though the mind of the composer. I particularly enjoyed the 4th movement “Papa”, which was the nickname of Haydn. The start of the piece sounds like an intense Piazzolla from the the 21-century. I think it is worth giving a listen: <a href="https://www.youtube.com/watch?v=pybQQnA-VJM&amp;list=OLAK5uy_kbd-wFny26AINqF61tpvN7xYsE0xQylD8&amp;index=4">Ever Yours (“Papa”) on YouTube</a>.</p>
+
+<h3 id="arvo-pärt-in-spe-2010">Arvo Pärt: <em>In spe</em> (2010)</h3>
+
+<p>The second half opened with Pärt’s signature tintinnabuli style. While I enjoy Pärt, the placement felt a bit awkward following the high energy of Haydn and Golijov.</p>
+
+<h3 id="mendelssohn-octet-in-e-flat-major-op-20-1825">Mendelssohn: <em>Octet in E-flat Major</em>, Op. 20 (1825)</h3>
+
+<p>The final item on the program was the main attraction. Once again, the conductor stepped out to speak about the significance of the piece, noting its special place in his own childhood—as well as in the lives of many musicians. It is, he remarked, the kind of work people love to sight-read at home with friends. He went on to say that Mendelssohn stands at the very top of the child prodigies, largely because of this composition, and I agree. Somehow, at just sixteen years old, Mendelssohn managed to write a work of remarkable complexity, placing together eight independent voices with clarity and purpose. The energy of the performance was electric, and the individual lines blended seamlessly into a vibrant whole. It is often the case that the parts are not balanced properly but this was done well.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/blog/the-knights-zankel-hall/mendelssohn-octet.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="The octet performing Mendelssohn at Zankel Hall" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+  
+    <figcaption class="caption">The octet that played Mendelssohn at Zankel Hall.</figcaption>
+  
+</figure>
+
+<p>The last time I heard this piece live was in 2018, when I was an undergraduate at Stony Brook and it was performed as part of the Starry Nights series. Hearing it again now felt like a welcome return to one of my favorite chamber works.</p>
+
+<h3 id="closing-thoughts">Closing thoughts</h3>
+
+<p>It turns out I’d seen the Jacobsen brothers before with their string quartet, Brooklyn Rider, at the NY Phil. Their work with “The Knights” is nice, I’ll definitely be keeping a closer eye on their performance calendar from now on.</p>]]></content><author><name></name></author><category term="music" /><category term="music" /><summary type="html"><![CDATA[Reflections from The Knights at Zankel Hall (Feb. 5).]]></summary></entry></feed>

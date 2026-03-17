@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Computing Fractional Membrane Potential | Jose Guerra
+    
+  
+</title>
+<meta name="author" content="Jose Guerra">
+<meta name="description" content="Compute the membrane potential using simulations.">
+
+  <meta name="keywords" content="computational chemistry, ion transport, MD simulations, molecular modeling">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="https://jlguerraphd.github.io/tutorials/pmepot/">
+
+
+  <!-- Dark Mode -->
+  <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Jose Guerra
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/blog/">Blog
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/tutorials/">Tutorials
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+          
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+              </button>
+            </li>
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Computing Fractional Membrane Potential</h1>
+    <p class="post-description">Compute the membrane potential using simulations.</p>
+  </header>
+
+  <article>
+    <!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p><strong>📋 Tutorial Summary</strong><br>
+Learn how to compute the fractional membrane potential from PMEpot output. This method separates voltage-dependent contributions from the reaction-field potential, enabling quantitative analysis of transmembrane electric fields in MD simulations.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<hr>
+
+<h2 id="overview">Overview</h2>
+
+<p>This tutorial walks through generating the <strong>fractional membrane potential</strong> of a planar membrane system. We cover:</p>
+
+<ol>
+  <li>The underlying theory (linear-response decomposition)</li>
+  <li>Setting up NAMD simulations with applied electric fields</li>
+  <li>Computing PMEpot maps in VMD</li>
+  <li>Post-processing to extract the membrane potential</li>
+</ol>
+
+<hr>
+
+<h2 id="inputs">Inputs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tutorials/planer_membrane/pos.dx</code></td>
+      <td>PMEpot output for <strong>+V</strong> simulation — <a href="https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/pos.dx" rel="external nofollow noopener" target="_blank">pos.dx on GitHub</a>
+</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tutorials/planer_membrane/neg.dx</code></td>
+      <td>PMEpot output for <strong>−V</strong> simulation — <a href="https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/neg.dx" rel="external nofollow noopener" target="_blank">neg.dx on GitHub</a>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<p><strong>Download example data</strong>: a tarball containing <code class="language-plaintext highlighter-rouge">step5_input.psf</code>, <code class="language-plaintext highlighter-rouge">pos.dcd</code>, and <code class="language-plaintext highlighter-rouge">neg.dcd</code> (positve and negative voltage trajectories) is available: https://drive.google.com/file/d/1IN766-hRTBPqVSkxA3XaqkwAfwDf1dau/view?usp=sharing</p>
+
+<h3 id="toy-system">Toy system</h3>
+
+<figure style="text-align:center;margin:0.8rem 0 1.2rem 0">
+  <span style="display:inline-block;width:420px;height:300px;overflow:hidden;border-radius:6px;box-shadow:0 3px 8px rgba(0,0,0,0.08)">
+    <img src="/tutorials/planer_membrane/neg_only_map_4.dat.bmp" alt="Toy system snapshot" style="width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.35);transform-origin:center;display:block">
+  </span>
+  <figcaption style="margin-top:0.4rem;font-size:0.95em;color:#444">lipid bilayer with counterions in a box</figcaption>
+</figure>
+
+<h2 id="background">Background</h2>
+
+<p>Biological membranes are essentially <strong>electrical circuits</strong>. The same physics from introductory electromagnetism applies—and this perspective lets us study membrane proteins quantitatively. Electrophysiology experiments measure ionic conductance through membranes; we can compute analogous quantities <em>in silico</em> using methods developed since the 1990s.</p>
+
+<p>This tutorial uses <strong>linear-response theory</strong> to generate a membrane potential map.</p>
+
+<h3 id="-suggested-reading">📚 Suggested Reading</h3>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p><strong>Key References</strong></p>
+
+  <ol>
+    <li>
+      <p>Roux, B. <em>“Influence of the membrane potential on the free energy of an intrinsic protein.”</em><br>
+Biophys. J. <strong>73</strong>, 2980–2989 (1997). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1181204/" rel="external nofollow noopener" target="_blank">PMC1181204</a></p>
+    </li>
+    <li>
+      <p>Roux, B. <em>“The membrane potential and its representation by a constant electric field in computer simulations.”</em><br>
+Biophys. J. <strong>95</strong>, 4205–4216 (2008). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2567939/" rel="external nofollow noopener" target="_blank">PMC2567939</a></p>
+    </li>
+  </ol>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<p>A brief review of the theory is presented below. The solution of the linearized Poisson–Boltzmann equation developed by Roux (1997) shows that the total electrostatic potential can be decomposed as</p>
+
+\[\phi_{\mathrm{tot}}(\mathbf{r}; V) = \phi_{\mathrm{rf}}(\mathbf{r}) + V\,\phi_{\mathrm{mp}}(\mathbf{r})\]
+
+<p>In simple terms, this expression states that the total electrostatic potential $\phi_{\mathrm{tot}}(\mathbf{r};V)$ at position $\mathbf{r}$ in the presence of a transmembrane voltage $V$ can be written as the sum of two contributions. The first term, $\phi_{\mathrm{rf}}(\mathbf{r})$, is the reaction-field potential, which arises from the protein’s fixed charges together with the polarization and ionic screening of the surrounding environment in the absence of an applied voltage. The second term describes the effect of the applied membrane voltage: $\phi_{\mathrm{mp}}(\mathbf{r})$ is a dimensionless function that represents the fraction of the membrane potential experienced at position $\mathbf{r}$, so that multiplying it by $V$ gives the voltage-dependent contribution to the electrostatic potential.</p>
+
+<p>Now, using the previous linearized equation, we extend it to the use of PMEpot and the external field. If we take two simulations at opposite voltages, we can isolate the voltage-dependent part (central difference):</p>
+
+\[\phi_{\mathrm{tot}}(\mathbf{r}; -V) = \phi_{\mathrm{rf}}(\mathbf{r}) + (-V)\,\phi_{\mathrm{mp}}(\mathbf{r})\]
+
+<p>and</p>
+
+\[\phi_{\mathrm{tot}}(\mathbf{r}; +V) = \phi_{\mathrm{rf}}(\mathbf{r}) + (+V)\,\phi_{\mathrm{mp}}(\mathbf{r})\]
+
+<p>Combining them gives:</p>
+
+\[\begin{aligned}
+\phi_{\mathrm{tot}}(\mathbf{r}; +V) - \phi_{\mathrm{tot}}(\mathbf{r}; -V)
+&amp;= \bigl[\phi_{\mathrm{rf}}(\mathbf{r}) + (+V)\,\phi_{\mathrm{mp}}(\mathbf{r})\bigr] - \bigl[\phi_{\mathrm{rf}}(\mathbf{r}) + (-V)\,\phi_{\mathrm{mp}}(\mathbf{r})\bigr] \\
+&amp;= (+V)\,\phi_{\mathrm{mp}}(\mathbf{r}) - (-V)\,\phi_{\mathrm{mp}}(\mathbf{r}) \\
+&amp;= 2V\,\phi_{\mathrm{mp}}(\mathbf{r})
+\end{aligned}\]
+
+<p>Now solving for $\phi_{\mathrm{mp}}$ gives:</p>
+
+\[\phi_{\mathrm{mp}}(\mathbf{r}) = \frac{\phi_{\mathrm{tot}}(\mathbf{r};+V) - \phi_{\mathrm{tot}}(\mathbf{r};-V)}{2V}\]
+
+<hr>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>We now implement this using <strong>molecular dynamics</strong>. This tutorial uses NAMD with the <code class="language-plaintext highlighter-rouge">eField</code> keyword, but most MD packages support applied electric fields.</p>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-warning">
+  <p>⚠️ <strong>Use NVT, not NPT</strong><br>
+NPT ensembles with external fields can introduce artifacts in the box dimensions. Run production with <strong>NVT</strong> for reliable membrane potential calculations.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<hr>
+
+<h2 id="setting-a-transmembrane-voltage-in-namd">Setting a Transmembrane Voltage in NAMD</h2>
+
+<p>To simulate a specific voltage across your simulation box (e.g., a transmembrane potential), you must apply a constant electric field. NAMD uses specific internal units, so you cannot simply enter the voltage in Volts.</p>
+
+<h3 id="1-the-namd-configuration">1. The NAMD Configuration</h3>
+
+<p>Add the following lines to your production script (<code class="language-plaintext highlighter-rouge">.inp</code>):</p>
+
+<div class="language-tcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eField on
+eField 0 0 <span class="p">{</span>EZ_Value<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Where <code class="language-plaintext highlighter-rouge">{EZ_Value}</code> is the electric field vector component in the Z-direction.</p>
+
+<h3 id="2-calculating-ez_value-using-the-00434-factor">2. Calculating <code class="language-plaintext highlighter-rouge">{EZ_Value}</code> using the 0.0434 Factor</h3>
+
+<p>A useful shortcut for this calculation is the direct unit equivalence:</p>
+
+<blockquote>
+  <p>1 Unit $\left(\frac{\text{kcal}}{\text{mol} \cdot \text{Å} \cdot e}\right)$ is equivalent to $0.0434\,\text{V}/\text{Å}$.</p>
+</blockquote>
+
+<p>Using this equivalence, the formula becomes:</p>
+
+\[E_{\text{NAMD}} = \frac{V_{\text{target}}}{L_z \times 0.0434}\]
+
+<p>Where:</p>
+
+<ul>
+  <li>$V_{\text{target}}$ is the voltage in Volts.</li>
+  <li>$L_z$ is the box length in Angstroms (Å).</li>
+  <li>$0.0434$ is the conversion factor representing $\text{V}/\text{Å}$ per NAMD unit.</li>
+</ul>
+
+<h3 id="example-calculation-90-mv">Example Calculation: +90 mV</h3>
+
+<p><strong>Scenario:</strong> You want +90 mV across a box length ($L_z$) of $100~\text{Å}$.</p>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p>💡 <strong>Tip:</strong> Find the box size in the <code class="language-plaintext highlighter-rouge">.xsc</code> file—the <code class="language-plaintext highlighter-rouge">c_z</code> column gives $L_z$:</p>
+  <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># NAMD extended system configuration output file
+#$LABELS step a_x a_y a_z b_x b_y b_z c_x c_y c_z o_x o_y o_z
+</code></pre></div>  </div>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<ol>
+  <li><strong>Convert to Volts:</strong></li>
+</ol>
+
+\[90 \text{ mV} = 0.09 \text{ V}\]
+
+<ol>
+  <li><strong>Calculate Electric Field in V/Å:</strong></li>
+</ol>
+
+\[\frac{0.09~\text{V}}{100~\text{Å}} = 0.0009~\text{V}/\text{Å}\]
+
+<ol>
+  <li><strong>Convert to the NAMD Units:</strong></li>
+</ol>
+
+<p>Divide by the equivalence factor ($0.0434$):</p>
+
+\[E_{\text{NAMD}} = \frac{0.0009}{0.0434} \approx 0.02074~\text{kcal}/(\text{mol}\cdot\text{Å}\cdot e)\]
+
+<ol>
+  <li><strong>Resulting Input:</strong></li>
+</ol>
+
+<div class="language-tcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eField on
+eField 0 0 0.02074
+</code></pre></div></div>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p>📝 <strong>Note on the constant</strong><br>
+The factor $0.0434$ is the inverse of the thermodynamic conversion: $1\,\text{eV} \approx 23.06\,\text{kcal/mol}$.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<hr>
+
+<h3 id="restraints-for-pmepot-analysis">Restraints for PMEPot Analysis</h3>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-warning">
+  <p>⚠️ <strong>Important for membrane proteins</strong><br>
+Apply <strong>position restraints</strong> to protein backbone atoms during the sampling window.</p>
+
+  <p>PMEpot averages the potential over multiple frames. If the protein translates or rotates, the resulting map will be spatially “smeared” relative to the fixed grid. Restraining the backbone keeps the protein aligned and prevents motion artifacts.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<hr>
+
+<h2 id="computing-the-electrostatic-potential-with-vmd">Computing the Electrostatic Potential with VMD</h2>
+
+<p>Once trajectories are complete, compute PMEpot maps in VMD. For reproducibility, run a <strong>Tcl script</strong> rather than using the GUI.</p>
+
+<details>
+<summary><strong>📄 Example Tcl script (click to expand)</strong></summary>
+
+```tcl
+# load PMEPot plugin
+package require pmepot
+
+# load structure and trajectory (adjust paths as needed)
+mol new ../step5_input.psf type psf waitfor all
+mol addfile centered.dcd type dcd waitfor all
+
+# set files/parameters
+set xscfile pos.xsc
+set gridres 2.0          ;# grid spacing in Angstroms
+set ewald   0.25         ;# Ewald factor (default for periodic PMEPot)
+
+# compute potential and write DX
+pmepot -sel [atomselect top "all"] \
+  -frames all \
+  -xscfile $xscfile \
+  -grid $gridres \
+  -ewaldfactor $ewald \
+  -dxfile pos_epot.dx
+
+exit
+```
+
+</details>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">xscfile</code></td>
+      <td>Box vectors from NAMD (<code class="language-plaintext highlighter-rouge">.xsc</code>); <code class="language-plaintext highlighter-rouge">c_z</code> = $L_z$</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gridres</code></td>
+      <td>Grid spacing (Å); smaller = higher resolution, longer runtime</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ewaldfactor</code></td>
+      <td>PME screening (default 0.25 is usually fine)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-sel</code></td>
+      <td>Atom selection; narrow to <code class="language-plaintext highlighter-rouge">protein and name CA</code> for subsets</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="run-the-analysis">Run the Analysis</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python tutorials/planer_membrane/pme_pot_figure.py
+</code></pre></div></div>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p><strong>Headless mode</strong> (no GUI windows):</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">MPLBACKEND</span><span class="o">=</span>Agg python tutorials/planer_membrane/pme_pot_figure.py
+</code></pre></div>  </div>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<p>Script source: https://github.com/immunoguerrabulin/immunoguerrabulin.github.io/blob/main/tutorials/planer_membrane/pme_pot_figure.py</p>
+
+<h3 id="what-the-script-computes">What the Script Computes</h3>
+
+<ol>
+  <li>
+<strong>Adds the linear field ramp</strong> back to the VMD PMEpot output (VMD outputs molecular potentials <em>without</em> the applied field)</li>
+  <li>
+<strong>Builds z-profiles</strong> (XY-averaged) for both with-ramp and no-ramp potentials</li>
+  <li>
+<strong>Combines POS/NEG</strong> into a single membrane-potential profile</li>
+  <li>
+<strong>Computes fractional membrane potential (FMP)</strong>:<br>
+$\text{FMP} = \frac{\phi_{+V} - \phi_{-V}}{2\Delta V} + 0.5$</li>
+</ol>
+
+<hr>
+
+<h3 id="output-files">Output Files</h3>
+
+<details>
+<summary><strong>📁 Generated files (click to expand)</strong></summary>
+
+| Type                  | Files                                                                             |
+| --------------------- | --------------------------------------------------------------------------------- |
+| **DX (ramp removed)** | `pos_no_ramp.dx`, `neg_no_ramp.dx`                                                |
+| **DX (with ramp)**    | `pos_with_ramp.dx`, `neg_with_ramp.dx`                                            |
+| **CSV**               | `z_profiles_pos_neg_membrane.csv`                                                 |
+| **Figures**           | `pos_neg_ramp_demo.png`, `membrane_potential.png`, `fmp_yz_heatmap_with_ramp.png` |
+
+All outputs are written to `tutorials/planer_membrane/pme_pot_outputs/`.
+
+</details>
+
+<hr>
+
+<h2 id="results">Results</h2>
+
+<h3 id="ramp-removal-posneg-z-profiles">Ramp Removal (POS/NEG z-profiles)</h3>
+
+<figure style="text-align:center;margin:1.5rem 0">
+  <img src="/tutorials/planer_membrane/pme_pot_outputs/pos_neg_ramp_demo.png" alt="Ramp removal demo" style="max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+  <figcaption style="margin-top:0.5rem;font-size:0.9em;color:#666"><strong>Figure 1.</strong> XY-averaged z-profiles showing the linear ramp contribution.</figcaption>
+</figure>
+
+<h3 id="membrane-potential-combined-posneg">Membrane Potential (Combined POS/NEG)</h3>
+
+<figure style="text-align:center;margin:1.5rem 0">
+  <img src="/tutorials/planer_membrane/pme_pot_outputs/membrane_potential.png" alt="Membrane potential" style="max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+  <figcaption style="margin-top:0.5rem;font-size:0.9em;color:#666"><strong>Figure 2.</strong> Combined membrane potential after ramp removal.</figcaption>
+</figure>
+
+<h3 id="fractional-membrane-potential-fmp">Fractional Membrane Potential (FMP)</h3>
+
+<figure style="text-align:center;margin:1.5rem 0">
+  <img src="/tutorials/planer_membrane/pme_pot_outputs/fmp_yz_heatmap_with_ramp.png" alt="FMP heat map" style="max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+  <figcaption style="margin-top:0.5rem;font-size:0.9em;color:#666"><strong>Figure 3.</strong> FMP heat map (y–z plane, x-averaged). The potential is flat in bulk water and transitions linearly across the membrane.</figcaption>
+</figure>
+
+<hr>
+
+<h2 id="validation">Validation</h2>
+
+<p>The fractional membrane potential should be <strong>flat in bulk</strong> and <strong>linear across the membrane</strong>.</p>
+
+<h3 id="comparison-with-theory">Comparison with Theory</h3>
+
+<p>Compare our 1D result to the analytic Poisson–Boltzmann solution from Roux (2008):</p>
+
+<div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;justify-content:center;margin:1.5rem 0">
+  <figure style="flex:1;min-width:280px;max-width:55%;margin:0">
+    <img src="/tutorials/planer_membrane/pme_pot_outputs/fmp_z_profile.png" alt="FMP 1D z-profile" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+    <figcaption style="text-align:center;font-size:0.9em;margin-top:0.5rem;color:#666"><strong>This tutorial</strong> — FMP along z (XY-averaged)</figcaption>
+  </figure>
+  <figure style="flex:0 1 35%;min-width:200px;max-width:40%;margin:0">
+    <img src="/tutorials/planer_membrane/roux2008.png" alt="Roux 2008 Fig 1C" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08)">
+    <figcaption style="text-align:center;font-size:0.9em;margin-top:0.5rem;color:#666"><strong>Roux (2008) Fig. 1C</strong></figcaption>
+  </figure>
+</div>
+
+<!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p><strong>Good agreement!</strong> The MD-derived FMP reproduces the expected behavior from continuum electrostatics. There are some deviations from noise that can be solved by running the simulation longer.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2026
+  Jose
+  
+  Guerra. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.  Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script>
+
+
+
+
+  </body>
+</html>

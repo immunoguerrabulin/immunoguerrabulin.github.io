@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Gillespie SSA for Stochastic Chemical Kinetics | Jose Guerra
+    
+  
+</title>
+<meta name="author" content="Jose Guerra">
+<meta name="description" content="Simulate reaction networks with the Stochastic Simulation Algorithm (Gillespie).">
+
+  <meta name="keywords" content="computational chemistry, ion transport, MD simulations, molecular modeling">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="https://jlguerraphd.github.io/tutorials/gillespie-ssa/">
+
+
+  <!-- Dark Mode -->
+  <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Jose Guerra
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/blog/">Blog
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/tutorials/">Tutorials
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+          
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+              </button>
+            </li>
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Gillespie SSA for Stochastic Chemical Kinetics</h1>
+    <p class="post-description">Simulate reaction networks with the Stochastic Simulation Algorithm (Gillespie).</p>
+  </header>
+
+  <article>
+    <!-- prettier-ignore-start -->
+<blockquote class="block-tip">
+  <p><strong>📋 Tutorial Summary</strong><br>
+Implement the <strong>Gillespie Stochastic Simulation Algorithm (SSA)</strong> to generate exact sample trajectories of reaction networks, then compute basic statistics from the ensembles.</p>
+</blockquote>
+<!-- prettier-ignore-end -->
+
+<hr>
+
+<h2 id="overview">Overview</h2>
+
+<p>The Gillespie Stochastic Simulation Algorithm (SSA) simulates a continuous-time Markov jump process by repeatedly sampling:</p>
+
+<ol>
+  <li>The <strong>time to the next reaction</strong> and</li>
+  <li>
+<strong>Which reaction</strong> happens next,</li>
+</ol>
+
+<p>using the current <strong>propensities</strong> (reaction rates given the current state).</p>
+
+<p>The original 1977 paper by Gillespie (link:https://pubs.acs.org/doi/10.1021/j100540a008) presents an excellent overview of the limitations of a purely deterministic approach to chemical kinetics. Gillespie argues for stochastic simulation methods because chemical reactions are inherently discrete and random. For example, molecular counts change by integer amounts and reaction events occur with probabilistic timing (think of Poission Distributions), producing stochastic fluctuations. The arguments in the paper are well reasoned and I highly recommend reading it. I would emphasize that stochastic simulations make the fluctuations (noise) of a model explicit, this is important for applications such as noise analysis of ion channels, which may be explored in a later tutorial.</p>
+
+<p>This tutorial assumes knowledge of Monte Carlo simulations, and stochastic/transition matricies (Markov chain).</p>
+
+<p>Some of this was adapted from a guest lecture I gave for “Simulation, Modeling, and Computation in Biophysics”.</p>
+
+<h2 id="algorithm-the-direct-method">Algorithm (the direct method)</h2>
+
+<p>The original paper uses different notation than I will present below. Figure 2 from Gillespie (1977) is quite clear, but from a pedagogical standpoint I find the transition-matrix explanation more convenient.</p>
+
+<p>Using the $Q$-matrix (transition-rate matrix or infinitesimal generator) is the standard way to describe Markov chains (MCs). It makes the notation cleaner because the matrix explicitly defines both the <strong>holding time</strong> (diagonal elements) and the <strong>jump rates</strong> (off-diagonal elements).</p>
+
+<p>Let $Q$ be the transition rate matrix where $Q_{ij}$ is the rate of moving from state $i$ to $j$, and the diagonal is the negative sum of all leaving rates:</p>
+
+\[Q_{ii} = -\sum_{j \neq i} Q_{ij}.\]
+
+<p>At current state $x$ (row index of $Q$) and time $t$:</p>
+
+<ol>
+  <li>
+    <p>Identify total exit rate ($a_0$): retrieve the diagonal element for the current state.</p>
+
+\[a_0 = -Q_{xx}\]
+
+    <p>(Note: rate of leaving the state, $-Q_{xx} = k_{\text{forward}} + k_{\text{backward}}$.)</p>
+  </li>
+  <li>(Optional) Check stop condition: if $a_0 = 0$, the system is in an absorbing state. Stop.</li>
+  <li>Generate random numbers: draw $r_1, r_2 \sim U(0,1)$.</li>
+  <li>
+    <p>Compute time step ($\tau$): calculate the holding time using the total exit rate.</p>
+
+\[\\tau = \frac{-\ln(r_1)}{-Q_{xx}}\]
+  </li>
+  <li>
+    <p>Determine transition move: use the off-diagonal elements to compute the probability of the forward jump.</p>
+
+\[p_{\text{fwd}} = \frac{Q_{x, x+1}}{-Q_{xx}}\]
+
+    <p>If $r_2 &lt; p_{\text{fwd}}$: set next state $x_{\text{next}} = x + 1$ (forward). Otherwise set $x_{\text{next}} = x - 1$ (backward).</p>
+  </li>
+  <li>
+    <p>Update:</p>
+
+\[t \leftarrow t + \tau\]
+
+\[x \leftarrow x_{\text{next}}\]
+  </li>
+</ol>
+
+<hr>
+
+<p>As a challenge, it is worth trying to code this yourself in your favorite language.</p>
+
+<p>Let’s model the following system:</p>
+
+\[A \rightleftarrows B \rightleftarrows C\]
+
+<p>with rate constants (in $\mathrm{s}^{-1}$):</p>
+
+<ul>
+  <li>$k_{1f} = 5$, $k_{1b} = 2$</li>
+  <li>$k_{2f} = 10$, $k_{2b} = 4$</li>
+  <li>$k_{3f} = 20$, $k_{3b} = 1$</li>
+</ul>
+
+<p>The python code is provided here:</p>
+
+<h2 id="python-example-that-uses-a-q-matrix">Python example that uses a Q matrix</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="n">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="k">def</span> <span class="nf">gillespie_from_Q</span><span class="p">(</span><span class="n">Q</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100_000</span><span class="p">,</span> <span class="n">warmup</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">asarray</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Q</span><span class="p">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">Q</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">Q</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Q must be a square matrix</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">Q</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t_obs</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">t_total</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">traj</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t_total</span><span class="p">,</span> <span class="n">state</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+        <span class="n">a0</span> <span class="o">=</span> <span class="o">-</span><span class="n">Q</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">state</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a0</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">exponential</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">a0</span><span class="p">)</span>
+        <span class="n">t_total</span> <span class="o">+=</span> <span class="n">dt</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">Q</span><span class="p">[</span><span class="n">state</span><span class="p">].</span><span class="nf">copy</span><span class="p">()</span>
+        <span class="n">probs</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">probs</span> <span class="o">/</span> <span class="n">a0</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
+        <span class="n">cum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">cum</span> <span class="o">+=</span> <span class="n">probs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">cum</span><span class="p">:</span>
+                <span class="n">next_state</span> <span class="o">=</span> <span class="n">j</span>
+                <span class="k">break</span>
+        <span class="n">forward_event</span> <span class="o">=</span> <span class="p">((</span><span class="n">next_state</span> <span class="o">-</span> <span class="n">state</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">&gt;=</span> <span class="n">warmup</span><span class="p">:</span>
+            <span class="n">net</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">forward_event</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">t_obs</span> <span class="o">+=</span> <span class="n">dt</span>
+            <span class="n">traj</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="n">t_total</span><span class="p">,</span> <span class="n">state</span><span class="p">))</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">net</span> <span class="o">/</span> <span class="p">(</span><span class="n">t_obs</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="k">if</span> <span class="n">t_obs</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">flux</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">t_obs</span><span class="p">,</span> <span class="n">traj</span>
+
+<span class="c1"># Example: three-state chain A &lt;-&gt; B &lt;-&gt; C
+</span><span class="n">kf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])</span>
+<span class="n">kb</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">kf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">kb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">flux_Q</span><span class="p">,</span> <span class="n">net_Q</span><span class="p">,</span> <span class="n">t_obs_Q</span><span class="p">,</span> <span class="n">traj</span> <span class="o">=</span> <span class="nf">gillespie_from_Q</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">warmup</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">(Q)    flux=</span><span class="si">{</span><span class="n">flux_Q</span><span class="si">:</span><span class="p">.</span><span class="mi">6</span><span class="n">g</span><span class="si">}</span><span class="s"> (net=</span><span class="si">{</span><span class="n">net_Q</span><span class="si">}</span><span class="s">, t_obs=</span><span class="si">{</span><span class="n">t_obs_Q</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">g</span><span class="si">}</span><span class="s"> s)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">times</span><span class="p">,</span> <span class="n">states</span> <span class="o">=</span> <span class="nf">zip</span><span class="p">(</span><span class="o">*</span><span class="n">traj</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sh">'</span><span class="s">post</span><span class="sh">'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">'</span><span class="s">-</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Time (s)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">State</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Gillespie Trajectory</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">out_path</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">"</span><span class="s">tutorials/gillespie-ssa/gillespie_trajectory.png</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">out_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="nf">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="sh">"</span><span class="s">tight</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Longer simulation and empirical residence times
+</span><span class="n">flux_Q</span><span class="p">,</span> <span class="n">net_Q</span><span class="p">,</span> <span class="n">t_obs_Q</span><span class="p">,</span> <span class="n">traj_long</span> <span class="o">=</span> <span class="nf">gillespie_from_Q</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">warmup</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">res_times</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">traj_long</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">s0</span><span class="p">),</span> <span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">traj_long</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">traj_long</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">res_times</span><span class="p">[</span><span class="n">s0</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="s">Residence time (empirical vs theoretical):</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">emp</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="sh">'</span><span class="s">nan</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">res_times</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">emp</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">res_times</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">theo</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="o">-</span><span class="n">Q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="nf">float</span><span class="p">(</span><span class="sh">'</span><span class="s">nan</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s"> state </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">: emp=</span><span class="si">{</span><span class="n">emp</span><span class="si">:</span><span class="p">.</span><span class="mi">6</span><span class="n">g</span><span class="si">}</span><span class="s"> s, theo=</span><span class="si">{</span><span class="n">theo</span><span class="si">:</span><span class="p">.</span><span class="mi">6</span><span class="n">g</span><span class="si">}</span><span class="s"> s</span><span class="sh">"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>The output will look like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Q)    flux=1.50273 (net=26, t_obs=5.767 s)
+
+Residence time (empirical vs theoretical):
+ state 0: emp=0.0835453 s, theo=0.0833333 s
+ state 1: emp=0.0669106 s, theo=0.0666667 s
+ state 2: emp=0.0248728 s, theo=0.025 s
+</code></pre></div></div>
+
+<p>As a sanity check, for a two-state system the mean lifetime in a state is $1/(k_f + k_b)$; in the code above I estimate the mean lifetime from the simulated trajectory and compare it to the theoretical value. They agree!</p>
+
+<p>Trajectory plot (saved by the code above):</p>
+
+<figure style="text-align:center;margin:1rem 0">
+  <img src="/tutorials/gillespie-ssa/gillespie_trajectory.png" alt="Gillespie SSA trajectory" style="max-width: 700px; width: 100%; height: auto;">
+</figure>
+
+<h2 id="next-steps">Next steps</h2>
+
+<p>This tutorial provides a quick example of stochastic simulation using the Gillespie algorithm. These methods are widely used in biophysical modeling (ion channels and chemical reaction networks…) and deserve deeper treatment in a dedicated tutorial. One natural next step is to analyze the forward/backward switching in the trajectory as a noisy time series, for example by computing its power spectrum via a Fourier transform.</p>
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2026
+  Jose
+  
+  Guerra. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.  Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script>
+
+
+
+
+  </body>
+</html>

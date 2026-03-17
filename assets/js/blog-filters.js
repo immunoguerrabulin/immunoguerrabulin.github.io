@@ -55,10 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (status) {
       const label = (buttonByFilter.get(activeFilter)?.textContent || "All").trim();
-      status.textContent =
-        activeFilter === "all"
-          ? `Showing all ${totalPosts} posts`
-          : `Showing ${visiblePosts} of ${totalPosts} posts in ${label}`;
+      status.textContent = activeFilter === "all" ? `Showing all ${totalPosts} posts` : `Showing ${visiblePosts} of ${totalPosts} posts in ${label}`;
     }
 
     if (emptyState) {

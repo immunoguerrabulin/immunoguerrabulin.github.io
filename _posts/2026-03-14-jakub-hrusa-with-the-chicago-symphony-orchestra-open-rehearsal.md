@@ -8,7 +8,7 @@ categories: [music]
 
 This week I attended an open rehearsal with Jakub Hrůša and the Chicago Symphony Orchestra ahead of their March 12-14, 2026 program with Leif Ove Andsnes as the soloist for the Beethoven Piano Concerto. Believe it or not, this was the first time I attended a rehearsal of a professional orchestra. It was amazing to go behind the scenes and learn about how efficent the orchestra is. Some concerts have 2-3 rehearsals before the concerts. For a professional group like the CSO, its clear that they are not simply sight reading the music for the first time. They are given the music in advance to prepare for the rehearsal.
 
-It was also incredible to see the usual orchestra with causal clothing. I have seen these musicans for the past 5 years in their concert black but never with typically street wear. 
+It was also incredible to see the usual orchestra with causal clothing. I have seen these musicans for the past 5 years in their concert black but never with typically street wear.
 
 {% include figure.liquid path="assets/img/blog/jakub-hrusa-with-the-chicago-symphony-orchestra-open-rehearsal/open_rehearsal_view.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" max-width="720px" alt="View of the Chicago Symphony Orchestra during the donor open rehearsal" caption="View from the balcony during the donor open rehearsal." zoomable=true %}
 
@@ -39,6 +39,9 @@ I was also impressed by his ability to analyze the music in advance and help the
 There was one moment where he stopped the whole orchestra and asked only for the string sections. In that passage, the first violins have fast high notes, and Hrůša knew something was not quite 100% there. He joked that he did not want to torture them, but made clear that the passage needed more confidence. These are professional musicians who do not need to go note by note during rehearsal, and I think Hrůša handled the situation well. The musicians seemed to understand exactly what he wanted, and there were even a few giggles from both the orchestra and the audience.
 
 ### Smetana: selections from _The Bartered Bride_
+
 The second half of the rehearsal started at around 11:45. I decided to leave early and head back to work.
+
 ## Closing thoughts
+
 The way that Hrůša structures the rehearsal makes sense in hindsight. He has an incredible attention to detail and knew how to make the most of the rehearsal with the grop. He seems to be well liked by the ensemble (he is often invited to come join the group for concerts). I unfornately will not attend the concert this week at the CSO but based on what I saw I expect a wonderful concert.

@@ -31,6 +31,7 @@ pagination:
   {% endif %}
 
 {% if site.display_categories and site.display_categories.size > 0 %}
+
   <div class="blog-filters" data-blog-filters>
     <div class="blog-filter-buttons" role="toolbar" aria-label="Filter blog posts by category">
       <button type="button" class="blog-filter-button is-active" data-filter="all" aria-pressed="true">All</button>

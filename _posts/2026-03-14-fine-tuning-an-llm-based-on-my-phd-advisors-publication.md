@@ -65,6 +65,7 @@ Large language models (LLMs) are constantly getting better. Each month seems to 
 </div>
 
 When I started this mini-project, I was never going to produce a model with broad scientific understanding. My goal was much smaller and targeted to a specific domain of theoretical chemistry.
+
 ## Why try this?
 
 Many of the current flagship models are still, for the most part, black boxes. There is limited information about the data used to train them. Consequently, it is difficult to determine how much domain knowledge an LLM already carries into a specialized task. Given that uncertainty, I wanted to see what happens when a very specific field of chemistry is used to fine-tune a model. I also wanted to see whether I could build something that might be genuinely useful for my own research.
@@ -346,7 +347,9 @@ Q: In the canonical Na,K-ATPase cycle, how many Na+ and K+ ions move per ATP, an
 A: 3 Na+ and 2 K+ ions move per ATP, and the net transported charge is 1+.
 
 Q: In the canonical Na,K-ATPase cycle, how many Na+ and K</div></article>
-    <article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">The canonical Na,K-ATPase cycle involves the transport of three Na+ and two K+ ions per ATP hydrolyzed. The net transported charge is therefore 2 Na+ and 2 K+ ions per ATP.</div></article>
+
+<article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">The canonical Na,K-ATPase cycle involves the transport of three Na+ and two K+ ions per ATP hydrolyzed. The net transported charge is therefore 2 Na+ and 2 K+ ions per ATP.</div></article>
+
   </div>
 </details>
 
@@ -402,7 +405,9 @@ where P is the probability distribution of the system, E is the energy of the sy
 
 Q: What is the difference between WHAM and the Metropolis algorithm?
 A: WHAM is a method for calculating the probability distribution of a system in equilibrium, while the Metropolis algorithm is a method for simulating the dynamics of a system. WHAM is based on the assumption that the system is in equilibrium, while the Metropolis algorithm is based on the assumption that the system is not in equilibrium. WHAM is a very useful tool for calculating the probability distribution of a system in equilibrium, while the Metropolis algorithm is a very useful tool for sim</div></article>
-    <article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">WHAM is a Monte Carlo algorithm that solves the chemical potential of a system of charged particles in thermodynamic equilibrium. It is based on the chemical thermodynamic relation that the chemical potential of a species is the chemical potential of the particles of that species in the bulk solution plus the electrostatic potential of the system. The chemical potential of the bulk solution is calculated from the chemical potential of the bulk solution of the same species in the standard state. The electrostatic potential of the system is calculated from the electrostatic potential of the system in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard</div></article>
+
+<article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">WHAM is a Monte Carlo algorithm that solves the chemical potential of a system of charged particles in thermodynamic equilibrium. It is based on the chemical thermodynamic relation that the chemical potential of a species is the chemical potential of the particles of that species in the bulk solution plus the electrostatic potential of the system. The chemical potential of the bulk solution is calculated from the chemical potential of the bulk solution of the same species in the standard state. The electrostatic potential of the system is calculated from the electrostatic potential of the system in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard state is calculated from the chemical potential of the standard state of the same species in the standard state. The chemical potential of the standard</div></article>
+
   </div>
 </details>
 
@@ -417,7 +422,9 @@ A: WHAM is a method for estimating the free energy of a system using umbrella sa
 
 Q: What is the difference between WHAM and W-DF?
 A: WHAM is a method for estimating the free energy of a system using umbrella sampling. W-DF is a method for estimating the free energy of a system using weighted histogram analysis method. The main difference between the two methods is</div></article>
-    <article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">The most common problem with the WHAM method is that the distribution of the charges is not known. In practice, one has to guess the distribution of the charges and then calculate the free energy. The problem is that the distribution of the charges is not known. The best way to get around this problem is to use the maximum entropy method (MEM) to estimate the distribution of the charges. The MEM method is based on the principle that the most probable distribution of the charges is the one that maximizes the entropy of the system. The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and</div></article>
+
+<article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">The most common problem with the WHAM method is that the distribution of the charges is not known. In practice, one has to guess the distribution of the charges and then calculate the free energy. The problem is that the distribution of the charges is not known. The best way to get around this problem is to use the maximum entropy method (MEM) to estimate the distribution of the charges. The MEM method is based on the principle that the most probable distribution of the charges is the one that maximizes the entropy of the system. The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and Smit (1993). The method is described in detail in the book by Frenkel and</div></article>
+
   </div>
 </details>
 
@@ -493,7 +500,9 @@ Implicit sol</div></article>
 
 Q: What is the difference between implicit and explicit solvation?
 A: Implicit solvation is a method of simulating the effect of solvent on a solute by using a boundary potential that represents the effect of the solvent on the solute. Explicit solvation, on the other hand, is a method of simulating the effect of solvent on a solute by explicitly including solvent molecules in the simulation. Implicit solvation is often used in molecular dynamics simulations because it</div></article>
-    <article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">Implicit solvent models are a useful approximation for treating the average effect of the surrounding water molecules on the system. However, they fail to capture the local effects of the water molecules, which are important for understanding the microscopic details of the system.</div></article>
+
+<article class="llm-panel llm-panel-ft"><h3>Fine-tuned model</h3><div class="llm-answer-text">Implicit solvent models are a useful approximation for treating the average effect of the surrounding water molecules on the system. However, they fail to capture the local effects of the water molecules, which are important for understanding the microscopic details of the system.</div></article>
+
   </div>
 </details>
 

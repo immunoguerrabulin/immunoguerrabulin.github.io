@@ -14,7 +14,7 @@ profile:
     <p>Chicago, IL 60637</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: false # includes a list of news items
@@ -39,3 +39,5 @@ hero:
 I am a Ph.D. candidate in Chemistry at the University of Chicago, focused on Computational and Theoretical Chemistry, where I develop atomistic models for ion pumps. My research focuses on using computational techniques to study P-type ATPase pumps.
 
 My work combines molecular dynamics simulations and quantum mechanics calculations to study complex biological systems. This involves using tools to analyze large time-series data.
+
+My publications are also available on [Google Scholar](https://scholar.google.com/citations?user=U9IfD_EAAAAJ).

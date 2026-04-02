@@ -31,4 +31,6 @@ I am a Ph.D. candidate in Computational Chemistry at the University of Chicago, 
 
 My work combines molecular dynamics simulations, quantum mechanics calculations, and machine learning approaches to study complex biological systems. I am particularly interested in membrane proteins, ion channels, and their role in cellular processes.
 
-Feel free to reach out via email at JLGuerra@uchicago.edu for collaborations or discussions about computational chemistry and molecular modeling.
+My publications are also available on [Google Scholar](https://scholar.google.com/citations?user=U9IfD_EAAAAJ).
+
+Feel free to reach out via email at jlguerra at uchicago.edu for collaborations or discussions about computational chemistry and molecular modeling.

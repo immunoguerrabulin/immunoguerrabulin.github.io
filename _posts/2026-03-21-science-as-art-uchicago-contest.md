@@ -16,7 +16,6 @@ For me, the idea of science as art really began when I was an undergraduate soph
 
 Back in 2022, while I was finishing my first year, I learned about a new UChicago initiative centered on the [Science as Art contest](https://news.uchicago.edu/sciartcontest). Naturally, I already had a few possible figures in mind to submit. The artwork had to come from research being conducted on campus. At the time, I was working on the calcium ATPase pump, so I used that as the main subject of the piece.
 
-
 {% include figure.liquid path="assets/img/blog/science-as-art-uchicago-contest/serca.jpg" class="img-fluid rounded z-depth-1 mx-auto d-block" max-width="900px" alt="Original SERCA image used for the first UChicago Science as Art contest attempt" caption="First attempt for the UChicago Science as Art contest." zoomable=true %}
 
 I did not win the competition. However, I later found out that they still chose to display it at the medical school. Below are two photos from the hallway gallery.

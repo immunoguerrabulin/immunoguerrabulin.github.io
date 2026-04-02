@@ -52,7 +52,7 @@ categories: [science]
 }
 </style>
 
-I published a paper with Huan Rui and Benoît Roux in *The Journal of Physical Chemistry B* titled [Multistate Kinetic Model of the Sodium-Potassium ATPase](https://doi.org/10.1021/acs.jpcb.5c04069) in September 2025. I wanted to write a more informal companion note here because the paper is fairly dense, and the main framework is easier to appreciate in plain language. This paper lays out the theoretical foundation for my dissertation research on modeling P-type ATPase pumps.
+I published a paper with Huan Rui and Benoît Roux in _The Journal of Physical Chemistry B_ titled [Multistate Kinetic Model of the Sodium-Potassium ATPase](https://doi.org/10.1021/acs.jpcb.5c04069) in September 2025. I wanted to write a more informal companion note here because the paper is fairly dense, and the main framework is easier to appreciate in plain language. This paper lays out the theoretical foundation for my dissertation research on modeling P-type ATPase pumps.
 
 <div class="paper-links">
   <a href="https://doi.org/10.1021/acs.jpcb.5c04069">View Publication</a>
@@ -102,7 +102,6 @@ To make that concrete, we describe the voltage dependence in terms of incrementa
 That distinction matters because two transport cycles with the same net stoichiometry do not have to respond to voltage in the same way. The turnover depends on how the free energy barriers and charge increments are allocated over the microscopic steps, not only on the final balance sheet.
 
 In the follow-up to this work, we will present how the incremental charge is distributed across the whole cycle, whereas experimental studies have mainly been able to investigate the voltage dependence of the extracellular half of the cycle. In patch-clamp experiments, people are generally only able to measure the difference in incremental charge between state $i$ and state $i+1$, but computational techniques make it possible to measure $Q(x)$, a continuous function describing the incremental charge. The figure sketches what such an incremental charge function may look like and how it relates to the free energy of the system when a voltage is applied. The point is that it shows how much the free energy changes for a given voltage.
-
 
 ## What I think the paper contributes
 

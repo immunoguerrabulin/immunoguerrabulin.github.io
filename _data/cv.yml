@@ -67,7 +67,7 @@
       institution: Simmerling Lab, Stony Brook University
       location: Stony Brook, NY
       description:
-        - Simulated protein–nucleic acid interactions using AMBER/NAMD and Python; validated results via statistical analyses and targeted in silico mutations.
+        - Simulated protein–nucleic acid interactions using AMBER and Python; validated results via statistical analyses and targeted in silico mutations.
 
 - title: Technical Skills
   type: list_groups

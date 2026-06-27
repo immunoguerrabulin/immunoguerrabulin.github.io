@@ -7,6 +7,7 @@ categories: [science]
 ---
 
 ## Background
+
 On April 4, 2022, GPT-3 was still mostly an API-mediated tool rather than a consumer chatbot. Generative AI had not yet reached the general public in the way it has now. Back then, I was a first-year graduate student in Chemistry at the University of Chicago, and for journal club I chose to discuss a paper on the dual-use risks of AI-powered drug discovery [[1]](#ref-urbina2022). The paper came out of Spiez CONVERGENCE, a workshop hosted by Spiez Laboratory to examine how cutting-edge research in chemistry, biology, and related technologies might be misused [[2]](#ref-spiez-convergence).
 
 As an aside, it has now been a couple of years since that conference. Spiez CONVERGENCE released another report in 2024 that returned to questions around digitalization, automation, and artificial intelligence [[3]](#ref-spiez-convergence2024). To me, the fact that the impact first raised in 2022 kept coming up shows the importance of keeping these discussions ongoing.
@@ -14,6 +15,7 @@ As an aside, it has now been a couple of years since that conference. Spiez CONV
 At the time, I was already familiar with computational tools for drug design, including molecular docking and free-energy calculations. I viewed them primarily as tools for discovering safer and more effective therapeutics. I had not yet fully considered their darker potential. If a model can optimize molecules for a desired biological property, what happens when the desired outcome is harm? That question is what makes the 2022 paper especially worth revisiting now, during a period of rapid progress in generative AI.
 
 ## Commentary
+
 The drug discovery setting is usually framed around therapeutic goals. In practice, that means identifying molecules that bind a target, improving potency, reducing toxicity, and eventually finding something that can be synthesized and tested. The uncomfortable point raised by Urbina and colleagues is that the same optimization machinery can be redirected. A model that normally penalizes toxicity can instead be asked to reward predicted toxicity while preserving other desirable molecular properties such as bioactivity [[1]](#ref-urbina2022).
 
 The software used in the paper was MegaSyn. I think this distinction matters because MegaSyn is not just a generic "AI drug design model." MegaSyn combines SMILES-based generative models with optimization, analog generation, and estimates of synthetic viability [[4]](#ref-megasyn2022). The risk is not molecule generation alone. It is generation paired with scoring and some estimate of whether a molecule could plausibly be made.

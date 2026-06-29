@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Ethical Quagmires of AI Drug Design"
-description: ""
+description: "I revist a paper I read in 2022 about the dual-use of AI driven drug discovery"
 tags: [science]
 categories: [science]
 ---

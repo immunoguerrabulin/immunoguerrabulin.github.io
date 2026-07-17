@@ -15,18 +15,16 @@
 {% endif %}
 
 {% capture author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% if site.title == 'blank' %}
+  {% capture title %}{{ author_name }}{% endcapture %}
+{% else %}
+  {% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}
 
-<!-- Standard metadata -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>
-  {% if site.title == 'blank' %}
-    {% capture title %}{{ author_name }}{% endcapture %}
-  {% else %}
-    {% capture title %}{{ site.title }}{% endcapture %}
-  {% endif %}
-  {% if page.url == '/blog/index.html' %}
+{% capture meta_title %}
+  {% if page.seo_title %}
+    {{ page.seo_title }}
+  {% elsif page.url == '/blog/index.html' %}
     {{ page.title }} | {{ title }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
@@ -37,11 +35,91 @@
   {% else %}
     {{ title }}
   {% endif %}
-</title>
-<meta name="author" content="{{ author_name }}">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% endcapture %}
+
+{% capture meta_description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ meta_title | strip | escape }}</title>
+<meta name="author" content="{{ author_name | strip | escape }}">
+<meta name="description" content="{{ meta_description | strip | escape }}">
 {% if page.keywords or site.keywords %}
-  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | escape }}{% else %}{{ site.keywords | escape }}{% endif %}">
+{% endif %}
+
+{% if page.url == '/' %}
+  {% assign homepage_url = '/' | absolute_url %}
+  {% assign person_id = homepage_url | append: '#person' %}
+  {% assign website_id = homepage_url | append: '#website' %}
+  {% assign profile_page_id = homepage_url | append: '#profile-page' %}
+  {% assign profile_image_url = site.person.image | absolute_url %}
+  {% assign person_same_as = '' | split: ',' %}
+  {% if site.data.socials.github_username %}
+    {% capture github_url %}https://github.com/{{ site.data.socials.github_username }}{% endcapture %}
+    {% assign person_same_as = person_same_as | push: github_url %}
+  {% endif %}
+  {% if site.data.socials.linkedin_username %}
+    {% capture linkedin_url %}https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}{% endcapture %}
+    {% assign person_same_as = person_same_as | push: linkedin_url %}
+  {% endif %}
+  {% if site.data.socials.scholar_userid %}
+    {% capture scholar_url %}https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}{% endcapture %}
+    {% assign person_same_as = person_same_as | push: scholar_url %}
+  {% endif %}
+  {% if site.data.socials.orcid_id %}
+    {% capture orcid_url %}https://orcid.org/{{ site.data.socials.orcid_id }}{% endcapture %}
+    {% assign person_same_as = person_same_as | push: orcid_url %}
+  {% endif %}
+  {% if site.data.socials.work_url %}
+    {% assign person_same_as = person_same_as | push: site.data.socials.work_url %}
+  {% endif %}
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": {{ person_id | jsonify }},
+          "name": {{ author_name | strip | jsonify }},
+          "url": {{ homepage_url | jsonify }},
+          "image": {
+            "@type": "ImageObject",
+            "url": {{ profile_image_url | jsonify }}
+          },
+          "description": {{ meta_description | strip | jsonify }},
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": {{ site.person.affiliation.name | jsonify }},
+            "url": {{ site.person.affiliation.url | jsonify }}
+          },
+          "sameAs": {{ person_same_as | jsonify }}
+        },
+        {
+          "@type": "WebSite",
+          "@id": {{ website_id | jsonify }},
+          "url": {{ homepage_url | jsonify }},
+          "name": {{ title | strip | jsonify }},
+          "description": {{ meta_description | strip | jsonify }},
+          "inLanguage": {{ site.lang | jsonify }},
+          "creator": { "@id": {{ person_id | jsonify }} }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": {{ profile_page_id | jsonify }},
+          "url": {{ homepage_url | jsonify }},
+          "name": {{ meta_title | strip | jsonify }},
+          "description": {{ meta_description | strip | jsonify }},
+          "inLanguage": {{ site.lang | jsonify }},
+          "isPartOf": { "@id": {{ website_id | jsonify }} },
+          "mainEntity": { "@id": {{ person_id | jsonify }} }
+        }
+      ]
+    }
+  </script>
 {% endif %}
 
 {% assign is_blog_post = false %}
@@ -53,22 +131,34 @@
 
 {% if site.serve_og_meta %}
   <!-- OpenGraph -->
-  <meta property="og:site_name" content="{{ title }}">
+  <meta property="og:site_name" content="{{ title | strip | escape }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:title" content="{{ meta_title | strip | escape }}">
+  <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  <meta property="og:description" content="{{ meta_description | strip | escape }}">
   {% if page.og_image or site.og_image %}
-    <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
+    {% assign social_image = page.og_image | default: site.og_image %}
+    {% capture social_image_alt %}
+      {% if page.og_image_alt %}
+        {{ page.og_image_alt }}
+      {% elsif page.og_image and page.title %}
+        {{ page.title }}
+      {% else %}
+        Portrait of {{ author_name }}
+      {% endif %}
+    {% endcapture %}
+    <meta property="og:image" content="{{ social_image | absolute_url }}">
+    <meta property="og:image:alt" content="{{ social_image_alt | strip | escape }}">
   {% endif %}
   <meta property="og:locale" content="{{ site.lang }}">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:title" content="{{ meta_title | strip | escape }}">
+  <meta name="twitter:description" content="{{ meta_description | strip | escape }}">
   {% if page.og_image or site.og_image %}
-    <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
+    <meta name="twitter:image" content="{{ social_image | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ social_image_alt | strip | escape }}">
   {% endif %}
   {% if site.x_username %}
     <meta name="twitter:site" content="@{{ site.x_username }}">

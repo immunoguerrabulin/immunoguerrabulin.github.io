@@ -1,4 +1,8 @@
-<a href="https://immunoguerrabulin.github.io/" target="_blank" rel="noopener noreferrer">My Website</a>
+# Jose Guerra
+
+Personal website of Jose Guerra, featuring computational chemistry research on ion transport, molecular simulation, and P-type ATPase pumps, including his work at the University of Chicago.
+
+[Visit Jose Guerra's website](https://immunoguerrabulin.github.io/)
 
 ## License
 

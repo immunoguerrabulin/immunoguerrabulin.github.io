@@ -4,7 +4,7 @@ title: "Have We Solved Binding-Affinity Prediction?"
 description: "Notes on a recent perspective about biomolecular ensembles, affinity prediction, and the benchmarks used to evaluate AI models."
 tags: [science]
 categories: [science]
-published: false
+published: true
 ---
 
 Machine learning for biology and chemistry has promised a great deal. As new structure and affinity models appear, however, it is becoming harder to distinguish genuine generalization from impressive interpolation within familiar chemical and structural space. More recently, Chai Discovery [made headlines for raising $400 million](https://www.nytimes.com/2026/07/14/business/dealbook/chai-discovery-ai-drug-development.html) to use AI to accelerate drug discovery.
